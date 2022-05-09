@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package quanlythucpham;
+package DAO;
+
+import DTO.*;
 
 /**
  *
  * @author Thanh Tam
  */
-public class NewClass {
+public class ThanhVien_DAO {
     
 }
