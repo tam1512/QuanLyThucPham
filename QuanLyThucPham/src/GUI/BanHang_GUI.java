@@ -4,7 +4,13 @@
  */
 package GUI;
 
+import BUS.SanPham_BUS;
+import DTO.SanPham_DTO;
+import static java.lang.Integer.parseInt;
+import java.util.ArrayList;
+import java.util.Vector;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -15,13 +21,47 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
     /**
      * Creates new form BangHang_UI
      */
+    DefaultTableModel model = new DefaultTableModel();
     public BanHang_GUI() {
         initComponents();
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI ui = (BasicInternalFrameUI) this.getUI();
         ui.setNorthPane(null);
+        
+        showAll();
+        
     }
-
+    public void showAll(){
+        DefaultTableModel n = new DefaultTableModel();
+        SanPham_BUS bus = new SanPham_BUS();
+        bus.docSanPham();
+        Vector header = new Vector();
+            header.add("STT");
+            header.add("ID_SanPham");
+            header.add("ID_Loai");
+            header.add("ID_NCC");
+            header.add("Tên SP");
+            header.add("Mô tả");
+            header.add("Đơn giá");
+            header.add("Số lượng");
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+        for (SanPham_DTO sp : SanPham_BUS.dssp) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(sp.id_sanpham);
+            row.add(sp.id_loai);
+            row.add(sp.id_ncc);
+            row.add(sp.tensp);
+            row.add(sp.mota);
+            row.add(sp.giaban);
+            row.add(sp.soluong);
+            n.addRow(row);
+            k++;
+        }
+        tbl_sanpham.setModel(n);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,12 +76,15 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         jButton3 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
+        btn_chon = new javax.swing.JButton();
+        txt_soluong = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbl_sanpham = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tbl_dachon = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -70,45 +113,77 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
 
         jButton10.setText("Xóa ");
 
+        btn_chon.setText("Chọn");
+        btn_chon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_chonActionPerformed(evt);
+            }
+        });
+
+        txt_soluong.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_soluong.setText("1");
+
+        jLabel1.setText("Số lượng:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_soluong, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(2, 2, 2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE))
-                    .addComponent(jButton8))
-                .addContainerGap())
+                        .addGap(115, 115, 115))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(btn_chon, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txt_soluong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_chon, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(682, 357, -1, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(682, 257, 380, 260));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Sản phẩm"));
 
         tbl_sanpham.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "STT", "ID_SanPham", "ID_Loai", "ID_NCC", "Tên SP", "Mô tả", "Đơn giá", "Số lượng"
             }
         ));
         jScrollPane2.setViewportView(tbl_sanpham);
@@ -123,25 +198,24 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 339, 658, -1));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 254, 658, 300));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Đã chọn"));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_dachon.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "STT", "Tên", "Số lượng", "Đơn giá"
+                "STT", "Mã SP", "Tên SP", "Số lượng", "Đơn giá"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tbl_dachon);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -249,10 +323,10 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
                     .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 380, -1));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 380, 250));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -268,9 +342,63 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+                
+    private void btn_chonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chonActionPerformed
+        // TODO add your handling code here:
+        int index = 0;
+        int flag = 0;
+        int soLuong = parseInt(txt_soluong.getText());
+        int i = tbl_sanpham.getSelectedRow();
+       int count_row = model.getRowCount();
+       
+        Vector header = new Vector();
+            header.add("STT");
+            header.add("Mã SP");
+            header.add("Tên SP");
+            header.add("Số lượng");
+            header.add("Đơn giá");
+            if(model.getRowCount() == 0)
+            model = new DefaultTableModel(header,0);
+            
+            //Cập nhật số lượng (trùng mã sp)
+            
+            String a = tbl_sanpham.getModel().getValueAt(i, 1).toString();
+            if(count_row > 0){
+            for(int j = 0; j < count_row; j++){
+            String b = model.getValueAt(j, 1).toString();
+                if(b.equals(a)){
+                    index = j;
+                    flag = 1;
+                }
+            }
+            }
+            if(flag == 0){
+                Vector row = new Vector();
+            row.add(count_row++);
+            row.add(tbl_sanpham.getModel().getValueAt(i, 1));
+            row.add(tbl_sanpham.getModel().getValueAt(i, 4));
+            row.add(txt_soluong.getText());
+            row.add(parseInt(tbl_sanpham.getModel().getValueAt(i, 6).toString())*soLuong);
+            model.addRow(row);
+            
+            tbl_dachon.setModel(model);
+            } else {
+                
+                Vector row = new Vector();
+                row.add(model.getValueAt(index, 0));
+            row.add(tbl_sanpham.getModel().getValueAt(i, 1));
+            row.add(tbl_sanpham.getModel().getValueAt(i, 4));
+            row.add(parseInt(txt_soluong.getText()) + parseInt(model.getValueAt(index, 3).toString()));
+            row.add(parseInt((tbl_sanpham.getModel().getValueAt(i, 6).toString()))*soLuong + parseInt(model.getValueAt(index, 4).toString()));          
+            model.removeRow(index);
+            model.insertRow(index, row);
+            tbl_dachon.setModel(model);
+            }
+    }//GEN-LAST:event_btn_chonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_chon;
     private javax.swing.JButton btn_rau;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
@@ -284,13 +412,15 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tbl_dachon;
     private javax.swing.JTable tbl_sanpham;
+    private javax.swing.JTextField txt_soluong;
     // End of variables declaration//GEN-END:variables
 }

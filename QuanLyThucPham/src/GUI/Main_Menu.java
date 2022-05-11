@@ -4,9 +4,14 @@
  */
 package GUI;
 
+import BUS.SanPham_BUS;
+import DTO.SanPham_DTO;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.util.Iterator;
+import java.util.Vector;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -157,6 +162,9 @@ public class Main_Menu extends javax.swing.JFrame {
         lb_banhang.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lb_banhangMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lb_banhangMouseEntered(evt);
             }
         });
 
@@ -376,6 +384,10 @@ public class Main_Menu extends javax.swing.JFrame {
         pnl_thongke.setBackground(DefaultColor);
         
         
+        
+            
+        
+        
     }//GEN-LAST:event_lb_banhangMouseClicked
 
     private void lb_khuyenmaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_khuyenmaiMouseClicked
@@ -445,6 +457,10 @@ public class Main_Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setState(this.ICONIFIED);
     }//GEN-LAST:event_lb_minimizeMouseClicked
+
+    private void lb_banhangMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_banhangMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lb_banhangMouseEntered
 
     /**
      * @param args the command line arguments

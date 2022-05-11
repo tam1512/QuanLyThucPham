@@ -4,12 +4,21 @@
  */
 package BUS;
 
+import DAO.SanPham_DAO;
 import DTO.*;
+import java.util.ArrayList;
 
 /**
  *
  * @author blemb
  */
 public class SanPham_BUS {
-    
+    public static ArrayList<SanPham_DTO> dssp;
+    public SanPham_BUS(){};
+    public void docSanPham(){
+        dssp = new SanPham_DAO().docSanPham();
+    }
+    public static void main(String[] args){
+        
+    }
 }
