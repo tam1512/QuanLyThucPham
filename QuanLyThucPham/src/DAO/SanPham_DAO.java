@@ -5,6 +5,7 @@
 package DAO;
 
 import DTO.*;
+import static java.lang.Integer.parseInt;
 import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -50,5 +51,18 @@ public class SanPham_DAO {
             Logger.getLogger(SanPham_DAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return dssp;
+    }
+    public void capNhatSlSp(String soluong, String id){
+        try {
+            st = conn.createStatement();
+            String query1 = "select sv.soluong from sanpham sv where ID_SanPham = '" + id + "'";
+            rs = st.executeQuery(query1);
+            rs.next();
+            
+            String query = "update sanpham set SoLuong='" + (parseInt(rs.getString(1))- parseInt(soluong)) + "' where ID_SanPham='" + id + "'";
+            st.executeUpdate(query);
+        } catch (SQLException ex) {
+            Logger.getLogger(SanPham_DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

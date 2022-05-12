@@ -18,6 +18,9 @@ public class SanPham_BUS {
     public void docSanPham(){
         dssp = new SanPham_DAO().docSanPham();
     }
+    public void capNhatSlSp(String soluong, String id){
+        new SanPham_DAO().capNhatSlSp(soluong, id);
+    }
     public static void main(String[] args){
         
     }

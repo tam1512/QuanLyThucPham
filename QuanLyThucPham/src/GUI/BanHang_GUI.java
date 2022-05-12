@@ -9,6 +9,7 @@ import DTO.SanPham_DTO;
 import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
 import java.util.Vector;
+import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 
@@ -74,11 +75,12 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jPanel1 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        btn_chon = new javax.swing.JButton();
+        btn_thanhtoan = new javax.swing.JButton();
+        btn_xoa = new javax.swing.JButton();
         txt_soluong = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        btn_chon = new javax.swing.JButton();
+        btn_refresh = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbl_sanpham = new javax.swing.JTable();
@@ -109,14 +111,17 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
 
         jButton3.setText("In hóa đơn");
 
-        jButton8.setText("Thanh toán");
-
-        jButton10.setText("Xóa ");
-
-        btn_chon.setText("Chọn");
-        btn_chon.addActionListener(new java.awt.event.ActionListener() {
+        btn_thanhtoan.setText("Thanh toán");
+        btn_thanhtoan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_chonActionPerformed(evt);
+                btn_thanhtoanActionPerformed(evt);
+            }
+        });
+
+        btn_xoa.setText("Xóa ");
+        btn_xoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_xoaActionPerformed(evt);
             }
         });
 
@@ -125,6 +130,20 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Số lượng:");
 
+        btn_chon.setText("Chọn");
+        btn_chon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_chonActionPerformed(evt);
+            }
+        });
+
+        btn_refresh.setText("Refresh");
+        btn_refresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_refreshActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -132,25 +151,29 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(9, Short.MAX_VALUE)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txt_soluong, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(2, 2, 2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton8)
+                        .addComponent(btn_thanhtoan)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton3)
-                        .addGap(115, 115, 115))
+                        .addGap(16, 16, 16)
+                        .addComponent(btn_chon, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_xoa, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(btn_chon, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addComponent(jButton3)
+                        .addGap(115, 115, 115))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(124, 124, 124)
+                .addComponent(btn_refresh)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,11 +185,13 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
                             .addComponent(txt_soluong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1)))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btn_chon, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
+                        .addComponent(btn_xoa, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_chon, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(26, 26, 26)
+                .addComponent(btn_refresh)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_thanhtoan, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -342,9 +367,27 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
-                
+     
+    private void btn_thanhtoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_thanhtoanActionPerformed
+        // TODO add your handling code here:
+        int i = model.getRowCount();
+        if(i != 0){
+        for(int j = i-1; j >= 0; j--){
+            String soluong1 = model.getValueAt(j, 3).toString();           
+            String maSp = model.getValueAt(j, 1).toString();
+            new SanPham_BUS().capNhatSlSp(soluong1, maSp);         
+            model.removeRow(j);
+        }
+        showAll();
+        JOptionPane.showMessageDialog(null, "Mua sản phẩm thành công !");
+        } else {
+            JOptionPane.showMessageDialog(null, "Bạn chưa chọn sản phẩm !");
+        }
+    }//GEN-LAST:event_btn_thanhtoanActionPerformed
+
     private void btn_chonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chonActionPerformed
         // TODO add your handling code here:
+        //Nhớ đổi Giá data base thành Int
         int index = 0;
         int flag = 0;
         int soLuong = parseInt(txt_soluong.getText());
@@ -373,35 +416,75 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
             }
             }
             if(flag == 0){
+                
                 Vector row = new Vector();
             row.add(count_row++);
             row.add(tbl_sanpham.getModel().getValueAt(i, 1));
             row.add(tbl_sanpham.getModel().getValueAt(i, 4));
             row.add(txt_soluong.getText());
             row.add(parseInt(tbl_sanpham.getModel().getValueAt(i, 6).toString())*soLuong);
-            model.addRow(row);
-            
-            tbl_dachon.setModel(model);
+            //so sánh lúc chọn 
+                if(parseInt(txt_soluong.getText()) <= parseInt(tbl_sanpham.getModel().getValueAt(i, 7).toString()) && parseInt(txt_soluong.getText()) > 0){
+                model.addRow(row);
+                tbl_dachon.setModel(model);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Số lượng không còn đủ trong kho");
+                }
             } else {
                 
                 Vector row = new Vector();
                 row.add(model.getValueAt(index, 0));
             row.add(tbl_sanpham.getModel().getValueAt(i, 1));
             row.add(tbl_sanpham.getModel().getValueAt(i, 4));
+            //Cập nhật số lượng và giá sản phẩm đã chọn
             row.add(parseInt(txt_soluong.getText()) + parseInt(model.getValueAt(index, 3).toString()));
-            row.add(parseInt((tbl_sanpham.getModel().getValueAt(i, 6).toString()))*soLuong + parseInt(model.getValueAt(index, 4).toString()));          
-            model.removeRow(index);
-            model.insertRow(index, row);
-            tbl_dachon.setModel(model);
+            row.add(parseInt((tbl_sanpham.getModel().getValueAt(i, 6).toString()))*soLuong + parseInt(model.getValueAt(index, 4).toString()));
+            //so sánh lúc chọn (sp đã có trên model)
+            int SoLuongDangChon = parseInt(txt_soluong.getText()) + parseInt(model.getValueAt(index, 3).toString());
+            if(SoLuongDangChon <= parseInt(tbl_sanpham.getModel().getValueAt(i, 7).toString()) && parseInt(txt_soluong.getText()) > 0){
+                model.removeRow(index);
+                model.insertRow(index, row);
+                tbl_dachon.setModel(model);   
+                } else {
+                    JOptionPane.showMessageDialog(null, "Số lượng không còn đủ trong kho");
+                }
+                     
             }
     }//GEN-LAST:event_btn_chonActionPerformed
+
+    private void btn_xoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_xoaActionPerformed
+        // TODO add your handling code here:
+        int i = tbl_dachon.getSelectedRow();
+        if(parseInt(txt_soluong.getText()) > parseInt(tbl_dachon.getModel().getValueAt(i, 3).toString())){
+            model.removeRow(i);
+        for(int j = 0; j < model.getRowCount(); j++ ){
+            model.setValueAt(j, j, 0);
+        }
+        } else {
+            int a = parseInt(tbl_dachon.getValueAt(i, 3).toString());
+            int b = parseInt(txt_soluong.getText());
+            tbl_dachon.setValueAt(a - b, i, 3);
+            model.setValueAt(a - b, i, 3);
+            tbl_dachon.setModel(model);
+        }
+        
+        
+        tbl_dachon.setModel(model);
+    }//GEN-LAST:event_btn_xoaActionPerformed
+
+    private void btn_refreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_refreshActionPerformed
+        // TODO add your handling code here:
+        showAll();
+    }//GEN-LAST:event_btn_refreshActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_chon;
     private javax.swing.JButton btn_rau;
+    private javax.swing.JButton btn_refresh;
+    private javax.swing.JButton btn_thanhtoan;
+    private javax.swing.JButton btn_xoa;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -409,7 +492,6 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
