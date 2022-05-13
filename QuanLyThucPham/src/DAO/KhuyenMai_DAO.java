@@ -49,5 +49,33 @@ public class KhuyenMai_DAO {
         }
         return dskm;
     }
-    
+    public void themKM(String id, String ten, String batdau, String ketthuc){
+        try{
+            String query = "INSERT INTO `khuyenmai`(`ID_KhuyenMai`, `TenCTKhuyenMai`, `ThoiGianBatDau`, `ThoiGianKetThuc`) VALUES ('" + id
+                    + "','" + ten + "','" + batdau + "','" + ketthuc + "')";
+            st = conn.createStatement();
+            st.executeUpdate(query);
+    }   catch (SQLException ex) {
+            Logger.getLogger(KhuyenMai_DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public void xoaKM(String id){
+        try{
+            String query = "DELETE FROM `khuyenmai` WHERE ID_KhuyenMai='" + id + "'";
+            st = conn.createStatement();
+            st.executeUpdate(query);
+    }   catch (SQLException ex) {
+            Logger.getLogger(KhuyenMai_DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public void suaKM(String id_new, String ten, String batdau, String ketthuc, String id){
+        try{
+            String query = "UPDATE `khuyenmai` SET `ID_KhuyenMai`='" + id_new + "',`TenCTKhuyenMai`='" + ten 
+                    + "',`ThoiGianBatDau`='" + batdau + "',`ThoiGianKetThuc`=' "+ ketthuc +"' WHERE ID_KhuyenMai='" + id + "'";
+            st = conn.createStatement();
+            st.executeUpdate(query);
+    }   catch (SQLException ex) {
+            Logger.getLogger(KhuyenMai_DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
