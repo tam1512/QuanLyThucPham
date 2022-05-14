@@ -4,6 +4,7 @@
  */
 package GUI;
 
+
 import BUS.SanPham_BUS;
 import DTO.SanPham_DTO;
 import com.lowagie.text.Document;
@@ -33,6 +34,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 
+
 /**
  *
  * @author blemb
@@ -42,12 +44,15 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
     /**
      * Creates new form BangHang_UI
      */
+
     DefaultTableModel model = new DefaultTableModel();
+
     public BanHang_GUI() {
         initComponents();
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI ui = (BasicInternalFrameUI) this.getUI();
         ui.setNorthPane(null);
+
         
         showAll();
         
@@ -83,6 +88,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         }
         tbl_sanpham.setModel(n);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -94,6 +100,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jPanel1 = new javax.swing.JPanel();
+
         btn_inhoadon = new javax.swing.JButton();
         btn_thanhtoan = new javax.swing.JButton();
         btn_xoa = new javax.swing.JButton();
@@ -101,11 +108,13 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         btn_chon = new javax.swing.JButton();
         btn_refresh = new javax.swing.JButton();
+
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbl_sanpham = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
+
         tbl_dachon = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         btn_giavi = new javax.swing.JButton();
@@ -118,6 +127,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         jButton9 = new javax.swing.JButton();
         btn_banhkeo = new javax.swing.JButton();
 
+
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         setMinimumSize(new java.awt.Dimension(1050, 570));
         setPreferredSize(new java.awt.Dimension(1060, 580));
@@ -128,6 +138,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(742, 339, 80, -1));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Tùy chọn"));
+
 
         btn_inhoadon.setText("In hóa đơn");
         btn_inhoadon.addActionListener(new java.awt.event.ActionListener() {
@@ -169,10 +180,12 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
             }
         });
 
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -199,10 +212,12 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(btn_refresh)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
@@ -223,10 +238,12 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(682, 257, 380, 260));
 
+
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Sản phẩm"));
 
         tbl_sanpham.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -234,6 +251,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
             },
             new String [] {
                 "STT", "Tên SP", "Mô tả", "Đơn giá", "Số lượng", "Title 6", "Title 7"
+
             }
         ));
         jScrollPane2.setViewportView(tbl_sanpham);
@@ -248,6 +266,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
                 .addContainerGap())
@@ -266,6 +285,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
             }
         ));
         jScrollPane1.setViewportView(tbl_dachon);
+
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -287,6 +307,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Loại sản phẩm"));
 
+
         btn_giavi.setText("Gia vị");
         btn_giavi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -299,6 +320,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         btn_donglanh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_donglanhActionPerformed(evt);
+
             }
         });
 
@@ -312,6 +334,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
                 btn_rauActionPerformed(evt);
             }
         });
+
 
         btn_thit.setText("Thịt, Trứng");
         btn_thit.addActionListener(new java.awt.event.ActionListener() {
@@ -358,6 +381,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
             }
         });
 
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -385,6 +409,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
                         .addComponent(btn_khac, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(btn_mitom))
                 .addContainerGap(26, Short.MAX_VALUE))
+
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -392,6 +417,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
                 .addGap(10, 10, 10)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_rau, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+
                     .addComponent(btn_thit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_luongthuc, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -415,6 +441,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
 
     private void btn_rauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rauActionPerformed
         // TODO add your handling code here:
+
         new SanPham_BUS().docSanPham_loai("1");
         DefaultTableModel n = new DefaultTableModel();
         SanPham_BUS bus = new SanPham_BUS();
@@ -941,14 +968,17 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
+
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+
     private javax.swing.JTable tbl_dachon;
     private javax.swing.JTable tbl_sanpham;
     private javax.swing.JTextField txt_soluong;
+
     // End of variables declaration//GEN-END:variables
 }
