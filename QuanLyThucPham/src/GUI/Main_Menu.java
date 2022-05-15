@@ -4,6 +4,7 @@
  */
 package GUI;
 
+
 import BUS.SanPham_BUS;
 import DTO.SanPham_DTO;
 import java.awt.Color;
@@ -12,6 +13,7 @@ import java.awt.Toolkit;
 import java.util.Iterator;
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
+
 
 /**
  *
@@ -163,9 +165,11 @@ public class Main_Menu extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lb_banhangMouseClicked(evt);
             }
+
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lb_banhangMouseEntered(evt);
             }
+
         });
 
         javax.swing.GroupLayout pnl_banhangLayout = new javax.swing.GroupLayout(pnl_banhang);
@@ -275,6 +279,7 @@ public class Main_Menu extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -365,6 +370,7 @@ public class Main_Menu extends javax.swing.JFrame {
             .addGap(0, 580, Short.MAX_VALUE)
         );
 
+
         getContentPane().add(container, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 1060, 580));
 
         pack();
@@ -384,10 +390,12 @@ public class Main_Menu extends javax.swing.JFrame {
         pnl_thongke.setBackground(DefaultColor);
         
         
+
         
             
         
         
+
     }//GEN-LAST:event_lb_banhangMouseClicked
 
     private void lb_khuyenmaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_khuyenmaiMouseClicked
@@ -458,9 +466,11 @@ public class Main_Menu extends javax.swing.JFrame {
         this.setState(this.ICONIFIED);
     }//GEN-LAST:event_lb_minimizeMouseClicked
 
+
     private void lb_banhangMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_banhangMouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_lb_banhangMouseEntered
+
 
     /**
      * @param args the command line arguments
