@@ -5,6 +5,7 @@
 package DAO;
 
 import DTO.*;
+import static java.lang.Integer.parseInt;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -48,7 +49,6 @@ public class KhuyenMai_DAO {
         }
         return dskm;
     }
-    
     public void themKM(String id, String ten, String batdau, String ketthuc){
         try{
             String query = "INSERT INTO `khuyenmai`(`ID_KhuyenMai`, `TenCTKhuyenMai`, `ThoiGianBatDau`, `ThoiGianKetThuc`) VALUES ('" + id
@@ -78,5 +78,4 @@ public class KhuyenMai_DAO {
             Logger.getLogger(KhuyenMai_DAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
 }
