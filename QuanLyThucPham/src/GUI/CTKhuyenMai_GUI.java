@@ -12,5 +12,4 @@ import DTO.*;
  */
 public class CTKhuyenMai_GUI {
     
-    
 }

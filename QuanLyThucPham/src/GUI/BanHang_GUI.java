@@ -4,26 +4,18 @@
  */
 package GUI;
 
-<<<<<<< HEAD
-import BUS.CTKhuyenMai_BUS;
-import static BUS.CTKhuyenMai_BUS.ds_ctkm;
-=======
 
->>>>>>> fbf6009383e3dbbac355b30f9d37154045586571
 import BUS.SanPham_BUS;
-import DTO.CTKhuyenMai_DTO;
-import DTO.KhuyenMai_DTO;
 import DTO.SanPham_DTO;
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
-import com.lowagie.text.Font;
-import com.lowagie.text.Paragraph;
-import com.lowagie.text.pdf.BaseFont;
 import com.lowagie.text.pdf.PdfPTable;
 import com.lowagie.text.pdf.PdfWriter;
-import static java.awt.Color.red;
+import static java.awt.Frame.NORMAL;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import static java.lang.Integer.parseInt;
+import java.util.ArrayList;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,9 +26,7 @@ import javax.swing.table.DefaultTableModel;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import static java.lang.Float.parseFloat;
-import javax.swing.table.TableCellRenderer;
+import java.util.List;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -118,12 +108,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         btn_chon = new javax.swing.JButton();
         btn_refresh = new javax.swing.JButton();
-<<<<<<< HEAD
-        jLabel2 = new javax.swing.JLabel();
-        lb_tongtien = new javax.swing.JLabel();
-=======
 
->>>>>>> fbf6009383e3dbbac355b30f9d37154045586571
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbl_sanpham = new javax.swing.JTable();
@@ -195,14 +180,6 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
             }
         });
 
-<<<<<<< HEAD
-        jLabel2.setText("Tổng tiền:");
-
-        lb_tongtien.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lb_tongtien.setText("VND");
-        lb_tongtien.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-=======
->>>>>>> fbf6009383e3dbbac355b30f9d37154045586571
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -212,48 +189,34 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(9, Short.MAX_VALUE)
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txt_soluong, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(2, 2, 2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btn_thanhtoan)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(8, 8, 8)
-                                .addComponent(lb_tongtien, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))))
+                        .addComponent(btn_thanhtoan)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
-                        .addComponent(btn_chon, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+                        .addComponent(btn_chon, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(btn_xoa, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btn_xoa, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btn_inhoadon)
-<<<<<<< HEAD
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_refresh)))
-                .addContainerGap())
-=======
                         .addGap(115, 115, 115))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btn_refresh)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 
->>>>>>> fbf6009383e3dbbac355b30f9d37154045586571
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-<<<<<<< HEAD
-=======
 
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -267,22 +230,9 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
                 .addGap(23, 23, 23)
                 .addComponent(btn_refresh)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
->>>>>>> fbf6009383e3dbbac355b30f9d37154045586571
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_xoa, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_chon, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_soluong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(lb_tongtien))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btn_thanhtoan, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btn_inhoadon, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btn_refresh, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(btn_thanhtoan, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_inhoadon, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -293,15 +243,6 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
 
         tbl_sanpham.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-<<<<<<< HEAD
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "STT", "ID_SanPham", "Loại", "NCC", "Tên SP", "Mô tả", "Đơn giá", "Số lượng"
-=======
 
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -311,7 +252,6 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
             new String [] {
                 "STT", "Tên SP", "Mô tả", "Đơn giá", "Số lượng", "Title 6", "Title 7"
 
->>>>>>> fbf6009383e3dbbac355b30f9d37154045586571
             }
         ));
         jScrollPane2.setViewportView(tbl_sanpham);
@@ -328,11 +268,11 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 264, 658, 290));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 254, 658, 300));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Đã chọn"));
 
@@ -341,7 +281,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "STT", "Mã SP", "Tên SP", "Số lượng", "Đơn giá", "Giá KM", "Tổng cộng"
+                "STT", "Mã SP", "Tên SP", "Số lượng", "Đơn giá"
             }
         ));
         jScrollPane1.setViewportView(tbl_dachon);
@@ -351,16 +291,16 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 636, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 636, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, -1, -1));
@@ -455,21 +395,14 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
                         .addComponent(btn_banhkeo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(btn_donglanh, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_donglanh)
                             .addGap(18, 18, 18)
                             .addComponent(btn_giavi, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(btn_rau, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(btn_rau)
+                            .addGap(18, 18, 18)
                             .addComponent(btn_thit, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-<<<<<<< HEAD
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btn_luongthuc, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                    .addComponent(btn_khac, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_mitom, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
-                .addContainerGap(58, Short.MAX_VALUE))
-=======
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(btn_luongthuc, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
@@ -477,7 +410,6 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
                     .addComponent(btn_mitom))
                 .addContainerGap(26, Short.MAX_VALUE))
 
->>>>>>> fbf6009383e3dbbac355b30f9d37154045586571
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -615,7 +547,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         int i = model.getRowCount();
         if(i != 0){
         for(int j = i-1; j >= 0; j--){
-            String soluong1 = String.valueOf(Math.round(parseFloat(model.getValueAt(j, 3).toString())));           
+            String soluong1 = model.getValueAt(j, 3).toString();           
             String maSp = model.getValueAt(j, 1).toString();
             new SanPham_BUS().capNhatSlSp(soluong1, maSp);         
             model.removeRow(j);
@@ -629,23 +561,12 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
 
     private void btn_chonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chonActionPerformed
         // TODO add your handling code here:
-        
+        //Nhớ đổi Giá data base thành Int
         int index = 0;
         int flag = 0;
-        int flag1 = 0;
-        float soLuong = parseFloat(txt_soluong.getText());
+        int soLuong = parseInt(txt_soluong.getText());
         int i = tbl_sanpham.getSelectedRow();
        int count_row = model.getRowCount();
-       
-       new CTKhuyenMai_BUS().docDS_CTKM();
-       float gia_km = (float) 0.0;
-       
-       for(CTKhuyenMai_DTO km : CTKhuyenMai_BUS.ds_ctkm){
-           if( tbl_sanpham.getValueAt(i, 1).toString().equals(km.id_sp)){
-               gia_km = (float) (parseFloat((km.giamcon)));
-               flag1 = 1;
-           }
-       }
        
         Vector header = new Vector();
             header.add("STT");
@@ -653,30 +574,21 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
             header.add("Tên SP");
             header.add("Số lượng");
             header.add("Đơn giá");
-            header.add("Giá KM");
-            header.add("Tổng cộng");
             if(model.getRowCount() == 0)
             model = new DefaultTableModel(header,0);
             
             //Cập nhật số lượng (trùng mã sp)
             
-            String a = tbl_sanpham.getValueAt(i, 1).toString();
+            String a = tbl_sanpham.getModel().getValueAt(i, 1).toString();
             if(count_row > 0){
             for(int j = 0; j < count_row; j++){
-                //kiem tra ID trùng
             String b = model.getValueAt(j, 1).toString();
                 if(b.equals(a)){
                     index = j;
                     flag = 1;
                 }
-            }           
             }
-            //Kiem tra SP co khuyen mai
-            
-            
-            //nếu sp chưa có trên model
-            float dongia = parseFloat(tbl_sanpham.getModel().getValueAt(i, 6).toString());
-            
+            }
             if(flag == 0){
                 
                 Vector row = new Vector();
@@ -684,50 +596,26 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
             row.add(tbl_sanpham.getModel().getValueAt(i, 1));
             row.add(tbl_sanpham.getModel().getValueAt(i, 4));
             row.add(txt_soluong.getText());
-            row.add(dongia);
-            //Neu co khuyen mai thi add giá km, khong co thi add rỗng
-            
-            if(flag1 == 1){
-                row.add(gia_km);
-                row.add(gia_km*soLuong);
-            } else {
-                row.add("");
-                row.add(dongia*soLuong);
-            }
+            row.add(parseInt(tbl_sanpham.getModel().getValueAt(i, 6).toString())*soLuong);
             //so sánh lúc chọn 
-                if(parseFloat(txt_soluong.getText()) <= parseFloat(tbl_sanpham.getModel().getValueAt(i, 7).toString()) && parseFloat(txt_soluong.getText()) > 0){
+                if(parseInt(txt_soluong.getText()) <= parseInt(tbl_sanpham.getModel().getValueAt(i, 7).toString()) && parseInt(txt_soluong.getText()) > 0){
                 model.addRow(row);
                 tbl_dachon.setModel(model);
                 } else {
                     JOptionPane.showMessageDialog(null, "Số lượng không còn đủ trong kho");
                 }
-            }
-            //Nếu sp có ở model rồi
-            else {
+            } else {
                 
                 Vector row = new Vector();
                 row.add(model.getValueAt(index, 0));
             row.add(tbl_sanpham.getModel().getValueAt(i, 1));
             row.add(tbl_sanpham.getModel().getValueAt(i, 4));
             //Cập nhật số lượng và giá sản phẩm đã chọn
-            row.add(parseFloat(txt_soluong.getText()) + parseFloat(model.getValueAt(index, 3).toString()));
-            row.add(dongia);
-            //Neu co khuyen mai thi add giá km, khong co thi add rỗng
-            if(flag1 == 1){
-               row.add(gia_km);
-               row.add((gia_km)*soLuong + parseFloat(model.getValueAt(index, 3).toString())*gia_km);
-            } else {
-               row.add("");
-               row.add(dongia*soLuong + dongia*parseFloat(model.getValueAt(index, 3).toString()));
-                  
-            }
-            
-            
+            row.add(parseInt(txt_soluong.getText()) + parseInt(model.getValueAt(index, 3).toString()));
+            row.add(parseInt((tbl_sanpham.getModel().getValueAt(i, 6).toString()))*soLuong + parseInt(model.getValueAt(index, 4).toString()));
             //so sánh lúc chọn (sp đã có trên model)
-            float SoLuongDangChon = parseFloat(txt_soluong.getText()) + parseFloat(model.getValueAt(index, 3).toString());
-            //kiem tra khuyen mai
-            
-            if(SoLuongDangChon <= parseFloat(tbl_sanpham.getModel().getValueAt(i, 7).toString()) && parseFloat(txt_soluong.getText()) > 0){
+            int SoLuongDangChon = parseInt(txt_soluong.getText()) + parseInt(model.getValueAt(index, 3).toString());
+            if(SoLuongDangChon <= parseInt(tbl_sanpham.getModel().getValueAt(i, 7).toString()) && parseInt(txt_soluong.getText()) > 0){
                 model.removeRow(index);
                 model.insertRow(index, row);
                 tbl_dachon.setModel(model);   
@@ -736,13 +624,6 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
                 }
                      
             }
-            float tongtien = 0;
-            for(int j = 0; j < tbl_dachon.getRowCount(); j++){
-                
-                tongtien += parseFloat(tbl_dachon.getValueAt(j, 4).toString());
-                lb_tongtien.setText(String.valueOf(tongtien) + "VND");
-            }
-            
     }//GEN-LAST:event_btn_chonActionPerformed
 
     private void btn_xoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_xoaActionPerformed
@@ -766,8 +647,8 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btn_xoaActionPerformed
 
     private void btn_refreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_refreshActionPerformed
-        // TODO add your handling code here:      
-        showAll();       
+        // TODO add your handling code here:
+        showAll();
     }//GEN-LAST:event_btn_refreshActionPerformed
 
     private void btn_luongthucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_luongthucActionPerformed
@@ -983,74 +864,35 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         }
         
         Document doc = new Document();
-        doc.addTitle("HÓA ĐƠN");
         try {
             PdfWriter.getInstance(doc, new FileOutputStream(path+"Hoadon.pdf"));
-            BaseFont bf = BaseFont.createFont("c:\\windows\\fonts\\times.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
-            Font font10 = new Font(bf, 10, Font.NORMAL);
-            
-
-
             doc.open();
-            
-            PdfPTable tbl = new PdfPTable(7);
+            PdfPTable tbl = new PdfPTable(5);
             //header
-            Paragraph pa7 = new Paragraph("STT", font10);
-            tbl.addCell(pa7);
-            Paragraph pa8 = new Paragraph("Mã SP", font10);
-            tbl.addCell(pa8);
-            Paragraph pa9 = new Paragraph("Tên SP", font10);
-            tbl.addCell(pa9);
-            Paragraph pa10 = new Paragraph("Số lượng", font10);
-            tbl.addCell(pa10);
-            Paragraph pa11 = new Paragraph("Đơn giá", font10);
-            tbl.addCell(pa11);
-            Paragraph pa12 = new Paragraph("Giá KM", font10);
-            tbl.addCell(pa12);
-            Paragraph pa13 = new Paragraph("Tổng cộng", font10);
-            tbl.addCell(pa13);
-            String tong = lb_tongtien.getText();
+            tbl.addCell("STT");
+            tbl.addCell("Mã SP");
+            tbl.addCell("Tên SP");
+            tbl.addCell("Số lượng");
+            tbl.addCell("Đơn giá");
+            
             for(int i = 0; i < tbl_dachon.getRowCount(); i++){
-                
-
-
                 String stt = tbl_dachon.getValueAt(i, 0).toString();
-                Paragraph pa1 = new Paragraph(stt, font10);
                 String ma_sp = tbl_dachon.getValueAt(i, 1).toString();
-                Paragraph pa2 = new Paragraph(ma_sp, font10);
                 String ten_sp = tbl_dachon.getValueAt(i, 2).toString();
-                Paragraph pa3 = new Paragraph(ten_sp, font10);
                 String soluong = tbl_dachon.getValueAt(i, 3).toString();
-                Paragraph pa4 = new Paragraph(soluong, font10);
                 String don_gia = tbl_dachon.getValueAt(i, 4).toString();
-                Paragraph pa5 = new Paragraph(don_gia, font10);
-                String gia_km = tbl_dachon.getValueAt(i, 5).toString();
-                Paragraph pa14 = new Paragraph(gia_km, font10);
-                String tongcong = tbl_dachon.getValueAt(i, 6).toString();
-                Paragraph pa15 = new Paragraph(tongcong, font10);
-                tbl.addCell(pa1);
-                tbl.addCell(pa2);
-                tbl.addCell(pa3);
-                tbl.addCell(pa4);
-                tbl.addCell(pa5);
-                tbl.addCell(pa14);
-                tbl.addCell(pa15);
+                
+                tbl.addCell(stt);
+                tbl.addCell(ma_sp);
+                tbl.addCell(ten_sp);
+                tbl.addCell(soluong);
+                tbl.addCell(don_gia);
             }
-                tbl.addCell("");
-                tbl.addCell("");
-                tbl.addCell("");
-                tbl.addCell("");
-                tbl.addCell("");
-                Paragraph pa6 = new Paragraph("Tổng tiền", font10);
-                tbl.addCell(pa6);
-                tbl.addCell(tong);
             doc.add(tbl);
             
                     } catch (FileNotFoundException ex) {
             Logger.getLogger(BanHang_GUI.class.getName()).log(Level.SEVERE, null, ex);
         } catch (DocumentException ex) {
-            Logger.getLogger(BanHang_GUI.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
             Logger.getLogger(BanHang_GUI.class.getName()).log(Level.SEVERE, null, ex);
         }
         doc.close();
@@ -1126,22 +968,14 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
-<<<<<<< HEAD
-    private javax.swing.JLabel jLabel2;
-=======
 
->>>>>>> fbf6009383e3dbbac355b30f9d37154045586571
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-<<<<<<< HEAD
-    private javax.swing.JLabel lb_tongtien;
-=======
 
->>>>>>> fbf6009383e3dbbac355b30f9d37154045586571
     private javax.swing.JTable tbl_dachon;
     private javax.swing.JTable tbl_sanpham;
     private javax.swing.JTextField txt_soluong;

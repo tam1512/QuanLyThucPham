@@ -9,12 +9,5 @@ package DTO;
  * @author blemb
  */
 public class CTKhuyenMai_DTO {
-    public String id_sp;
-    public String id_km;
-    public String ten_sp;
-    public String gtkm;
-    public String giaban;
-    public String giamcon;
-    public CTKhuyenMai_DTO(){
-    }
+    
 }
