@@ -5,10 +5,15 @@
 package GUI;
 
 
+import BUS.CTKhuyenMai_BUS;
 import BUS.SanPham_BUS;
+import DTO.CTKhuyenMai_DTO;
 import DTO.SanPham_DTO;
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
+import com.lowagie.text.Font;
+import com.lowagie.text.Paragraph;
+import com.lowagie.text.pdf.BaseFont;
 import com.lowagie.text.pdf.PdfPTable;
 import com.lowagie.text.pdf.PdfWriter;
 import static java.awt.Frame.NORMAL;
@@ -26,6 +31,8 @@ import javax.swing.table.DefaultTableModel;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import static java.lang.Float.parseFloat;
 import java.util.List;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
@@ -107,6 +114,8 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         btn_chon = new javax.swing.JButton();
         btn_refresh = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        lb_tongtien = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbl_sanpham = new javax.swing.JTable();
@@ -121,7 +130,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         btn_luongthuc = new javax.swing.JButton();
         btn_mitom = new javax.swing.JButton();
         btn_khac = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        btn_bia = new javax.swing.JButton();
         btn_banhkeo = new javax.swing.JButton();
 
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -175,6 +184,14 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel2.setText("Tổng tiền:");
+
+        lb_tongtien.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lb_tongtien.setText("VND");
+        lb_tongtien.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        lb_tongtien.setName(""); // NOI18N
+        lb_tongtien.setVerifyInputWhenFocusTarget(false);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -194,16 +211,20 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
-                        .addComponent(btn_chon, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_xoa, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
+                        .addComponent(btn_chon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btn_inhoadon)
-                        .addGap(115, 115, 115))))
+                        .addGap(49, 49, 49)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_xoa, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_refresh))
+                .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btn_refresh)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lb_tongtien, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -218,12 +239,16 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btn_xoa, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btn_chon, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(23, 23, 23)
-                .addComponent(btn_refresh)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_thanhtoan, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_inhoadon, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2)
+                    .addComponent(lb_tongtien))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btn_thanhtoan, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_inhoadon, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_refresh, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
 
@@ -358,13 +383,13 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         });
         jPanel2.add(btn_khac, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 108, 53));
 
-        jButton9.setText("Bia, nước ngọt");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        btn_bia.setText("Bia, nước ngọt");
+        btn_bia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                btn_biaActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 163, 90, 53));
+        jPanel2.add(btn_bia, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 163, 90, 53));
 
         btn_banhkeo.setText("Bánh kẹo");
         btn_banhkeo.addActionListener(new java.awt.event.ActionListener() {
@@ -487,7 +512,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         int i = model.getRowCount();
         if(i != 0){
         for(int j = i-1; j >= 0; j--){
-            String soluong1 = model.getValueAt(j, 3).toString();           
+            String soluong1 = String.valueOf(Math.round(parseFloat(model.getValueAt(j, 3).toString())));           
             String maSp = model.getValueAt(j, 1).toString();
             new SanPham_BUS().capNhatSlSp(soluong1, maSp);         
             model.removeRow(j);
@@ -504,79 +529,129 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         //Nhớ đổi Giá data base thành Int
         int index = 0;
         int flag = 0;
-        int soLuong = parseInt(txt_soluong.getText());
+        int flag1 = 0;
+        float soLuong = parseFloat(txt_soluong.getText());
         int i = tbl_sanpham.getSelectedRow();
        int count_row = model.getRowCount();
-       
+
+       new CTKhuyenMai_BUS().docDS_CTKM();
+       float gia_km = (float) 0.0;
+
+       for(CTKhuyenMai_DTO km : CTKhuyenMai_BUS.ds_ctkm){
+           if( tbl_sanpham.getValueAt(i, 1).toString().equals(km.id_sp)){
+               gia_km = (float) (parseFloat((km.giamcon)));
+               flag1 = 1;
+           }
+       }
+
         Vector header = new Vector();
             header.add("STT");
             header.add("Mã SP");
             header.add("Tên SP");
             header.add("Số lượng");
             header.add("Đơn giá");
+            header.add("Giá KM");
+            header.add("Tổng cộng");
             if(model.getRowCount() == 0)
             model = new DefaultTableModel(header,0);
-            
+
             //Cập nhật số lượng (trùng mã sp)
-            
-            String a = tbl_sanpham.getModel().getValueAt(i, 1).toString();
+
+            String a = tbl_sanpham.getValueAt(i, 1).toString();
             if(count_row > 0){
             for(int j = 0; j < count_row; j++){
+                //kiem tra ID trùng
             String b = model.getValueAt(j, 1).toString();
                 if(b.equals(a)){
                     index = j;
                     flag = 1;
                 }
+            }           
             }
-            }
+            //Kiem tra SP co khuyen mai
+
+
+            //nếu sp chưa có trên model
+            float dongia = parseFloat(tbl_sanpham.getModel().getValueAt(i, 6).toString());
+
             if(flag == 0){
-                
+
                 Vector row = new Vector();
             row.add(count_row++);
             row.add(tbl_sanpham.getModel().getValueAt(i, 1));
             row.add(tbl_sanpham.getModel().getValueAt(i, 4));
             row.add(txt_soluong.getText());
-            row.add(parseInt(tbl_sanpham.getModel().getValueAt(i, 6).toString())*soLuong);
+            row.add(dongia);
+            //Neu co khuyen mai thi add giá km, khong co thi add rỗng
+
+            if(flag1 == 1){
+                row.add(gia_km);
+                row.add(gia_km*soLuong);
+            } else {
+                row.add("");
+                row.add(dongia*soLuong);
+            }
             //so sánh lúc chọn 
-                if(parseInt(txt_soluong.getText()) <= parseInt(tbl_sanpham.getModel().getValueAt(i, 7).toString()) && parseInt(txt_soluong.getText()) > 0){
+                if(parseFloat(txt_soluong.getText()) <= parseFloat(tbl_sanpham.getModel().getValueAt(i, 7).toString()) && parseFloat(txt_soluong.getText()) > 0){
                 model.addRow(row);
                 tbl_dachon.setModel(model);
                 } else {
                     JOptionPane.showMessageDialog(null, "Số lượng không còn đủ trong kho");
                 }
-            } else {
-                
+            }
+            //Nếu sp có ở model rồi
+            else {
+
                 Vector row = new Vector();
                 row.add(model.getValueAt(index, 0));
             row.add(tbl_sanpham.getModel().getValueAt(i, 1));
             row.add(tbl_sanpham.getModel().getValueAt(i, 4));
             //Cập nhật số lượng và giá sản phẩm đã chọn
-            row.add(parseInt(txt_soluong.getText()) + parseInt(model.getValueAt(index, 3).toString()));
-            row.add(parseInt((tbl_sanpham.getModel().getValueAt(i, 6).toString()))*soLuong + parseInt(model.getValueAt(index, 4).toString()));
+            row.add(parseFloat(txt_soluong.getText()) + parseFloat(model.getValueAt(index, 3).toString()));
+            row.add(dongia);
+            //Neu co khuyen mai thi add giá km, khong co thi add rỗng
+            if(flag1 == 1){
+               row.add(gia_km);
+               row.add((gia_km)*soLuong + parseFloat(model.getValueAt(index, 3).toString())*gia_km);
+            } else {
+               row.add("");
+               row.add(dongia*soLuong + dongia*parseFloat(model.getValueAt(index, 3).toString()));
+
+            }
+
+
             //so sánh lúc chọn (sp đã có trên model)
-            int SoLuongDangChon = parseInt(txt_soluong.getText()) + parseInt(model.getValueAt(index, 3).toString());
-            if(SoLuongDangChon <= parseInt(tbl_sanpham.getModel().getValueAt(i, 7).toString()) && parseInt(txt_soluong.getText()) > 0){
+            float SoLuongDangChon = parseFloat(txt_soluong.getText()) + parseFloat(model.getValueAt(index, 3).toString());
+            //kiem tra khuyen mai
+
+            if(SoLuongDangChon <= parseFloat(tbl_sanpham.getModel().getValueAt(i, 7).toString()) && parseFloat(txt_soluong.getText()) > 0){
                 model.removeRow(index);
                 model.insertRow(index, row);
                 tbl_dachon.setModel(model);   
                 } else {
                     JOptionPane.showMessageDialog(null, "Số lượng không còn đủ trong kho");
                 }
-                     
+
+            }
+            float tongtien = 0;
+            for(int j = 0; j < tbl_dachon.getRowCount(); j++){
+
+                tongtien += parseFloat(tbl_dachon.getValueAt(j, 4).toString());
+                lb_tongtien.setText(String.valueOf(tongtien) + "VND");
             }
     }//GEN-LAST:event_btn_chonActionPerformed
 
     private void btn_xoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_xoaActionPerformed
         // TODO add your handling code here:
         int i = tbl_dachon.getSelectedRow();
-        if(parseInt(txt_soluong.getText()) > parseInt(tbl_dachon.getModel().getValueAt(i, 3).toString())){
+        if(parseInt(txt_soluong.getText()) >= parseFloat(tbl_dachon.getModel().getValueAt(i, 3).toString())){
             model.removeRow(i);
         for(int j = 0; j < model.getRowCount(); j++ ){
             model.setValueAt(j, j, 0);
         }
         } else {
-            int a = parseInt(tbl_dachon.getValueAt(i, 3).toString());
-            int b = parseInt(txt_soluong.getText());
+            float a = parseFloat(tbl_dachon.getValueAt(i, 3).toString());
+            float b = parseFloat(txt_soluong.getText());
             tbl_dachon.setValueAt(a - b, i, 3);
             model.setValueAt(a - b, i, 3);
             tbl_dachon.setModel(model);
@@ -693,7 +768,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         tbl_sanpham.setModel(n);
     }//GEN-LAST:event_btn_mitomActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void btn_biaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_biaActionPerformed
         // TODO add your handling code here:
         new SanPham_BUS().docSanPham_loai("11");
         DefaultTableModel n = new DefaultTableModel();
@@ -725,7 +800,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
             k++;
         }
         tbl_sanpham.setModel(n);
-    }//GEN-LAST:event_jButton9ActionPerformed
+    }//GEN-LAST:event_btn_biaActionPerformed
 
     private void btn_banhkeoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_banhkeoActionPerformed
         // TODO add your handling code here:
@@ -802,88 +877,77 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         if(x == JFileChooser.APPROVE_OPTION){
             path = j.getSelectedFile().getPath();
         }
-        
+
         Document doc = new Document();
+        doc.addTitle("HÓA ĐƠN");
         try {
             PdfWriter.getInstance(doc, new FileOutputStream(path+"Hoadon.pdf"));
+            BaseFont bf = BaseFont.createFont("c:\\windows\\fonts\\times.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+            Font font10 = new Font(bf, 10, Font.NORMAL);
+
+
+
             doc.open();
-            PdfPTable tbl = new PdfPTable(5);
+
+            PdfPTable tbl = new PdfPTable(7);
             //header
-            tbl.addCell("STT");
-            tbl.addCell("Mã SP");
-            tbl.addCell("Tên SP");
-            tbl.addCell("Số lượng");
-            tbl.addCell("Đơn giá");
-            
+            Paragraph pa7 = new Paragraph("STT", font10);
+            tbl.addCell(pa7);
+            Paragraph pa8 = new Paragraph("Mã SP", font10);
+            tbl.addCell(pa8);
+            Paragraph pa9 = new Paragraph("Tên SP", font10);
+            tbl.addCell(pa9);
+            Paragraph pa10 = new Paragraph("Số lượng", font10);
+            tbl.addCell(pa10);
+            Paragraph pa11 = new Paragraph("Đơn giá", font10);
+            tbl.addCell(pa11);
+            Paragraph pa12 = new Paragraph("Giá KM", font10);
+            tbl.addCell(pa12);
+            Paragraph pa13 = new Paragraph("Tổng cộng", font10);
+            tbl.addCell(pa13);
+            String tong = lb_tongtien.getText();
             for(int i = 0; i < tbl_dachon.getRowCount(); i++){
+
+
+
                 String stt = tbl_dachon.getValueAt(i, 0).toString();
+                Paragraph pa1 = new Paragraph(stt, font10);
                 String ma_sp = tbl_dachon.getValueAt(i, 1).toString();
+                Paragraph pa2 = new Paragraph(ma_sp, font10);
                 String ten_sp = tbl_dachon.getValueAt(i, 2).toString();
+                Paragraph pa3 = new Paragraph(ten_sp, font10);
                 String soluong = tbl_dachon.getValueAt(i, 3).toString();
+                Paragraph pa4 = new Paragraph(soluong, font10);
                 String don_gia = tbl_dachon.getValueAt(i, 4).toString();
-                
-                tbl.addCell(stt);
-                tbl.addCell(ma_sp);
-                tbl.addCell(ten_sp);
-                tbl.addCell(soluong);
-                tbl.addCell(don_gia);
+                Paragraph pa5 = new Paragraph(don_gia, font10);
+                String gia_km = tbl_dachon.getValueAt(i, 5).toString();
+                Paragraph pa14 = new Paragraph(gia_km, font10);
+                String tongcong = tbl_dachon.getValueAt(i, 6).toString();
+                Paragraph pa15 = new Paragraph(tongcong, font10);
+                tbl.addCell(pa1);
+                tbl.addCell(pa2);
+                tbl.addCell(pa3);
+                tbl.addCell(pa4);
+                tbl.addCell(pa5);
+                tbl.addCell(pa14);
+                tbl.addCell(pa15);
             }
+                tbl.addCell("");
+                tbl.addCell("");
+                tbl.addCell("");
+                tbl.addCell("");
+                tbl.addCell("");
+                Paragraph pa6 = new Paragraph("Tổng tiền", font10);
+                tbl.addCell(pa6);
+                tbl.addCell(tong);
             doc.add(tbl);
-            
+
                     } catch (FileNotFoundException ex) {
             Logger.getLogger(BanHang_GUI.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (DocumentException ex) {
+        } catch (DocumentException | IOException ex) {
             Logger.getLogger(BanHang_GUI.class.getName()).log(Level.SEVERE, null, ex);
         }
         doc.close();
-    }
-    public void inHoaDon2(){
-        try {
-            XSSFWorkbook workbook = new XSSFWorkbook();
-            XSSFSheet spreadsheet = workbook.createSheet("Hóa đơn");
-
-            XSSFRow row = null;
-            Cell cell = null;
-
-            row = spreadsheet.createRow((short) 2);
-            row.setHeight((short) 500);
-            cell = row.createCell(0, CellType.STRING);
-            cell.setCellValue("HÓA ĐƠN");
-
-            row = spreadsheet.createRow((short) 3);
-            row.setHeight((short) 500);
-            cell = row.createCell(0, CellType.STRING);
-            cell.setCellValue("STT");
-            cell = row.createCell(1, CellType.STRING);
-            cell.setCellValue("Mã SP");
-            cell = row.createCell(2, CellType.STRING);
-            cell.setCellValue("Tên SP");
-            cell = row.createCell(3, CellType.STRING);
-            cell.setCellValue("Số Lượng");
-            cell = row.createCell(4, CellType.STRING);
-            cell.setCellValue("Đơn giá");
-            
-
-            
-
-            for (int i = 0; i < tbl_dachon.getRowCount(); i++) {
-                
-                row = spreadsheet.createRow((short) 4 + i);
-                row.setHeight((short) 400);
-                row.createCell(0).setCellValue(tbl_dachon.getValueAt(i, 0).toString());
-                row.createCell(1).setCellValue(tbl_dachon.getValueAt(i, 1).toString());
-                row.createCell(2).setCellValue(tbl_dachon.getValueAt(i, 2).toString());
-                row.createCell(3).setCellValue(tbl_dachon.getValueAt(i, 3).toString());
-                row.createCell(4).setCellValue(tbl_dachon.getValueAt(i, 4).toString());
-                
-            }
-
-            FileOutputStream out = new FileOutputStream(new File("D:/hd.xlsx"));
-            workbook.write(out);
-            out.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
     private void btn_inhoadonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inhoadonActionPerformed
         // TODO add your handling code here:
@@ -893,6 +957,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_banhkeo;
+    private javax.swing.JButton btn_bia;
     private javax.swing.JButton btn_chon;
     private javax.swing.JButton btn_donglanh;
     private javax.swing.JButton btn_giavi;
@@ -905,15 +970,16 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JButton btn_thanhtoan;
     private javax.swing.JButton btn_thit;
     private javax.swing.JButton btn_xoa;
-    private javax.swing.JButton jButton9;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lb_tongtien;
     private javax.swing.JTable tbl_dachon;
     private javax.swing.JTable tbl_sanpham;
     private javax.swing.JTextField txt_soluong;

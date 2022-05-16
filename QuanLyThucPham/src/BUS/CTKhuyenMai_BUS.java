@@ -4,12 +4,18 @@
  */
 package BUS;
 
+import DAO.CTKhuyenMai_DAO;
 import DTO.*;
+import java.util.ArrayList;
 
 /**
  *
  * @author blemb
  */
 public class CTKhuyenMai_BUS {
-    
+    public static ArrayList<CTKhuyenMai_DTO> ds_ctkm;
+    public CTKhuyenMai_BUS(){}
+    public void docDS_CTKM(){
+        ds_ctkm = new CTKhuyenMai_DAO().docDS_CTKM();
+    }
 }

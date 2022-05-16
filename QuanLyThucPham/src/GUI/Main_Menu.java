@@ -165,11 +165,9 @@ public class Main_Menu extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lb_banhangMouseClicked(evt);
             }
-
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lb_banhangMouseEntered(evt);
             }
-
         });
 
         javax.swing.GroupLayout pnl_banhangLayout = new javax.swing.GroupLayout(pnl_banhang);
@@ -279,7 +277,6 @@ public class Main_Menu extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -369,7 +366,6 @@ public class Main_Menu extends javax.swing.JFrame {
             containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 580, Short.MAX_VALUE)
         );
-
 
         getContentPane().add(container, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 1060, 580));
 
