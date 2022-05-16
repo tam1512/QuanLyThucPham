@@ -186,6 +186,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Tổng tiền:");
 
+        lb_tongtien.setBackground(new java.awt.Color(255, 255, 0));
         lb_tongtien.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lb_tongtien.setText("VND");
         lb_tongtien.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
@@ -199,7 +200,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(9, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txt_soluong, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -210,16 +211,16 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btn_inhoadon)
+                        .addGap(49, 49, 49)
+                        .addComponent(btn_refresh)
+                        .addGap(21, 21, 21))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(btn_chon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btn_inhoadon)
-                        .addGap(49, 49, 49)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_xoa, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_refresh))
-                .addContainerGap())
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_xoa, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
@@ -252,7 +253,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(682, 257, 380, 260));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(682, 257, 370, 260));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Sản phẩm"));
 
@@ -288,12 +289,14 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Đã chọn"));
 
+        tbl_dachon.setBackground(new java.awt.Color(255, 255, 0));
+        tbl_dachon.setForeground(new java.awt.Color(255, 51, 102));
         tbl_dachon.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "STT", "Mã SP", "Tên SP", "Số lượng", "Đơn giá"
+                "STT", "Mã SP", "Tên SP", "Số lượng", "Đơn giá", "Giá KM", "Tổng cộng"
             }
         ));
         jScrollPane1.setViewportView(tbl_dachon);
@@ -519,6 +522,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         }
         showAll();
         JOptionPane.showMessageDialog(null, "Mua sản phẩm thành công !");
+        inHoaDon();
         } else {
             JOptionPane.showMessageDialog(null, "Bạn chưa chọn sản phẩm !");
         }
@@ -636,7 +640,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
             float tongtien = 0;
             for(int j = 0; j < tbl_dachon.getRowCount(); j++){
 
-                tongtien += parseFloat(tbl_dachon.getValueAt(j, 4).toString());
+                tongtien += parseFloat(tbl_dachon.getValueAt(j, 6).toString());
                 lb_tongtien.setText(String.valueOf(tongtien) + "VND");
             }
     }//GEN-LAST:event_btn_chonActionPerformed
@@ -869,19 +873,21 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         }
         tbl_sanpham.setModel(n);
     }//GEN-LAST:event_btn_khacActionPerformed
+    int k = 0;
     public void inHoaDon(){
-        String path="";
+        k++;
+        String path="D:\\";
         JFileChooser j = new JFileChooser();
-        j.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        /*j.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         int x = j.showSaveDialog(this);
         if(x == JFileChooser.APPROVE_OPTION){
             path = j.getSelectedFile().getPath();
-        }
+        }*/
 
         Document doc = new Document();
         doc.addTitle("HÓA ĐƠN");
         try {
-            PdfWriter.getInstance(doc, new FileOutputStream(path+"Hoadon.pdf"));
+            PdfWriter.getInstance(doc, new FileOutputStream(path+"Hoadon" + k +".pdf"));
             BaseFont bf = BaseFont.createFont("c:\\windows\\fonts\\times.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
             Font font10 = new Font(bf, 10, Font.NORMAL);
 
