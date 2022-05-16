@@ -100,7 +100,6 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jPanel1 = new javax.swing.JPanel();
-
         btn_inhoadon = new javax.swing.JButton();
         btn_thanhtoan = new javax.swing.JButton();
         btn_xoa = new javax.swing.JButton();
@@ -108,13 +107,11 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         btn_chon = new javax.swing.JButton();
         btn_refresh = new javax.swing.JButton();
-
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbl_sanpham = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-
         tbl_dachon = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         btn_giavi = new javax.swing.JButton();
@@ -127,7 +124,6 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         jButton9 = new javax.swing.JButton();
         btn_banhkeo = new javax.swing.JButton();
 
-
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         setMinimumSize(new java.awt.Dimension(1050, 570));
         setPreferredSize(new java.awt.Dimension(1060, 580));
@@ -138,7 +134,6 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(742, 339, 80, -1));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Tùy chọn"));
-
 
         btn_inhoadon.setText("In hóa đơn");
         btn_inhoadon.addActionListener(new java.awt.event.ActionListener() {
@@ -180,12 +175,10 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
             }
         });
 
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -212,12 +205,10 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(btn_refresh)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
@@ -238,12 +229,10 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(682, 257, 380, 260));
 
-
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Sản phẩm"));
 
         tbl_sanpham.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -251,7 +240,6 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
             },
             new String [] {
                 "STT", "Tên SP", "Mô tả", "Đơn giá", "Số lượng", "Title 6", "Title 7"
-
             }
         ));
         jScrollPane2.setViewportView(tbl_sanpham);
@@ -266,7 +254,6 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
                 .addContainerGap())
@@ -285,7 +272,6 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
             }
         ));
         jScrollPane1.setViewportView(tbl_dachon);
-
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -306,7 +292,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, -1, -1));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Loại sản phẩm"));
-
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_giavi.setText("Gia vị");
         btn_giavi.addActionListener(new java.awt.event.ActionListener() {
@@ -314,15 +300,16 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
                 btn_giaviActionPerformed(evt);
             }
         });
+        jPanel2.add(btn_giavi, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 83, 49));
 
         btn_donglanh.setText("Đông lạnh");
         btn_donglanh.setAutoscrolls(true);
         btn_donglanh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_donglanhActionPerformed(evt);
-
             }
         });
+        jPanel2.add(btn_donglanh, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 96, 90, 49));
 
         btn_rau.setText("Rau củ, trái cây");
         btn_rau.setAutoscrolls(true);
@@ -334,7 +321,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
                 btn_rauActionPerformed(evt);
             }
         });
-
+        jPanel2.add(btn_rau, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 28, 90, 50));
 
         btn_thit.setText("Thịt, Trứng");
         btn_thit.addActionListener(new java.awt.event.ActionListener() {
@@ -342,6 +329,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
                 btn_thitActionPerformed(evt);
             }
         });
+        jPanel2.add(btn_thit, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, -1, 50));
 
         btn_luongthuc.setText("Lương thực");
         btn_luongthuc.addActionListener(new java.awt.event.ActionListener() {
@@ -349,6 +337,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
                 btn_luongthucActionPerformed(evt);
             }
         });
+        jPanel2.add(btn_luongthuc, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 108, 49));
 
         btn_mitom.setText("Mì, miếng, phở, cháo");
         btn_mitom.setAutoscrolls(true);
@@ -359,6 +348,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
                 btn_mitomActionPerformed(evt);
             }
         });
+        jPanel2.add(btn_mitom, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, 108, 49));
 
         btn_khac.setText("Khác...");
         btn_khac.addActionListener(new java.awt.event.ActionListener() {
@@ -366,6 +356,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
                 btn_khacActionPerformed(evt);
             }
         });
+        jPanel2.add(btn_khac, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 108, 53));
 
         jButton9.setText("Bia, nước ngọt");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -373,6 +364,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
                 jButton9ActionPerformed(evt);
             }
         });
+        jPanel2.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 163, 90, 53));
 
         btn_banhkeo.setText("Bánh kẹo");
         btn_banhkeo.addActionListener(new java.awt.event.ActionListener() {
@@ -380,61 +372,9 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
                 btn_banhkeoActionPerformed(evt);
             }
         });
+        jPanel2.add(btn_banhkeo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 83, 53));
 
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_banhkeo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(btn_donglanh)
-                            .addGap(18, 18, 18)
-                            .addComponent(btn_giavi, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(btn_rau)
-                            .addGap(18, 18, 18)
-                            .addComponent(btn_thit, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btn_luongthuc, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                        .addComponent(btn_khac, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(btn_mitom))
-                .addContainerGap(26, Short.MAX_VALUE))
-
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_rau, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-
-                    .addComponent(btn_thit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_luongthuc, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btn_giavi, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btn_mitom, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btn_donglanh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
-                    .addComponent(btn_khac, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_banhkeo, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(29, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 380, 250));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 370, 250));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -968,17 +908,14 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
-
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-
     private javax.swing.JTable tbl_dachon;
     private javax.swing.JTable tbl_sanpham;
     private javax.swing.JTextField txt_soluong;
-
     // End of variables declaration//GEN-END:variables
 }
