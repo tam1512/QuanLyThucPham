@@ -103,9 +103,9 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
         jTextField4 = new javax.swing.JTextField();
         jPanel10 = new javax.swing.JPanel();
         btn_lammoi_ctkm = new javax.swing.JButton();
-        btn_them1 = new javax.swing.JButton();
-        btn_xoa1 = new javax.swing.JButton();
-        btn_sua1 = new javax.swing.JButton();
+        btn_ttkm_them = new javax.swing.JButton();
+        ttkm_btn_xoa = new javax.swing.JButton();
+        ttkm_btn_sua = new javax.swing.JButton();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -617,24 +617,24 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
             }
         });
 
-        btn_them1.setText("Thêm");
-        btn_them1.addActionListener(new java.awt.event.ActionListener() {
+        btn_ttkm_them.setText("Thêm");
+        btn_ttkm_them.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_them1ActionPerformed(evt);
+                btn_ttkm_themActionPerformed(evt);
             }
         });
 
-        btn_xoa1.setText("Xóa");
-        btn_xoa1.addActionListener(new java.awt.event.ActionListener() {
+        ttkm_btn_xoa.setText("Xóa");
+        ttkm_btn_xoa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_xoa1ActionPerformed(evt);
+                ttkm_btn_xoaActionPerformed(evt);
             }
         });
 
-        btn_sua1.setText("Sửa");
-        btn_sua1.addActionListener(new java.awt.event.ActionListener() {
+        ttkm_btn_sua.setText("Sửa");
+        ttkm_btn_sua.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_sua1ActionPerformed(evt);
+                ttkm_btn_suaActionPerformed(evt);
             }
         });
 
@@ -647,11 +647,11 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_lammoi_ctkm)
                     .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(btn_them1)
+                        .addComponent(btn_ttkm_them)
                         .addGap(18, 18, 18)
-                        .addComponent(btn_xoa1)
+                        .addComponent(ttkm_btn_xoa)
                         .addGap(18, 18, 18)
-                        .addComponent(btn_sua1)))
+                        .addComponent(ttkm_btn_sua)))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
@@ -661,9 +661,9 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
                 .addComponent(btn_lammoi_ctkm)
                 .addGap(35, 35, 35)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_them1)
-                    .addComponent(btn_xoa1)
-                    .addComponent(btn_sua1))
+                    .addComponent(btn_ttkm_them)
+                    .addComponent(ttkm_btn_xoa)
+                    .addComponent(ttkm_btn_sua))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -813,18 +813,18 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
         showAll_ctkm();
     }//GEN-LAST:event_btn_lammoi_ctkmActionPerformed
 
-    private void btn_them1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_them1ActionPerformed
+    private void btn_ttkm_themActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ttkm_themActionPerformed
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_btn_them1ActionPerformed
+    }//GEN-LAST:event_btn_ttkm_themActionPerformed
 
-    private void btn_xoa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_xoa1ActionPerformed
+    private void ttkm_btn_xoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ttkm_btn_xoaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_xoa1ActionPerformed
+    }//GEN-LAST:event_ttkm_btn_xoaActionPerformed
 
-    private void btn_sua1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sua1ActionPerformed
+    private void ttkm_btn_suaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ttkm_btn_suaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_sua1ActionPerformed
+    }//GEN-LAST:event_ttkm_btn_suaActionPerformed
 
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
         // TODO add your handling code here:
@@ -889,13 +889,11 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JButton btn_lammoi;
     private javax.swing.JButton btn_lammoi_ctkm;
     private javax.swing.JButton btn_sua;
-    private javax.swing.JButton btn_sua1;
     private javax.swing.JButton btn_them;
-    private javax.swing.JButton btn_them1;
     private javax.swing.JButton btn_timkiem;
     private javax.swing.JButton btn_timkiem1;
+    private javax.swing.JButton btn_ttkm_them;
     private javax.swing.JButton btn_xoa;
-    private javax.swing.JButton btn_xoa1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -937,6 +935,8 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JRadioButton rbtn_ten1;
     private javax.swing.JTable tbl_ctkhuyenmai;
     private javax.swing.JTable tbl_khuyenmai;
+    private javax.swing.JButton ttkm_btn_sua;
+    private javax.swing.JButton ttkm_btn_xoa;
     private javax.swing.JTextField ttkm_gtkm;
     private javax.swing.JTextField ttkm_makm;
     private javax.swing.JTextField ttkm_masp;
