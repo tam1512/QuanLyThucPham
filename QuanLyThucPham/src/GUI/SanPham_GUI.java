@@ -4,14 +4,11 @@
  */
 package GUI;
 
-
 import BUS.SanPham_BUS;
 import DTO.SanPham_DTO;
 import java.util.Vector;
-import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
-
 
 /**
  *
@@ -27,11 +24,6 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI ui = (BasicInternalFrameUI) this.getUI();
         ui.setNorthPane(null);
-        showAll();
-        
-        
-
-        
     }
 
     /**
@@ -43,9 +35,7 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-
         timkiem_sp = new javax.swing.ButtonGroup();
-
         jPanel1 = new javax.swing.JPanel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
@@ -54,14 +44,13 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         jRadioButton5 = new javax.swing.JRadioButton();
         jRadioButton6 = new javax.swing.JRadioButton();
         jRadioButton7 = new javax.swing.JRadioButton();
-
         jTextField1 = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         btn_refresh = new javax.swing.JButton();
-        btn_them = new javax.swing.JButton();
-        btn_xoa = new javax.swing.JButton();
-        btn_sua = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         txt_masp = new javax.swing.JTextField();
         txt_maloai = new javax.swing.JTextField();
@@ -82,13 +71,11 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tbl_sanpham = new javax.swing.JTable();
 
-
         setMinimumSize(new java.awt.Dimension(1060, 580));
         setPreferredSize(new java.awt.Dimension(1068, 580));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Tìm kiếm"));
-
 
         timkiem_sp.add(jRadioButton1);
         jRadioButton1.setText("Số TT");
@@ -115,7 +102,6 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
 
         jButton4.setText("Tìm kiếm");
 
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -126,7 +112,6 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jRadioButton1)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jRadioButton2)
@@ -145,7 +130,6 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jButton4)
                         .addGap(51, 51, 51))))
-
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,7 +146,6 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
                     .addComponent(jRadioButton7))
                 .addGap(18, 18, 18)
                 .addComponent(jRadioButton1)
-
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -181,43 +164,31 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
             }
         });
 
-        btn_them.setText("Thêm");
-        btn_them.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_themActionPerformed(evt);
-            }
-        });
+        jButton1.setText("Thêm");
 
-        btn_xoa.setText("Xóa");
-        btn_xoa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_xoaActionPerformed(evt);
-            }
-        });
+        jButton2.setText("Xóa");
+<<<<<<< HEAD
 
-        btn_sua.setText("Sửa");
-        btn_sua.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_suaActionPerformed(evt);
-            }
-        });
+        jButton3.setText("Sửa");
+=======
+>>>>>>> parent of 139011a (Dau)
 
+        jButton3.setText("Sửa");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btn_refresh)
                         .addGap(44, 44, 44)
-                        .addComponent(btn_them))
+                        .addComponent(jButton1))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btn_xoa)
+                        .addComponent(jButton2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_sua)))
+                        .addComponent(jButton3)))
                 .addContainerGap(172, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -226,11 +197,11 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_refresh)
-                    .addComponent(btn_them))
+                    .addComponent(jButton1))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_xoa)
-                    .addComponent(btn_sua))
+                    .addComponent(jButton2)
+                    .addComponent(jButton3))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
@@ -243,16 +214,16 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         jPanel3.add(txt_masp, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 48, -1, -1));
 
         txt_maloai.setText("ID_Loai");
-        jPanel3.add(txt_maloai, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 48, 90, -1));
+        jPanel3.add(txt_maloai, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 48, -1, -1));
 
         txt_mancc.setText("ID_NCC");
-        jPanel3.add(txt_mancc, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, 140, -1));
+        jPanel3.add(txt_mancc, new org.netbeans.lib.awtextra.AbsoluteConstraints(362, 48, -1, -1));
 
         txt_tensp.setText("Tên SP");
         jPanel3.add(txt_tensp, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 103, 220, -1));
 
         txt_soluong.setText("Số lượng");
-        jPanel3.add(txt_soluong, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, -1, -1));
+        jPanel3.add(txt_soluong, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 48, -1, -1));
 
         txt_gia.setText("Đơn giá");
         jPanel3.add(txt_gia, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 100, -1));
@@ -264,7 +235,7 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 51, -1, -1));
 
         jLabel3.setText("Mã NCC:");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 50, 120, -1));
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 51, -1, -1));
 
         jLabel4.setText("Tên SP:");
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 106, -1, -1));
@@ -276,7 +247,7 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
         jLabel7.setText("Số lượng:");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, -1, -1));
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(463, 51, -1, -1));
 
         txt_mota.setColumns(20);
         txt_mota.setLineWrap(true);
@@ -286,11 +257,9 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
 
         jPanel3.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 360, 100));
 
-
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 610, 250));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Sản phẩm"));
-
 
         tbl_sanpham.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -310,35 +279,29 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         });
         jScrollPane2.setViewportView(tbl_sanpham);
 
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 624, Short.MAX_VALUE))
-
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
                 .addContainerGap())
-
         );
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 270));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
     public void showAll(){
         DefaultTableModel n = new DefaultTableModel();
         SanPham_BUS bus = new SanPham_BUS();
-        bus.docSanPham_edit();
+        bus.docSanPham();
         Vector header = new Vector();
             header.add("STT");
             header.add("ID_SanPham");
@@ -384,58 +347,12 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_tbl_sanphamMouseClicked
 
-    private void btn_suaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_suaActionPerformed
-        // TODO add your handling code here:
-        int i = tbl_sanpham.getSelectedRow();
-        String ma_sp = txt_masp.getText();
-        String ma_loai = txt_maloai.getText();
-        String ma_ncc = txt_mancc.getText();
-        String ten_sp = txt_tensp.getText();
-        String mo_ta = txt_mota.getText();
-        String gia = txt_gia.getText();
-        String sl = txt_soluong.getText();
-        new SanPham_BUS().sua_sp(ma_sp, ma_loai, ma_ncc, ten_sp, mo_ta, gia, sl);
-        showAll();
-    }//GEN-LAST:event_btn_suaActionPerformed
-
-    private void btn_xoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_xoaActionPerformed
-        // TODO add your handling code here:
-        int i = tbl_sanpham.getSelectedRow();
-        String id_sp = tbl_sanpham.getValueAt(i, 1).toString();
-        new SanPham_BUS().xoa_sp(id_sp);
-        showAll();
-    }//GEN-LAST:event_btn_xoaActionPerformed
-
-    private void btn_themActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_themActionPerformed
-        // TODO add your handling code here:
-        int flag = 0;
-        String id_sp = txt_masp.getText();
-        int row = tbl_sanpham.getModel().getRowCount();
-        for(int i = 0; i < row; i++){
-        if(id_sp.equals(tbl_sanpham.getValueAt(i, 1).toString())){
-            flag = 1;
-        }
-        } 
-        if(flag == 0){
-            String ma_sp = txt_masp.getText();
-        String ma_loai = txt_maloai.getText();
-        String ma_ncc = txt_mancc.getText();
-        String ten_sp = txt_tensp.getText();
-        String mo_ta = txt_mota.getText();
-        String gia = txt_gia.getText();
-        String sl = txt_soluong.getText();
-        new SanPham_BUS().them_sp(ma_sp, ma_loai, ma_ncc, ten_sp, mo_ta, gia, sl);
-        JOptionPane.showMessageDialog(null, "Thêm sản phẩm thành công !");
-        showAll();
-        }else JOptionPane.showMessageDialog(null, "Mã sản phẩm đã tồn tại !");
-    }//GEN-LAST:event_btn_themActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_refresh;
-    private javax.swing.JButton btn_sua;
-    private javax.swing.JButton btn_them;
-    private javax.swing.JButton btn_xoa;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -444,7 +361,6 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -456,7 +372,6 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JRadioButton jRadioButton7;
-
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTextField1;
@@ -469,6 +384,5 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JTextArea txt_mota;
     private javax.swing.JTextField txt_soluong;
     private javax.swing.JTextField txt_tensp;
-
     // End of variables declaration//GEN-END:variables
 }

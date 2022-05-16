@@ -56,61 +56,50 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-
           <AbsoluteConstraints x="682" y="257" width="380" height="260"/>
-
         </Constraint>
       </Constraints>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-
               <Group type="102" alignment="1" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="9" max="32767" attributes="0"/>
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="txt_soluong" min="-2" pref="74" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="btn_thanhtoan" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                                  <Component id="lb_tongtien" min="-2" pref="97" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="btn_thanhtoan" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                          <Component id="btn_chon" pref="73" max="32767" attributes="0"/>
+                          <Component id="btn_chon" pref="102" max="32767" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btn_xoa" min="-2" pref="87" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="btn_inhoadon" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btn_refresh" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-<<<<<<< HEAD
-=======
                   <Component id="btn_refresh" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
+<<<<<<< HEAD
 
->>>>>>> fbf6009383e3dbbac355b30f9d37154045586571
+=======
+>>>>>>> parent of 139011a (Dau)
               </Group>
           </Group>
         </DimensionLayout>
@@ -118,8 +107,9 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
 <<<<<<< HEAD
-=======
 
+=======
+>>>>>>> parent of 139011a (Dau)
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
@@ -136,34 +126,16 @@
                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   <Component id="btn_refresh" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="82" max="32767" attributes="0"/>
->>>>>>> fbf6009383e3dbbac355b30f9d37154045586571
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btn_xoa" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                      <Component id="btn_chon" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                      <Component id="txt_soluong" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lb_tongtien" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="93" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                          <Component id="btn_thanhtoan" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                          <Component id="btn_inhoadon" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="btn_refresh" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="btn_thanhtoan" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                      <Component id="btn_inhoadon" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-
         <Component class="javax.swing.JButton" name="btn_inhoadon">
           <Properties>
             <Property name="text" type="java.lang.String" value="In h&#xf3;a &#x111;&#x1a1;n"/>
@@ -214,19 +186,10 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_refreshActionPerformed"/>
           </Events>
+<<<<<<< HEAD
 
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="T&#x1ed5;ng ti&#x1ec1;n:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lb_tongtien">
-          <Properties>
-            <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="text" type="java.lang.String" value="VND"/>
-            <Property name="horizontalTextPosition" type="int" value="0"/>
-          </Properties>
+=======
+>>>>>>> parent of 139011a (Dau)
         </Component>
       </SubComponents>
     </Container>
@@ -241,12 +204,12 @@
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
 <<<<<<< HEAD
-          <AbsoluteConstraints x="6" y="264" width="658" height="290"/>
-=======
 
           <AbsoluteConstraints x="6" y="254" width="658" height="300"/>
 
->>>>>>> fbf6009383e3dbbac355b30f9d37154045586571
+=======
+          <AbsoluteConstraints x="6" y="254" width="658" height="300"/>
+>>>>>>> parent of 139011a (Dau)
         </Constraint>
       </Constraints>
 
@@ -254,19 +217,17 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="jScrollPane2" pref="642" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="jScrollPane2" pref="261" max="32767" attributes="0"/>
-                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Component id="jScrollPane2" pref="271" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
-
           </Group>
         </DimensionLayout>
       </Layout>
@@ -282,28 +243,21 @@
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
 <<<<<<< HEAD
-                  <Table columnCount="8" rowCount="4">
-=======
 
+=======
+>>>>>>> parent of 139011a (Dau)
                   <Table columnCount="7" rowCount="4">
->>>>>>> fbf6009383e3dbbac355b30f9d37154045586571
                     <Column editable="true" title="STT" type="java.lang.Object"/>
-                    <Column editable="true" title="ID_SanPham" type="java.lang.Object"/>
-                    <Column editable="true" title="Lo&#x1ea1;i" type="java.lang.Object"/>
-                    <Column editable="true" title="NCC" type="java.lang.Object"/>
                     <Column editable="true" title="T&#xea;n SP" type="java.lang.Object"/>
                     <Column editable="true" title="M&#xf4; t&#x1ea3;" type="java.lang.Object"/>
                     <Column editable="true" title="&#x110;&#x1a1;n gi&#xe1;" type="java.lang.Object"/>
                     <Column editable="true" title="S&#x1ed1; l&#x1b0;&#x1ee3;ng" type="java.lang.Object"/>
+                    <Column editable="true" title="Title 6" type="java.lang.Object"/>
+                    <Column editable="true" title="Title 7" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                   <TableColumnModel selectionModel="0">
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                       <Title/>
                       <Editor/>
@@ -344,7 +298,6 @@
                 <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
-
               </Properties>
             </Component>
           </SubComponents>
@@ -368,18 +321,18 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" pref="636" max="32767" attributes="0"/>
-                  <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="636" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="jScrollPane1" pref="222" max="32767" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="216" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -392,19 +345,15 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-
             <Component class="javax.swing.JTable" name="tbl_dachon">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="7" rowCount="0">
+                  <Table columnCount="5" rowCount="0">
                     <Column editable="true" title="STT" type="java.lang.Object"/>
                     <Column editable="true" title="M&#xe3; SP" type="java.lang.Object"/>
                     <Column editable="true" title="T&#xea;n SP" type="java.lang.Object"/>
-
                     <Column editable="true" title="S&#x1ed1; l&#x1b0;&#x1ee3;ng" type="java.lang.Object"/>
                     <Column editable="true" title="&#x110;&#x1a1;n gi&#xe1;" type="java.lang.Object"/>
-                    <Column editable="true" title="Gi&#xe1; KM" type="java.lang.Object"/>
-                    <Column editable="true" title="T&#x1ed5;ng c&#x1ed9;ng" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -429,26 +378,15 @@
                       <Editor/>
                       <Renderer/>
                     </Column>
-
                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                       <Title/>
                       <Editor/>
                       <Renderer/>
                     </Column>
 <<<<<<< HEAD
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-=======
 
->>>>>>> fbf6009383e3dbbac355b30f9d37154045586571
+=======
+>>>>>>> parent of 139011a (Dau)
                   </TableColumnModel>
                 </Property>
                 <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
@@ -470,9 +408,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-
           <AbsoluteConstraints x="680" y="10" width="380" height="250"/>
-
         </Constraint>
       </Constraints>
 
@@ -481,7 +417,6 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="jButton9" min="-2" pref="85" max="-2" attributes="0"/>
@@ -490,29 +425,30 @@
                       </Group>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="btn_donglanh" min="-2" pref="85" max="-2" attributes="0"/>
+                              <Component id="btn_donglanh" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="btn_giavi" min="-2" pref="83" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="btn_rau" min="-2" pref="87" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="btn_rau" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="btn_thit" min="-2" pref="87" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="btn_luongthuc" pref="108" max="32767" attributes="0"/>
-                      <Component id="btn_khac" max="32767" attributes="0"/>
-                      <Component id="btn_mitom" pref="0" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btn_luongthuc" pref="108" max="32767" attributes="0"/>
+                          <Component id="btn_khac" max="32767" attributes="0"/>
+                      </Group>
+                      <Component id="btn_mitom" min="-2" max="-2" attributes="0"/>
                   </Group>
-<<<<<<< HEAD
-                  <EmptySpace pref="58" max="32767" attributes="0"/>
-=======
                   <EmptySpace pref="26" max="32767" attributes="0"/>
+<<<<<<< HEAD
 
->>>>>>> fbf6009383e3dbbac355b30f9d37154045586571
+=======
+>>>>>>> parent of 139011a (Dau)
               </Group>
           </Group>
         </DimensionLayout>
@@ -522,15 +458,12 @@
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btn_rau" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-
                       <Component id="btn_thit" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                       <Component id="btn_luongthuc" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
-
                           <Component id="btn_giavi" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                           <Component id="btn_mitom" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                       </Group>
@@ -543,13 +476,11 @@
                       <Component id="jButton9" min="-2" pref="53" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="29" max="32767" attributes="0"/>
-
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-
         <Component class="javax.swing.JButton" name="btn_giavi">
           <Properties>
             <Property name="text" type="java.lang.String" value="Gia v&#x1ecb;"/>
@@ -559,15 +490,12 @@
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_donglanh">
-
           <Properties>
             <Property name="text" type="java.lang.String" value="&#x110;&#xf4;ng l&#x1ea1;nh"/>
             <Property name="autoscrolls" type="boolean" value="true"/>
           </Properties>
           <Events>
-
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_donglanhActionPerformed"/>
-
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_rau">
@@ -584,14 +512,11 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_rauActionPerformed"/>
           </Events>
         </Component>
-
         <Component class="javax.swing.JButton" name="btn_thit">
-
           <Properties>
             <Property name="text" type="java.lang.String" value="Th&#x1ecb;t, Tr&#x1ee9;ng"/>
           </Properties>
           <Events>
-
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_thitActionPerformed"/>
           </Events>
         </Component>
@@ -621,13 +546,11 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_khacActionPerformed"/>
           </Events>
-
         </Component>
         <Component class="javax.swing.JButton" name="jButton9">
           <Properties>
             <Property name="text" type="java.lang.String" value="Bia, n&#x1b0;&#x1edb;c ng&#x1ecd;t"/>
           </Properties>
-
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton9ActionPerformed"/>
           </Events>
@@ -639,7 +562,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_banhkeoActionPerformed"/>
           </Events>
-
         </Component>
       </SubComponents>
     </Container>

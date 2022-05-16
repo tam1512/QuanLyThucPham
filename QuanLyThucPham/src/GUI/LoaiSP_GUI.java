@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package BUS;
+package GUI;
 
 import DTO.*;
 
@@ -10,6 +10,6 @@ import DTO.*;
  *
  * @author blemb
  */
-public class CTKhuyenMai_BUS {
+public class LoaiSP_GUI {
     
 }
