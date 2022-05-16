@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
+
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
   <NonVisualComponents>
     <Component class="javax.swing.ButtonGroup" name="Timkiem">
     </Component>
   </NonVisualComponents>
+
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
   </SyntheticProperties>
@@ -35,11 +37,9 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-<<<<<<< HEAD
 
-=======
->>>>>>> parent of 139011a (Dau)
           <AbsoluteConstraints x="10" y="290" width="640" height="-1"/>
+
         </Constraint>
       </Constraints>
 
@@ -47,6 +47,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+
                   <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
@@ -74,6 +75,7 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="txt_ketthuc" min="-2" pref="115" max="-2" attributes="0"/>
                           <EmptySpace pref="176" max="32767" attributes="0"/>
+
                       </Group>
                   </Group>
               </Group>
@@ -84,6 +86,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
+
                       <Component id="txt_makm" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txt_tenkm" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -95,6 +98,7 @@
                       <Component id="txt_batdau" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+
                   </Group>
                   <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
               </Group>
@@ -102,6 +106,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
+
         <Component class="javax.swing.JTextField" name="txt_batdau">
           <Properties>
             <Property name="columns" type="int" value="10"/>
@@ -146,6 +151,7 @@
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="text" type="java.lang.String" value="K&#x1ebf;t th&#xfa;c:"/>
+
           </Properties>
         </Component>
       </SubComponents>
@@ -160,7 +166,9 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+
           <AbsoluteConstraints x="650" y="10" width="390" height="220"/>
+
         </Constraint>
       </Constraints>
 
@@ -169,6 +177,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
@@ -211,6 +220,7 @@
                           <EmptySpace pref="35" max="32767" attributes="0"/>
                           <Component id="jRadioButton6" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
+
                       </Group>
                   </Group>
               </Group>
@@ -221,6 +231,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
+
                       <Component id="jRadioButton2" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="rbtn_ten" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -245,6 +256,7 @@
                       <Component id="btn_timkiem" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="35" max="32767" attributes="0"/>
+
               </Group>
           </Group>
         </DimensionLayout>
@@ -252,6 +264,7 @@
       <SubComponents>
         <Component class="javax.swing.JRadioButton" name="jRadioButton1">
           <Properties>
+
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="Timkiem"/>
             </Property>
@@ -313,6 +326,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField2">
         </Component>
+
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel4">
@@ -357,6 +371,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
+
             <Component class="javax.swing.JTable" name="tbl_khuyenmai">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
@@ -404,6 +419,7 @@
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tbl_khuyenmaiMouseClicked"/>
               </Events>
+
             </Component>
           </SubComponents>
         </Container>
@@ -419,13 +435,16 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+
           <AbsoluteConstraints x="660" y="240" width="370" height="300"/>
+
         </Constraint>
       </Constraints>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
+
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -440,10 +459,12 @@
                   </Group>
                   <EmptySpace pref="102" max="32767" attributes="0"/>
               </Group>
+
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
+
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
@@ -492,6 +513,7 @@
           </Events>
         </Component>
       </SubComponents>
+
     </Container>
   </SubComponents>
 </Form>
