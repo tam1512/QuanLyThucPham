@@ -56,16 +56,13 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-
           <AbsoluteConstraints x="682" y="257" width="380" height="260"/>
-
         </Constraint>
       </Constraints>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-
               <Group type="102" alignment="1" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
@@ -99,14 +96,20 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btn_refresh" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 139011a (Dau)
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 139011a (Dau)
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
@@ -128,13 +131,11 @@
                       <Component id="btn_inhoadon" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-
         <Component class="javax.swing.JButton" name="btn_inhoadon">
           <Properties>
             <Property name="text" type="java.lang.String" value="In h&#xf3;a &#x111;&#x1a1;n"/>
@@ -185,7 +186,10 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_refreshActionPerformed"/>
           </Events>
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 139011a (Dau)
         </Component>
       </SubComponents>
     </Container>
@@ -199,9 +203,13 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+<<<<<<< HEAD
 
           <AbsoluteConstraints x="6" y="254" width="658" height="300"/>
 
+=======
+          <AbsoluteConstraints x="6" y="254" width="658" height="300"/>
+>>>>>>> parent of 139011a (Dau)
         </Constraint>
       </Constraints>
 
@@ -216,12 +224,10 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jScrollPane2" pref="271" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
-
           </Group>
         </DimensionLayout>
       </Layout>
@@ -236,7 +242,10 @@
             <Component class="javax.swing.JTable" name="tbl_sanpham">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 139011a (Dau)
                   <Table columnCount="7" rowCount="4">
                     <Column editable="true" title="STT" type="java.lang.Object"/>
                     <Column editable="true" title="T&#xea;n SP" type="java.lang.Object"/>
@@ -289,7 +298,6 @@
                 <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
-
               </Properties>
             </Component>
           </SubComponents>
@@ -337,7 +345,6 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-
             <Component class="javax.swing.JTable" name="tbl_dachon">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
@@ -345,7 +352,6 @@
                     <Column editable="true" title="STT" type="java.lang.Object"/>
                     <Column editable="true" title="M&#xe3; SP" type="java.lang.Object"/>
                     <Column editable="true" title="T&#xea;n SP" type="java.lang.Object"/>
-
                     <Column editable="true" title="S&#x1ed1; l&#x1b0;&#x1ee3;ng" type="java.lang.Object"/>
                     <Column editable="true" title="&#x110;&#x1a1;n gi&#xe1;" type="java.lang.Object"/>
                   </Table>
@@ -372,13 +378,15 @@
                       <Editor/>
                       <Renderer/>
                     </Column>
-
                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                       <Title/>
                       <Editor/>
                       <Renderer/>
                     </Column>
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 139011a (Dau)
                   </TableColumnModel>
                 </Property>
                 <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
@@ -400,9 +408,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-
           <AbsoluteConstraints x="680" y="10" width="380" height="250"/>
-
         </Constraint>
       </Constraints>
 
@@ -411,7 +417,6 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="jButton9" min="-2" pref="85" max="-2" attributes="0"/>
@@ -440,7 +445,10 @@
                       <Component id="btn_mitom" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="26" max="32767" attributes="0"/>
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 139011a (Dau)
               </Group>
           </Group>
         </DimensionLayout>
@@ -450,15 +458,12 @@
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btn_rau" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-
                       <Component id="btn_thit" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                       <Component id="btn_luongthuc" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
-
                           <Component id="btn_giavi" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                           <Component id="btn_mitom" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                       </Group>
@@ -471,13 +476,11 @@
                       <Component id="jButton9" min="-2" pref="53" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="29" max="32767" attributes="0"/>
-
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-
         <Component class="javax.swing.JButton" name="btn_giavi">
           <Properties>
             <Property name="text" type="java.lang.String" value="Gia v&#x1ecb;"/>
@@ -487,15 +490,12 @@
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_donglanh">
-
           <Properties>
             <Property name="text" type="java.lang.String" value="&#x110;&#xf4;ng l&#x1ea1;nh"/>
             <Property name="autoscrolls" type="boolean" value="true"/>
           </Properties>
           <Events>
-
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_donglanhActionPerformed"/>
-
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_rau">
@@ -512,14 +512,11 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_rauActionPerformed"/>
           </Events>
         </Component>
-
         <Component class="javax.swing.JButton" name="btn_thit">
-
           <Properties>
             <Property name="text" type="java.lang.String" value="Th&#x1ecb;t, Tr&#x1ee9;ng"/>
           </Properties>
           <Events>
-
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_thitActionPerformed"/>
           </Events>
         </Component>
@@ -549,13 +546,11 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_khacActionPerformed"/>
           </Events>
-
         </Component>
         <Component class="javax.swing.JButton" name="jButton9">
           <Properties>
             <Property name="text" type="java.lang.String" value="Bia, n&#x1b0;&#x1edb;c ng&#x1ecd;t"/>
           </Properties>
-
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton9ActionPerformed"/>
           </Events>
@@ -567,7 +562,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_banhkeoActionPerformed"/>
           </Events>
-
         </Component>
       </SubComponents>
     </Container>

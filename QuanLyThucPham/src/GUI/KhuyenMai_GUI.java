@@ -4,7 +4,10 @@
  */
 package GUI;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 139011a (Dau)
 import BUS.KhuyenMai_BUS;
 import BUS.SanPham_BUS;
 import DTO.KhuyenMai_DTO;
@@ -13,7 +16,6 @@ import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
-
 
 /**
  *
@@ -29,9 +31,7 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI ui = (BasicInternalFrameUI) this.getUI();
         ui.setNorthPane(null);
-
         showAll();
-
     }
 
     /**
@@ -42,7 +42,6 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
 
         Timkiem = new javax.swing.ButtonGroup();
         jPanel3 = new javax.swing.JPanel();
@@ -74,12 +73,14 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
         btn_them = new javax.swing.JButton();
         btn_xoa = new javax.swing.JButton();
         btn_sua = new javax.swing.JButton();
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 139011a (Dau)
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Thông tin khuyến mãi"));
-
 
         txt_batdau.setColumns(10);
         txt_batdau.addActionListener(new java.awt.event.ActionListener() {
@@ -107,13 +108,11 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
 
         jLabel5.setText("Kết thúc:");
 
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-
                 .addGap(44, 44, 44)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -137,14 +136,12 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txt_ketthuc, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(176, Short.MAX_VALUE))))
-
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-
                     .addComponent(txt_makm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_tenkm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
@@ -187,14 +184,16 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
 
         jLabel6.setText("Đến:");
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 139011a (Dau)
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -227,14 +226,16 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                         .addComponent(jRadioButton6)
                         .addGap(131, 131, 131))))
-
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 139011a (Dau)
                     .addComponent(jRadioButton2)
                     .addComponent(rbtn_ten))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -275,7 +276,6 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tbl_khuyenmai);
 
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -296,7 +296,10 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 270));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Tùy chọn"));
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 139011a (Dau)
 
         jButton1.setText("Refresh");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -326,12 +329,14 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
             }
         });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 139011a (Dau)
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -358,12 +363,18 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 240, 370, 300));
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 139011a (Dau)
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 139011a (Dau)
     private void txt_batdauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_batdauActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_batdauActionPerformed
@@ -485,14 +496,20 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 139011a (Dau)
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 139011a (Dau)
     private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JScrollPane jScrollPane1;
@@ -505,6 +522,9 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txt_makm;
     private javax.swing.JTextField txt_tenkm;
     private javax.swing.JTextField txt_timkiem;
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 139011a (Dau)
     // End of variables declaration//GEN-END:variables
 }
