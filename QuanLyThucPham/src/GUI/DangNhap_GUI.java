@@ -95,7 +95,7 @@ public static String TenDangNhap;
                 Main_Menu menu= new Main_Menu();
                 this.setVisible(false);
                 menu.setVisible(true);
-
+                JOptionPane.showMessageDialog(null, "Dang nhap thanh cong","Thông báo",1);
             }else{
                 JOptionPane.showMessageDialog(null, "Tài khoản không tồn tại","Thông báo",1);
             }
