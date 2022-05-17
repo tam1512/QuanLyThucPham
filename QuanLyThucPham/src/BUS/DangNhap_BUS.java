@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package BUS;
-import DAO.NhanVien_DAO;
 import DTO.NhanVien_DTO;
 /**
  *
@@ -12,10 +11,22 @@ import DTO.NhanVien_DTO;
  */
 public class DangNhap_BUS {
     public boolean DangNhap(String TenDangNhap,String MatKhau){
-        DAO.NhanVien_DAO nv= new DAO.NhanVien_DAO();
-        if(nv.DangNhap(TenDangNhap, MatKhau)!=null){
+        DAO.NhanVien_DAO nv_DAO= new DAO.NhanVien_DAO();
+        NhanVien_DTO nv_DTO = new NhanVien_DTO();
+        nv_DTO = nv_DAO.DangNhap(TenDangNhap, MatKhau);
+        if(nv_DTO.MatKhau.equals(MatKhau) && nv_DTO.TenDangNhap.equals(TenDangNhap)){
             return true;
         }
         return false;
+    }
+    public int check_account(String TenDangNhap,String MatKhau){
+        int check = 0;
+            DAO.NhanVien_DAO nv_DAO= new DAO.NhanVien_DAO();
+        NhanVien_DTO nv_DTO = new NhanVien_DTO();
+        nv_DTO = nv_DAO.DangNhap(TenDangNhap, MatKhau);
+        if(nv_DTO.ID_NhanVien.equals("1")){
+            check = 1;
+        }
+        return check;
     }
 }
