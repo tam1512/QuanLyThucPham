@@ -39,12 +39,9 @@ public class ThanhVien_DAO {
             while (rs.next()){
                 ThanhVien_DTO tv = new ThanhVien_DTO();
                 tv.ID_ThanhVien = rs.getString(1);
-                tv.TenDangNhap = rs.getString(2);
-                tv.MatKhau = rs.getString(3);
-                tv.Email = rs.getString(4);
-                tv.HoVaTen = rs.getString(5);
-                tv.DiaChi = rs.getString(6);
-                tv.SoDienThoai = rs.getString(7);
+                tv.HoVaTen = rs.getString(2);
+                tv.SoDienThoai = rs.getString(3);
+                tv.NgayDangKi = rs.getString(4);
                 dstv.add(tv);
             }
         } catch (SQLException ex) {
