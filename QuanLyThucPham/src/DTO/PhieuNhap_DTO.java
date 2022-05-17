@@ -9,5 +9,9 @@ package DTO;
  * @author blemb
  */
 public class PhieuNhap_DTO {
-    
+    public String id_phieunhap;
+    public String id_ncc;
+    public String ngaynhap;
+    public String id_nhanvien;
+    public PhieuNhap_DTO(){};
 }

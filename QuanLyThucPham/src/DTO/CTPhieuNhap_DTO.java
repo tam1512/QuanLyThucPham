@@ -9,5 +9,8 @@ package DTO;
  * @author blemb
  */
 public class CTPhieuNhap_DTO {
-    
+    public String id_phieunhap;
+    public String id_sp;
+    public String soluong;
+    public CTPhieuNhap_DTO(){};
 }

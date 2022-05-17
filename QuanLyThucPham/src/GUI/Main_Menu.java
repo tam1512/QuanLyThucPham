@@ -326,7 +326,7 @@ public class Main_Menu extends javax.swing.JFrame {
                 .addComponent(pnl_thongke, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pnl_nhaphang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout MenuBarLayout = new javax.swing.GroupLayout(MenuBar);
@@ -777,9 +777,7 @@ public class Main_Menu extends javax.swing.JFrame {
                         .addGap(210, 210, 210)
                         .addComponent(pn_giavi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(11, 50, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, containerLayout.createSequentialGroup()
-                .addComponent(backGround, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(backGround, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
 
         getContentPane().add(container, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 1070, 590));
@@ -867,12 +865,17 @@ public class Main_Menu extends javax.swing.JFrame {
 
     private void lb_nhaphangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_nhaphangMouseClicked
         // TODO add your handling code here:
+        container.removeAll();
+        NhapHang_GUI nh = new NhapHang_GUI();
+        container.add(nh).setVisible(true);
         pnl_khuyenmai.setBackground(DefaultColor);
         pnl_banhang.setBackground(DefaultColor);
         pnl_nhaphang.setBackground(ClickedColor);
         pnl_sanpham.setBackground(DefaultColor);
         pnl_thanhvien.setBackground(DefaultColor);
         pnl_thongke.setBackground(DefaultColor);
+        
+        
     }//GEN-LAST:event_lb_nhaphangMouseClicked
 
     private void lb_closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_closeMouseClicked
