@@ -316,7 +316,7 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
     public void showAll(){
         DefaultTableModel n = new DefaultTableModel();
         SanPham_BUS bus = new SanPham_BUS();
-        bus.docSanPham();
+        bus.docSanPham_edit();
         Vector header = new Vector();
             header.add("STT");
             header.add("ID_SanPham");
@@ -344,6 +344,7 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         }
         tbl_sanpham.setModel(n);
     }
+    
     private void btn_refreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_refreshActionPerformed
         // TODO add your handling code here:
         showAll();

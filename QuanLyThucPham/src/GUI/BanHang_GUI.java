@@ -95,7 +95,33 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         }
         tbl_sanpham.setModel(n);
     }
-
+    public void click_btn_rau(){
+        btn_rau.doClick();
+    }
+    public void click_btn_thit(){
+        btn_thit.doClick();
+    }
+    public void click_btn_luongthuc(){
+        btn_luongthuc.doClick();
+    }
+    public void click_btn_donglanh(){
+        btn_donglanh.doClick();
+    }
+    public void click_btn_giavi(){
+        btn_giavi.doClick();
+    }
+    public void click_btn_mitom(){
+        btn_mitom.doClick();
+    }
+    public void click_btn_nuoc(){
+        btn_bia.doClick();
+    }
+    public void click_btn_banhkeo(){
+        btn_banhkeo.doClick();
+    }
+    public void click_btn_khac(){
+        btn_khac.doClick();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -962,19 +988,19 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_banhkeo;
-    private javax.swing.JButton btn_bia;
+    public javax.swing.JButton btn_banhkeo;
+    public javax.swing.JButton btn_bia;
     private javax.swing.JButton btn_chon;
-    private javax.swing.JButton btn_donglanh;
-    private javax.swing.JButton btn_giavi;
+    public javax.swing.JButton btn_donglanh;
+    public javax.swing.JButton btn_giavi;
     private javax.swing.JButton btn_inhoadon;
-    private javax.swing.JButton btn_khac;
-    private javax.swing.JButton btn_luongthuc;
-    private javax.swing.JButton btn_mitom;
-    private javax.swing.JButton btn_rau;
+    public javax.swing.JButton btn_khac;
+    public javax.swing.JButton btn_luongthuc;
+    public javax.swing.JButton btn_mitom;
+    public javax.swing.JButton btn_rau;
     private javax.swing.JButton btn_refresh;
     private javax.swing.JButton btn_thanhtoan;
-    private javax.swing.JButton btn_thit;
+    public javax.swing.JButton btn_thit;
     private javax.swing.JButton btn_xoa;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
