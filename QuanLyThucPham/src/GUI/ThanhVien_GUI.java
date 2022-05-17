@@ -686,13 +686,13 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
 
     private void btn_suaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_suaActionPerformed
         // TODO add your handling code here:
-        //lỗi refresh
+        
         int i = tbl_ThanhVien.getSelectedRow();
         String ID_ThanhVien=tbl_ThanhVien.getModel().getValueAt(i, 1).toString();
         String HoVaTen = txt_tenkhachhang.getText();
         String DiaChi = txt_sdt.getText();
         String Email = txt_date.getText();
-        String SoDienThoai = txt_SoDienThoai.getText();
+        String SoDienThoai = txt_sdt.getText();
        
         new ThanhVien_BUS().sua_ThanhVien(ID_ThanhVien, HoVaTen, DiaChi, Email, SoDienThoai);
         showAll();
