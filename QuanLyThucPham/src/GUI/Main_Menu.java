@@ -97,10 +97,8 @@ public class Main_Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(0, 0, 1200, 675));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMaximumSize(new java.awt.Dimension(1200, 675));
         setMinimumSize(new java.awt.Dimension(1200, 675));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1200, 675));
         setResizable(false);
         setSize(new java.awt.Dimension(1200, 675));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -840,7 +838,8 @@ public class Main_Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_lb_sanphamMouseClicked
 
     private void lb_thanhvienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_thanhvienMouseClicked
-        // TODO add your handling code here:
+        // TODO add your handling code here
+        
         pnl_khuyenmai.setBackground(DefaultColor);
         pnl_banhang.setBackground(DefaultColor);
         pnl_nhaphang.setBackground(DefaultColor);
@@ -851,6 +850,10 @@ public class Main_Menu extends javax.swing.JFrame {
 
     private void lb_thongkeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_thongkeMouseClicked
         // TODO add your handling code here:
+        container.removeAll();
+        ThongKe_GUI tk = new ThongKe_GUI();
+        
+        container.add(tk).setVisible(true);
         pnl_khuyenmai.setBackground(DefaultColor);
         pnl_banhang.setBackground(DefaultColor);
         pnl_nhaphang.setBackground(DefaultColor);
