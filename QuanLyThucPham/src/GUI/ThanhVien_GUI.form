@@ -504,6 +504,9 @@
                           </Table>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tbl_NhanVienMouseClicked"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -525,12 +528,12 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                                      <Component id="ttkm_gtkm" max="32767" attributes="0"/>
+                                      <Component id="txt_DiaChiNV" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="ttkm_makm" min="-2" pref="217" max="-2" attributes="0"/>
+                                      <Component id="txt_TenNhanVien" min="-2" pref="217" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -539,8 +542,8 @@
                                       </Group>
                                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="ttkm_masp" max="32767" attributes="0"/>
-                                          <Component id="ttkm_makm1" max="32767" attributes="0"/>
+                                          <Component id="txt_EmailNV" max="32767" attributes="0"/>
+                                          <Component id="txt_SoDienThoaiNV" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -555,33 +558,28 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="ttkm_makm" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txt_TenNhanVien" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="ttkm_gtkm" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="ttkm_masp" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="txt_DiaChiNV" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="txt_EmailNV" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                                       <Component id="ttkm_makm3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="ttkm_makm1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                      <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txt_SoDienThoaiNV" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -590,20 +588,20 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JTextField" name="ttkm_gtkm">
+                    <Component class="javax.swing.JTextField" name="txt_DiaChiNV">
                       <Properties>
                         <Property name="columns" type="int" value="10"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ttkm_gtkmActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_DiaChiNVActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="ttkm_makm">
+                    <Component class="javax.swing.JTextField" name="txt_TenNhanVien">
                       <Properties>
                         <Property name="columns" type="int" value="3"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="ttkm_masp">
+                    <Component class="javax.swing.JTextField" name="txt_EmailNV">
                       <Properties>
                         <Property name="columns" type="int" value="10"/>
                       </Properties>
@@ -628,7 +626,7 @@
                         <Property name="text" type="java.lang.String" value="S&#x1ed1; &#x111;i&#x1ec7;n tho&#x1ea1;i"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="ttkm_makm1">
+                    <Component class="javax.swing.JTextField" name="txt_SoDienThoaiNV">
                       <Properties>
                         <Property name="columns" type="int" value="3"/>
                       </Properties>
@@ -732,11 +730,13 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btn_lammoi_ctkm" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_lammoi_nv" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="ttkm_btn_xoa" min="-2" max="-2" attributes="0"/>
+                              <Component id="nv_btn_xoa" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="ttkm_btn_sua" min="-2" max="-2" attributes="0"/>
+                              <Component id="nv_btn_sua" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="nv_btn_Them" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -746,9 +746,10 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="btn_lammoi_ctkm" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ttkm_btn_xoa" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ttkm_btn_sua" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btn_lammoi_nv" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nv_btn_xoa" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nv_btn_sua" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nv_btn_Them" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace pref="48" max="32767" attributes="0"/>
                           </Group>
@@ -756,28 +757,36 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JButton" name="btn_lammoi_ctkm">
+                    <Component class="javax.swing.JButton" name="btn_lammoi_nv">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Refresh"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_lammoi_ctkmActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_lammoi_nvActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JButton" name="ttkm_btn_xoa">
+                    <Component class="javax.swing.JButton" name="nv_btn_xoa">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ttkm_btn_xoaActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nv_btn_xoaActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JButton" name="ttkm_btn_sua">
+                    <Component class="javax.swing.JButton" name="nv_btn_sua">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ttkm_btn_suaActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nv_btn_suaActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="nv_btn_Them">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nv_btn_ThemActionPerformed"/>
                       </Events>
                     </Component>
                   </SubComponents>
