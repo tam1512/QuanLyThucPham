@@ -3,8 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/DELL/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/GUI/KhuyenMai_GUI.java</file>
-            <file>file:/C:/Users/DELL/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/GUI/ThanhVien_GUI.java</file>
+            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/GUI/NhapHang_GUI.java</file>
+            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/DAO/SanPham_DAO.java</file>
+            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/GUI/ThanhVien_GUI.java</file>
+            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/DAO/PhieuNhap_DAO.java</file>
+            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/GUI/Main_Menu.java</file>
+            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/DTO/ThanhVien_DTO.java</file>
+            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/BUS/PhieuNhap_BUS.java</file>
+            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/DAO/NhanVien_DAO.java</file>
+            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/BUS/ThanhVien_BUS.java</file>
+            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/DTO/PhieuNhap_DTO.java</file>
+            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/DAO/ThanhVien_DAO.java</file>
+            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/GUI/DangNhap_GUI.java</file>
         </group>
     </open-files>
 </project-private>
