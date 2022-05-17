@@ -5,6 +5,9 @@
  */
 package GUI;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
@@ -20,6 +23,11 @@ public class DangNhap_GUI extends javax.swing.JFrame {
      */
     public DangNhap_GUI() {
         initComponents();
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        this.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
+        this.setMinimumSize(new Dimension(830, 556));
+        
     }
     public static ResultSet rs=null;
 public static PreparedStatement pst=null;
@@ -33,6 +41,7 @@ public static String TenDangNhap;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lb_exit_login = new javax.swing.JLabel();
         TieuDe = new javax.swing.JLabel();
         TitleTenDangNhap = new javax.swing.JLabel();
         TitileMatKhau = new javax.swing.JLabel();
@@ -42,7 +51,24 @@ public static String TenDangNhap;
         BackGround = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(830, 556));
+        setMinimumSize(new java.awt.Dimension(830, 556));
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(830, 556));
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                formKeyPressed(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lb_exit_login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/close-button (1).png"))); // NOI18N
+        lb_exit_login.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_exit_loginMouseClicked(evt);
+            }
+        });
+        getContentPane().add(lb_exit_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 20, -1, 30));
 
         TieuDe.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         TieuDe.setText("Quản Lý Bán Hàng");
@@ -57,12 +83,30 @@ public static String TenDangNhap;
         getContentPane().add(TitileMatKhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, -1, -1));
 
         TenDangNhapTxt.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        TenDangNhapTxt.setText("nhatanh123");
         TenDangNhapTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TenDangNhapTxtActionPerformed(evt);
             }
         });
+        TenDangNhapTxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TenDangNhapTxtKeyPressed(evt);
+            }
+        });
         getContentPane().add(TenDangNhapTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 200, 40));
+
+        PasswordTxt.setText("123456");
+        PasswordTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PasswordTxtActionPerformed(evt);
+            }
+        });
+        PasswordTxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                PasswordTxtKeyPressed(evt);
+            }
+        });
         getContentPane().add(PasswordTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 300, 200, 40));
 
         loginButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -75,13 +119,14 @@ public static String TenDangNhap;
         getContentPane().add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 350, -1, -1));
 
         BackGround.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/background-login.jpg"))); // NOI18N
-        getContentPane().add(BackGround, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(BackGround, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void TenDangNhapTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TenDangNhapTxtActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_TenDangNhapTxtActionPerformed
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
@@ -95,13 +140,46 @@ public static String TenDangNhap;
                 Main_Menu menu= new Main_Menu();
                 this.setVisible(false);
                 menu.setVisible(true);
-                JOptionPane.showMessageDialog(null, "Dang nhap thanh cong","Thông báo",1);
+
+                this.dispose();
+
             }else{
                 JOptionPane.showMessageDialog(null, "Tài khoản không tồn tại","Thông báo",1);
             }
         }
 
     }//GEN-LAST:event_loginButtonActionPerformed
+
+    private void lb_exit_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_exit_loginMouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_lb_exit_loginMouseClicked
+
+    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            loginButton.doClick();
+        }
+    }//GEN-LAST:event_formKeyPressed
+
+    private void PasswordTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordTxtActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_PasswordTxtActionPerformed
+
+    private void PasswordTxtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PasswordTxtKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            loginButton.doClick();
+        }
+    }//GEN-LAST:event_PasswordTxtKeyPressed
+
+    private void TenDangNhapTxtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TenDangNhapTxtKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            loginButton.doClick();
+        }
+    }//GEN-LAST:event_TenDangNhapTxtKeyPressed
 
     /**
      * @param args the command line arguments
@@ -145,6 +223,7 @@ public static String TenDangNhap;
     private javax.swing.JLabel TieuDe;
     private javax.swing.JLabel TitileMatKhau;
     private javax.swing.JLabel TitleTenDangNhap;
+    private javax.swing.JLabel lb_exit_login;
     private javax.swing.JButton loginButton;
     // End of variables declaration//GEN-END:variables
 }
