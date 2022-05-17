@@ -31,7 +31,7 @@ public class DangNhap_GUI extends javax.swing.JFrame {
     }
     public static ResultSet rs=null;
 public static PreparedStatement pst=null;
-public static String TenDangNhap;
+public  String TenDangNhap;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -128,7 +128,8 @@ public static String TenDangNhap;
         // TODO add your handling code here:
         
     }//GEN-LAST:event_TenDangNhapTxtActionPerformed
-
+    public static int flag = 0;
+    
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         if(TenDangNhapTxt.getText().length()==0 && String.valueOf(PasswordTxt.getText()).length()==0){
             JOptionPane.showMessageDialog(null,"Bạn chưa nhập thông tin tài khoản mật khẩu!!");
@@ -140,7 +141,7 @@ public static String TenDangNhap;
                 Main_Menu menu= new Main_Menu();
                 this.setVisible(false);
                 menu.setVisible(true);
-
+                flag = dn.check_account(TenDangNhap, PasswordTxt.getText());
                 this.dispose();
 
             }else{
@@ -219,7 +220,7 @@ public static String TenDangNhap;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BackGround;
     private javax.swing.JPasswordField PasswordTxt;
-    private javax.swing.JTextField TenDangNhapTxt;
+    public static javax.swing.JTextField TenDangNhapTxt;
     private javax.swing.JLabel TieuDe;
     private javax.swing.JLabel TitileMatKhau;
     private javax.swing.JLabel TitleTenDangNhap;

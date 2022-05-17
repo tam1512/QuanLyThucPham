@@ -30,7 +30,11 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
         BasicInternalFrameUI ui = (BasicInternalFrameUI) this.getUI();
         ui.setNorthPane(null);
         showAll();
-    }
+        DangNhap_GUI dn = new DangNhap_GUI();
+        if(dn.flag == 1){
+            admin();
+        } else user();
+     }
     
     
     public void showAll(){
@@ -444,19 +448,18 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel14)
                                 .addGap(18, 18, 18)
                                 .addComponent(txt_tendn, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE))
-                            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(jPanel8Layout.createSequentialGroup()
-                                    .addComponent(jLabel9)
-                                    .addGap(61, 61, 61)
-                                    .addComponent(txt_DiaChiNV, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE))
-                                .addGroup(jPanel8Layout.createSequentialGroup()
-                                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel7)
-                                        .addComponent(jLabel13))
-                                    .addGap(27, 27, 27)
-                                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txt_EmailNV)
-                                        .addComponent(txt_SoDienThoaiNV)))))
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addGap(61, 61, 61)
+                                .addComponent(txt_DiaChiNV, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE))
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel13))
+                                .addGap(27, 27, 27)
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txt_EmailNV)
+                                    .addComponent(txt_SoDienThoaiNV))))
                         .addGap(344, 344, 344)
                         .addComponent(ttkm_makm3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
@@ -768,7 +771,12 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
     private void txt_tendnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_tendnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_tendnActionPerformed
-
+    public void admin(){
+        nv_btn_xoa.setEnabled(true);
+    }
+    public void user(){
+        nv_btn_xoa.setEnabled(false);
+    }
     /**
      * @param args the command line arguments
      */

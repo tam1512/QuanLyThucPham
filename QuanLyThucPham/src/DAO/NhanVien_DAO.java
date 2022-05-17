@@ -32,16 +32,19 @@ public class NhanVien_DAO {
         
     }
   
-    public ResultSet DangNhap(String TenDangNhap, String MatKhau){
+    public NhanVien_DTO DangNhap(String TenDangNhap, String MatKhau){
+        NhanVien_DTO nv = new NhanVien_DTO();
         try {
             st = conn.createStatement();
             String query = "SELECT * FROM nhanvien where TenDangNhap='" + TenDangNhap + "' AND MatKhau='" + MatKhau + "'";
             rs = st.executeQuery(query);
             rs.next();
-            return rs;
-        } catch (Exception e) {
+            nv.ID_NhanVien = rs.getString(1);
+            nv.TenDangNhap = rs.getString(2);
+            nv.MatKhau = rs.getString(3);
+        } catch (SQLException e) {
         }
-         return rs=null;
+         return nv;
     }
       public ArrayList docNhanVien(){
         ArrayList dsnv = new ArrayList<NhanVien_DTO>();
