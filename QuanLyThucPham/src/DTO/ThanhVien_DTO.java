@@ -1,15 +1,16 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package DTO;
 
 /**
  *
- * @author blemb
+ * @author Thanh Tam
  */
-public class NhanVien_DTO {
-       public String ID_NhanVien;
+public class ThanhVien_DTO {
+    public String ID_ThanhVien;
     public String TenDangNhap;
     public String MatKhau;
     public String Email;
@@ -17,11 +18,11 @@ public class NhanVien_DTO {
     public String DiaChi;
     public String SoDienThoai;
     
-    public NhanVien_DTO(){
+    public ThanhVien_DTO(){
     
     }
-    public NhanVien_DTO(String ID_NhanVien,String TenDangNhap,String MatKhau,String Email,String HoVaTen,String DiaChi,String SoDienThoai){
-        this.ID_NhanVien=ID_NhanVien;
+    public ThanhVien_DTO(String ID_ThanhVien,String TenDangNhap,String MatKhau,String Email,String HoVaTen,String DiaChi,String SoDienThoai){
+        this.ID_ThanhVien=ID_ThanhVien;
         this.TenDangNhap=TenDangNhap;
         this.MatKhau=MatKhau;
         this.Email=Email;
@@ -29,11 +30,11 @@ public class NhanVien_DTO {
         this.DiaChi=DiaChi;
         this.SoDienThoai=SoDienThoai;
     }
-    public String getID_NhanVien(){
-        return this.ID_NhanVien;
+    public String getID_ThanhVien(){
+        return this.ID_ThanhVien;
     }
-    public void setID_NhanVien(String ID_NhanVien){
-        this.ID_NhanVien=ID_NhanVien;
+    public void setID_ThanhVien(String ID_ThanhVien){
+        this.ID_ThanhVien=ID_ThanhVien;
     }
     public String getTenDangNhap(){
         return TenDangNhap;
