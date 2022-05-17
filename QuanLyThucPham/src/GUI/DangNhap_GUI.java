@@ -140,7 +140,9 @@ public static String TenDangNhap;
                 Main_Menu menu= new Main_Menu();
                 this.setVisible(false);
                 menu.setVisible(true);
+
                 this.dispose();
+
             }else{
                 JOptionPane.showMessageDialog(null, "Tài khoản không tồn tại","Thông báo",1);
             }
