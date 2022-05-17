@@ -839,7 +839,10 @@ public class Main_Menu extends javax.swing.JFrame {
 
     private void lb_thanhvienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_thanhvienMouseClicked
         // TODO add your handling code here
+        container.removeAll();
+        ThanhVien_GUI tv = new ThanhVien_GUI();
         
+        container.add(tv).setVisible(true);
         pnl_khuyenmai.setBackground(DefaultColor);
         pnl_banhang.setBackground(DefaultColor);
         pnl_nhaphang.setBackground(DefaultColor);
