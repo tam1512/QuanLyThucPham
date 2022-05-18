@@ -9,5 +9,13 @@ package DTO;
  * @author blemb
  */
 public class HoaDon_DTO {
-    
+    public String id_hoadon;
+    public String id_thanhvien;
+    public String id_nhanvien;
+    public String ngaythanhlap;
+    public String ghichu;
+    public String tongtien;
+    public HoaDon_DTO(){
+        
+    }
 }
