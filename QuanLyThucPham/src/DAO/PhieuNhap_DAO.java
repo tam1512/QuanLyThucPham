@@ -48,4 +48,43 @@ public class PhieuNhap_DAO {
         }
         return ds_pn;
     }
+    public boolean them_PN(String id_pn, String id_ncc, String ngaynhap, String id_nhanvien){
+        
+        try{
+            String query = "INSERT INTO `phieunhap`(`ID_PhieuNhap`, `ID_NCC`, `NgayNhap`, `ID_NhanVien`) VALUES ('"+id_pn+"','"+id_ncc+"','"+ngaynhap+"','"+id_nhanvien+"')";
+            st = conn.createStatement();
+            st.executeUpdate(query);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(KhuyenMai_DAO.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+        return true;
+    }
+    public boolean xoa_PN(String id_pn){
+        
+        try{
+            String query = "DELETE FROM `phieunhap` WHERE ID_PhieuNhap='" +id_pn+ "'";
+            st = conn.createStatement();
+            st.executeUpdate(query);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(KhuyenMai_DAO.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+        return true;
+    }
+    public boolean sua_PN(String id_pn, String id_ncc, String ngaynhap, String id_nhanvien){
+        
+        try{
+            String query = "UPDATE `phieunhap` SET `ID_PhieuNhap`='"+id_pn+"',`ID_NCC`='"+id_ncc+"',`NgayNhap`='"+ngaynhap+"',`ID_NhanVien`='"+id_nhanvien+"' WHERE ID_PhieuNhap='"+id_pn+"'";
+            st = conn.createStatement();
+            st.executeUpdate(query);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(KhuyenMai_DAO.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+        return true;
+    }
 }

@@ -49,7 +49,8 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
         jRadioButton7 = new javax.swing.JRadioButton();
         jTextField1 = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        btn_refresh = new javax.swing.JButton();
+        pn_pn = new javax.swing.JPanel();
         txt_mapn = new javax.swing.JTextField();
         txt_mancc = new javax.swing.JTextField();
         txt_ngaynhap = new javax.swing.JTextField();
@@ -58,20 +59,25 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        btn_xoa = new javax.swing.JButton();
-        btn_refresh = new javax.swing.JButton();
-        btn_them = new javax.swing.JButton();
-        btn_sua = new javax.swing.JButton();
-        txt_masp = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        txt_soluong = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
+        btn_xoapn = new javax.swing.JButton();
+        btn_thempn = new javax.swing.JButton();
+        btn_suapn = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tbl_ctphieunhap = new javax.swing.JTable();
         pn_phieunhap = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbl_phieunhap = new javax.swing.JTable();
+        pn_ctpn = new javax.swing.JPanel();
+        txt_masp = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txt_soluong = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        txt_mactpn = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        btn_suactpn = new javax.swing.JButton();
+        btn_themctpn = new javax.swing.JButton();
+        btn_xoactpn = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(1075, 590));
         setMinimumSize(new java.awt.Dimension(1075, 590));
@@ -91,6 +97,13 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
         jTextField1.setColumns(5);
 
         jButton4.setText("Tìm kiếm");
+
+        btn_refresh.setText("Refresh");
+        btn_refresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_refreshActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -115,6 +128,10 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
                         .addGap(41, 41, 41)
                         .addComponent(jButton4)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_refresh)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -130,83 +147,64 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addComponent(btn_refresh))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, 390, 170));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, 390, 220));
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Thông tin sản phẩm"));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pn_pn.setBorder(javax.swing.BorderFactory.createTitledBorder("Phiếu nhập"));
+        pn_pn.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txt_mapn.setText("ID_PN");
-        jPanel3.add(txt_mapn, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 48, -1, -1));
+        pn_pn.add(txt_mapn, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 140, -1));
 
         txt_mancc.setText("MaNCC");
-        jPanel3.add(txt_mancc, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 48, 140, -1));
+        pn_pn.add(txt_mancc, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 140, -1));
 
         txt_ngaynhap.setText("NgayNhap");
-        jPanel3.add(txt_ngaynhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, 130, -1));
+        pn_pn.add(txt_ngaynhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 140, -1));
 
         txt_manv.setText("MaNV");
-        jPanel3.add(txt_manv, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 103, 110, -1));
+        pn_pn.add(txt_manv, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 140, -1));
 
         jLabel1.setText("Mã PN:");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 51, -1, -1));
+        pn_pn.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 51, -1, -1));
 
         jLabel2.setText("Mã NCC:");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 51, -1, -1));
+        pn_pn.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
 
         jLabel3.setText("Ngày Nhập:");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, -1, -1));
+        pn_pn.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 70, -1));
 
         jLabel4.setText("Mã NV: ");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 106, -1, -1));
+        pn_pn.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
 
-        btn_xoa.setText("Xóa");
-        btn_xoa.addActionListener(new java.awt.event.ActionListener() {
+        btn_xoapn.setText("Xóa");
+        btn_xoapn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_xoaActionPerformed(evt);
+                btn_xoapnActionPerformed(evt);
             }
         });
-        jPanel3.add(btn_xoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
+        pn_pn.add(btn_xoapn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, -1, -1));
 
-        btn_refresh.setText("Refresh");
-        btn_refresh.addActionListener(new java.awt.event.ActionListener() {
+        btn_thempn.setText("Thêm");
+        btn_thempn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_refreshActionPerformed(evt);
+                btn_thempnActionPerformed(evt);
             }
         });
-        jPanel3.add(btn_refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, -1, -1));
+        pn_pn.add(btn_thempn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, -1, -1));
 
-        btn_them.setText("Thêm");
-        btn_them.addActionListener(new java.awt.event.ActionListener() {
+        btn_suapn.setText("Sửa");
+        btn_suapn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_themActionPerformed(evt);
+                btn_suapnActionPerformed(evt);
             }
         });
-        jPanel3.add(btn_them, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
+        pn_pn.add(btn_suapn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, -1, -1));
 
-        btn_sua.setText("Sửa");
-        btn_sua.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_suaActionPerformed(evt);
-            }
-        });
-        jPanel3.add(btn_sua, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, -1, -1));
-
-        txt_masp.setText("MaNCC");
-        jPanel3.add(txt_masp, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 50, 140, -1));
-
-        jLabel5.setText("Mã SP:");
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, -1, -1));
-
-        txt_soluong.setText("MaNCC");
-        jPanel3.add(txt_soluong, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 140, -1));
-
-        jLabel6.setText("Số lượng:");
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, -1, -1));
-
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 640, 250));
+        getContentPane().add(pn_pn, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, 310, 250));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Chi tiết phiếu nhập"));
 
@@ -272,10 +270,111 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
         );
         pn_phieunhapLayout.setVerticalGroup(
             pn_phieunhapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn_phieunhapLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        getContentPane().add(pn_phieunhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 190, 380, 340));
+        getContentPane().add(pn_phieunhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 240, 380, 290));
+
+        pn_ctpn.setBorder(javax.swing.BorderFactory.createTitledBorder("Chi tiết phiếu nhập"));
+
+        txt_masp.setText("Mã sản phẩm");
+
+        jLabel5.setText("Mã SP:");
+
+        txt_soluong.setText("Số lượng");
+
+        jLabel6.setText("Số lượng:");
+
+        txt_mactpn.setText("ID_PN");
+
+        jLabel7.setText("Mã PN:");
+
+        btn_suactpn.setText("Sửa");
+        btn_suactpn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_suactpnActionPerformed(evt);
+            }
+        });
+
+        btn_themctpn.setText("Thêm");
+        btn_themctpn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_themctpnActionPerformed(evt);
+            }
+        });
+
+        btn_xoactpn.setText("Xóa");
+        btn_xoactpn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_xoactpnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pn_ctpnLayout = new javax.swing.GroupLayout(pn_ctpn);
+        pn_ctpn.setLayout(pn_ctpnLayout);
+        pn_ctpnLayout.setHorizontalGroup(
+            pn_ctpnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pn_ctpnLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(pn_ctpnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pn_ctpnLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(txt_masp, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(pn_ctpnLayout.createSequentialGroup()
+                        .addGroup(pn_ctpnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel6)
+                            .addGroup(pn_ctpnLayout.createSequentialGroup()
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(15, 15, 15)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pn_ctpnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pn_ctpnLayout.createSequentialGroup()
+                                .addComponent(txt_soluong, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                                .addGap(26, 26, 26)
+                                .addGroup(pn_ctpnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btn_suactpn)
+                                    .addComponent(btn_themctpn)
+                                    .addComponent(btn_xoactpn)))
+                            .addGroup(pn_ctpnLayout.createSequentialGroup()
+                                .addComponent(txt_mactpn, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap())
+        );
+        pn_ctpnLayout.setVerticalGroup(
+            pn_ctpnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pn_ctpnLayout.createSequentialGroup()
+                .addGroup(pn_ctpnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pn_ctpnLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(pn_ctpnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txt_mactpn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7))
+                        .addGap(29, 29, 29)
+                        .addGroup(pn_ctpnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txt_masp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))
+                        .addGap(28, 28, 28)
+                        .addGroup(pn_ctpnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txt_soluong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6))
+                        .addGap(0, 74, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn_ctpnLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_suactpn)
+                        .addGap(28, 28, 28)
+                        .addComponent(btn_themctpn)
+                        .addGap(28, 28, 28)
+                        .addComponent(btn_xoactpn)))
+                .addContainerGap())
+        );
+
+        getContentPane().add(pn_ctpn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 330, 250));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -307,7 +406,7 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
     public void showAll_CTPN(){
         DefaultTableModel n = new DefaultTableModel();
         CTPhieuNhap_BUS bus = new CTPhieuNhap_BUS();
-        bus.docDS_CTKM();
+        bus.docDS_CTPN();
         Vector header = new Vector();
             header.add("STT");
             header.add("Mã PN");
@@ -331,12 +430,8 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
     }
     private void tbl_phieunhapMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_phieunhapMouseClicked
         // TODO add your handling code here:
-        txt_masp.setVisible(false);
-        txt_soluong.setVisible(false);
-        
-        txt_manv.setVisible(true);
-        txt_mancc.setVisible(true);
-        txt_ngaynhap.setVisible(true);
+        pn_ctpn.setVisible(false);
+        pn_pn.setVisible(true);
         int i = tbl_phieunhap.getSelectedRow();
         DefaultTableModel n = new DefaultTableModel();
         CTPhieuNhap_BUS bus = new CTPhieuNhap_BUS();
@@ -371,77 +466,113 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
 
     private void btn_refreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_refreshActionPerformed
         // TODO add your handling code here:
+        showAll_PN();
+        showAll_CTPN();
         
     }//GEN-LAST:event_btn_refreshActionPerformed
 
-    private void btn_themActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_themActionPerformed
-        // TODO add your handling code here:
-        int flag = 0;
-        String id_sp = txt_mapn.getText();
-        int row = tbl_phieunhap.getModel().getRowCount();
-        for(int i = 0; i < row; i++){
-            if(id_sp.equals(tbl_phieunhap.getValueAt(i, 1).toString())){
-                flag = 1;
-            }
-        }
-        if(flag == 0){
-            String ma_sp = txt_mapn.getText();
-            String ma_loai = txt_mancc.getText();
-            String ma_ncc = txt_ngaynhap.getText();
-            String ten_sp = txt_manv.getText();
-            String mo_ta = txt_mota.getText();
-            String gia = txt_gia.getText();
-            String sl = txt_soluong.getText();
-            new SanPham_BUS().them_sp(ma_sp, ma_loai, ma_ncc, ten_sp, mo_ta, gia, sl);
-            JOptionPane.showMessageDialog(null, "Thêm sản phẩm thành công !");
-            showAll();
-        }else JOptionPane.showMessageDialog(null, "Mã sản phẩm đã tồn tại !");
-    }//GEN-LAST:event_btn_themActionPerformed
+    private void btn_thempnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_thempnActionPerformed
+        // TODO add your handling code here:  
+            String ma_pn = txt_mapn.getText();
+            String ma_ncc = txt_mancc.getText();
+            String ma_sp = txt_masp.getText();
+            String ngaynhap = txt_ngaynhap.getText();
+            String ma_nv = txt_manv.getText();     
+            String soluong = txt_soluong.getText();
+            
+            boolean flag = new PhieuNhap_BUS().them_PN(ma_pn, ma_ncc, ngaynhap, ma_nv);
+            if(flag == true){ 
+                JOptionPane.showMessageDialog(null, "Thêm phiếu nhập thành công !");
+                showAll_PN();
+            }else JOptionPane.showMessageDialog(null, "Mã phiếu nhập không hợp lệ !");
+            
+    }//GEN-LAST:event_btn_thempnActionPerformed
 
-    private void btn_xoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_xoaActionPerformed
+    private void btn_xoapnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_xoapnActionPerformed
         // TODO add your handling code here:
-        int i = tbl_phieunhap.getSelectedRow();
-        String id_sp = tbl_phieunhap.getValueAt(i, 1).toString();
-        new SanPham_BUS().xoa_sp(id_sp);
-        showAll();
-    }//GEN-LAST:event_btn_xoaActionPerformed
+        String ma_pn = txt_mapn.getText();
+        boolean flag = new PhieuNhap_BUS().xoa_PN(ma_pn);
+        if(flag == true){ 
+            JOptionPane.showMessageDialog(null, "Xóa phiếu nhập thành công !");
+            showAll_PN();
+        }else JOptionPane.showMessageDialog(null, "Vui lòng xóa chi tiết phiếu nhập có mã '"+ ma_pn +"' trước !");
+    }//GEN-LAST:event_btn_xoapnActionPerformed
 
-    private void btn_suaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_suaActionPerformed
+    private void btn_suapnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_suapnActionPerformed
         // TODO add your handling code here:
-        int i = tbl_phieunhap.getSelectedRow();
-        String ma_sp = txt_mapn.getText();
-        String ma_loai = txt_mancc.getText();
-        String ma_ncc = txt_ngaynhap.getText();
-        String ten_sp = txt_manv.getText();
-        String mo_ta = txt_mota.getText();
-        String gia = txt_gia.getText();
-        String sl = txt_soluong.getText();
-        new SanPham_BUS().sua_sp(ma_sp, ma_loai, ma_ncc, ten_sp, mo_ta, gia, sl);
-        showAll();
-    }//GEN-LAST:event_btn_suaActionPerformed
+            String ma_pn = txt_mapn.getText();
+            String ma_ncc = txt_mancc.getText();
+            String ngaynhap = txt_ngaynhap.getText();
+            String ma_nv = txt_manv.getText();      
+         boolean flag = new PhieuNhap_BUS().sua_PN(ma_pn, ma_ncc, ngaynhap, ma_nv);
+        if(flag == true){ 
+            JOptionPane.showMessageDialog(null, "Sửa phiếu nhập thành công !");
+            showAll_PN();
+        }else JOptionPane.showMessageDialog(null, "Lỗi khi sửa phiếu nhập");
+    }//GEN-LAST:event_btn_suapnActionPerformed
 
     private void tbl_ctphieunhapMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_ctphieunhapMouseClicked
-        // TODO add your handling code here:
-        txt_masp.setVisible(true);
-        txt_soluong.setVisible(true);
-        txt_manv.setVisible(false);
-        txt_mancc.setVisible(false);
-        txt_ngaynhap.setVisible(false);
-        int i = tbl_ctphieunhap.getSelectedRow();
+        // TODO add your handling code here: 
+        pn_ctpn.setVisible(true);
+        pn_pn.setVisible(false);
         
-        
-        txt_mapn.setText(tbl_ctphieunhap.getValueAt(i, 1).toString());
+        int i = tbl_ctphieunhap.getSelectedRow();   
+        txt_mactpn.setText(tbl_ctphieunhap.getValueAt(i, 1).toString());
         txt_masp.setText(tbl_ctphieunhap.getValueAt(i, 2).toString());
         txt_soluong.setText(tbl_ctphieunhap.getValueAt(i, 3).toString());
         
     }//GEN-LAST:event_tbl_ctphieunhapMouseClicked
 
+    private void btn_suactpnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_suactpnActionPerformed
+        // TODO add your handling code here:
+        String ma_pn = txt_mactpn.getText();
+            String ma_sp = txt_masp.getText();
+            String soluong = txt_soluong.getText();      
+         boolean flag = new CTPhieuNhap_BUS().sua_CTPN(ma_pn, ma_sp, soluong);
+        if(flag == true){ 
+            JOptionPane.showMessageDialog(null, "Sửa chi tiết phiếu nhập thành công !");
+            showAll_CTPN();
+        }else JOptionPane.showMessageDialog(null, "Lỗi khi sửa chi tiết phiếu nhập");
+    }//GEN-LAST:event_btn_suactpnActionPerformed
+
+    private void btn_themctpnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_themctpnActionPerformed
+        // TODO add your handling code here:
+        SanPham_BUS sp = new SanPham_BUS();
+        String ma_pn = txt_mactpn.getText();
+            String ma_sp = txt_masp.getText();
+            String soluong = txt_soluong.getText();    
+        boolean flag = new CTPhieuNhap_BUS().them_CTPN(ma_pn, ma_sp, soluong);
+            if(flag == true){ 
+                JOptionPane.showMessageDialog(null, "Thêm phiếu nhập thành công !");
+                sp.capNhatSlSp_cong(soluong, ma_sp);
+                showAll_CTPN();
+            }else JOptionPane.showMessageDialog(null, "Mã phiếu nhập không hợp lệ !");
+    }//GEN-LAST:event_btn_themctpnActionPerformed
+
+    private void btn_xoactpnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_xoactpnActionPerformed
+        // TODO add your handling code here:
+        SanPham_BUS sp = new SanPham_BUS();
+        String ma_pn = txt_mapn.getText();
+        String ma_sp = txt_masp.getText();
+                    String soluong = txt_soluong.getText();    
+
+        boolean flag = new CTPhieuNhap_BUS().xoa_CTPN(ma_pn,ma_sp);
+        if(flag == true){ 
+            sp.capNhatSlSp(soluong, ma_sp);
+            JOptionPane.showMessageDialog(null, "Xóa phiếu nhập thành công !");
+            showAll_CTPN();
+        }else JOptionPane.showMessageDialog(null, "Lỗi khi xóa chi tiết phiếu nhập");
+    }//GEN-LAST:event_btn_xoactpnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_refresh;
-    private javax.swing.JButton btn_sua;
-    private javax.swing.JButton btn_them;
-    private javax.swing.JButton btn_xoa;
+    private javax.swing.JButton btn_suactpn;
+    private javax.swing.JButton btn_suapn;
+    private javax.swing.JButton btn_themctpn;
+    private javax.swing.JButton btn_thempn;
+    private javax.swing.JButton btn_xoactpn;
+    private javax.swing.JButton btn_xoapn;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -449,9 +580,9 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton6;
@@ -459,9 +590,12 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JPanel pn_ctpn;
     private javax.swing.JPanel pn_phieunhap;
+    private javax.swing.JPanel pn_pn;
     private javax.swing.JTable tbl_ctphieunhap;
     private javax.swing.JTable tbl_phieunhap;
+    private javax.swing.JTextField txt_mactpn;
     private javax.swing.JTextField txt_mancc;
     private javax.swing.JTextField txt_manv;
     private javax.swing.JTextField txt_mapn;

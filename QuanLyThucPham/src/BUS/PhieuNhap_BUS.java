@@ -19,5 +19,29 @@ public class PhieuNhap_BUS {
     public void docDSPN(){
         dspn = new PhieuNhap_DAO().docPN();
     }
-    
+    public boolean them_PN(String id_pn, String id_ncc, String ngaynhap, String id_nhanvien){
+        boolean flag = new PhieuNhap_DAO().them_PN(id_pn, id_ncc, ngaynhap, id_nhanvien);
+        
+            if(flag == false)
+            {
+                return false;
+            }       
+        return true;
+    }
+    public boolean xoa_PN(String id_pn){
+        boolean flag = new PhieuNhap_DAO().xoa_PN(id_pn);
+       
+            if(flag == true){
+                return true;
+            }
+        return false;
+    }
+    public boolean sua_PN(String id_pn, String id_ncc, String ngaynhap, String id_nhanvien){
+        boolean flag = new PhieuNhap_DAO().sua_PN(id_pn, id_ncc, ngaynhap, id_nhanvien);
+       
+            if(flag == true){
+                return true;
+            }
+        return false;
+    }
 }

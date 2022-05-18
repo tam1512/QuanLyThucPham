@@ -64,4 +64,42 @@ public class CTPhieuNhap_DAO {
         }
         return ds_ctpn_id;
     }
+    public boolean them_CTPN(String id_pn, String id_sp, String soluong){
+        
+        try{
+            String query = "INSERT INTO `chitietphieunhap`(`ID_PhieuNhap`, `ID_SanPham`, `SoLuong`) VALUES ('"+id_pn+"','"+id_sp+"','"+soluong+"')";
+            st = conn.createStatement();
+            st.executeUpdate(query);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(KhuyenMai_DAO.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+        return true;
+    }
+    public boolean xoa_CTPN(String id_pn, String id_sp){
+        
+        try{
+            String query = "DELETE FROM `chitietphieunhap` WHERE ID_PhieuNhap='" +id_pn+ "' AND ID_SanPham = '" + id_sp + "'";
+            st = conn.createStatement();
+            st.executeUpdate(query);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(KhuyenMai_DAO.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+        return true;
+    }
+    public boolean sua_CTPN(String id_pn, String id_sp, String soluong){
+        
+        try{
+            String query = "UPDATE `chitietphieunhap` SET `ID_PhieuNhap`='"+id_pn+"',`ID_SanPham`='"+id_sp+"',`SoLuong`='"+soluong+"' where ID_PhieuNhap ='"+id_pn+"'" ;
+            st.executeUpdate(query);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(KhuyenMai_DAO.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+        return true;
+    }
 }

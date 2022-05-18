@@ -25,6 +25,9 @@ public class SanPham_BUS {
     public void capNhatSlSp(String soluong, String id){
         new SanPham_DAO().capNhatSlSp(soluong, id);
     }
+    public void capNhatSlSp_cong(String soluong, String id){
+        new SanPham_DAO().capNhatSlSp_cong(soluong, id);
+    }
     public void docSanPham_loai(String loai){
         dssp_loai = new SanPham_DAO().docSanPham_loai(loai);
     }
