@@ -119,7 +119,8 @@ public  String TenDangNhap;
         getContentPane().add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 350, -1, -1));
 
         BackGround.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/background-login.jpg"))); // NOI18N
-        getContentPane().add(BackGround, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 490));
+        BackGround.setName(""); // NOI18N
+        getContentPane().add(BackGround, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, -1, 580));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -141,6 +142,7 @@ public  String TenDangNhap;
                 Main_Menu menu= new Main_Menu();
                 this.setVisible(false);
                 menu.setVisible(true);
+                menu.login_scr(TenDangNhap);
                 flag = dn.check_account(TenDangNhap, PasswordTxt.getText());
                 this.dispose();
 

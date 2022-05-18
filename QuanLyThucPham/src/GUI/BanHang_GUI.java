@@ -561,6 +561,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         int i = model.getRowCount();
         if(i != 0){
+            inHoaDon();
         for(int j = i-1; j >= 0; j--){
             String soluong1 = String.valueOf(Math.round(parseFloat(model.getValueAt(j, 3).toString())));           
             String maSp = model.getValueAt(j, 1).toString();
@@ -569,7 +570,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         }
         showAll();
         JOptionPane.showMessageDialog(null, "Mua sản phẩm thành công !");
-        inHoaDon();
+        
         } else {
             JOptionPane.showMessageDialog(null, "Bạn chưa chọn sản phẩm !");
         }

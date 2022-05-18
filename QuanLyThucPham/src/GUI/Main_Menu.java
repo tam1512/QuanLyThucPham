@@ -73,6 +73,8 @@ public class Main_Menu extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         lb_close = new javax.swing.JLabel();
         lb_minimize = new javax.swing.JLabel();
+        txt_inout = new javax.swing.JLabel();
+        txt_taikhoan = new javax.swing.JLabel();
         container = new javax.swing.JDesktopPane();
         pn_donglanh = new javax.swing.JPanel();
         lb_donglanh = new javax.swing.JLabel();
@@ -108,11 +110,6 @@ public class Main_Menu extends javax.swing.JFrame {
 
         lb_home.setForeground(new java.awt.Color(255, 255, 255));
         lb_home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Logo.png"))); // NOI18N
-        lb_home.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lb_homeMouseClicked(evt);
-            }
-        });
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -372,6 +369,17 @@ public class Main_Menu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(lb_minimize, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 30, -1, -1));
+
+        txt_inout.setText("Đăng nhập");
+        txt_inout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txt_inoutMouseClicked(evt);
+            }
+        });
+        jPanel1.add(txt_inout, new org.netbeans.lib.awtextra.AbsoluteConstraints(1018, 26, 70, 30));
+
+        txt_taikhoan.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jPanel1.add(txt_taikhoan, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 30, 130, 20));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 80));
 
@@ -903,11 +911,6 @@ public class Main_Menu extends javax.swing.JFrame {
         pn_rau.setBackground(new Color(51,204,0));
     }//GEN-LAST:event_lb_rauMouseExited
 
-    private void lb_homeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_homeMouseClicked
-        // TODO add your handling code here:
-        new Main_Menu().setVisible(true);
-    }//GEN-LAST:event_lb_homeMouseClicked
-
     private void lb_thitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_thitMouseExited
         // TODO add your handling code here:
          pn_thit.setBackground(new Color(102,102,102));
@@ -1059,6 +1062,23 @@ public class Main_Menu extends javax.swing.JFrame {
         bh.click_btn_giavi();
     }//GEN-LAST:event_lb_giaviMouseClicked
 
+    private void txt_inoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_inoutMouseClicked
+        // TODO add your handling code here:
+        DangNhap_GUI dn = new DangNhap_GUI();
+        dn.setVisible(true);
+        this.setVisible(false);
+        logout_scr();
+    }//GEN-LAST:event_txt_inoutMouseClicked
+    public void login_scr(String tentk){
+        txt_inout.setText("Đăng xuất");
+        txt_taikhoan.setText(tentk);
+    }
+    public void logout_scr(){
+        txt_inout.setText("Đăng nhập");
+        txt_taikhoan.setText("");
+    }
+    
+    
 
     /**
      * @param args the command line arguments
@@ -1135,5 +1155,7 @@ public class Main_Menu extends javax.swing.JFrame {
     private javax.swing.JPanel pnl_sanpham;
     private javax.swing.JPanel pnl_thanhvien;
     private javax.swing.JPanel pnl_thongke;
+    private javax.swing.JLabel txt_inout;
+    private javax.swing.JLabel txt_taikhoan;
     // End of variables declaration//GEN-END:variables
 }
