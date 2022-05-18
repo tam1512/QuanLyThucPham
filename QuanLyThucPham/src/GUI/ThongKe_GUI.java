@@ -6,7 +6,20 @@ package GUI;
 
 import BUS.CTHoaDon_BUS;
 import DTO.CTHoaDon_DTO;
+import com.lowagie.text.Document;
+import com.lowagie.text.DocumentException;
+import com.lowagie.text.Font;
+import com.lowagie.text.Paragraph;
+import com.lowagie.text.pdf.BaseFont;
+import com.lowagie.text.pdf.PdfPTable;
+import com.lowagie.text.pdf.PdfWriter;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 
@@ -47,7 +60,7 @@ public class ThongKe_GUI extends javax.swing.JInternalFrame {
         jLabel67 = new javax.swing.JLabel();
         jLabel68 = new javax.swing.JLabel();
         jLabel69 = new javax.swing.JLabel();
-        jButton23 = new javax.swing.JButton();
+        btn_inthongke = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menu = new javax.swing.JMenu();
         mn_doanhthu = new javax.swing.JMenuItem();
@@ -98,7 +111,17 @@ public class ThongKe_GUI extends javax.swing.JInternalFrame {
         jLabel69.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel69.setText("QUẢN LÝ THỐNG KÊ ");
 
-        jButton23.setText("In thống kê");
+        btn_inthongke.setText("In thống kê");
+        btn_inthongke.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_inthongkeMouseClicked(evt);
+            }
+        });
+        btn_inthongke.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_inthongkeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -118,7 +141,7 @@ public class ThongKe_GUI extends javax.swing.JInternalFrame {
                 .addGap(29, 29, 29)
                 .addComponent(jComboBox23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(106, 106, 106)
-                .addComponent(jButton23)
+                .addComponent(btn_inthongke)
                 .addGap(14, 14, 14))
         );
         jPanel4Layout.setVerticalGroup(
@@ -131,7 +154,7 @@ public class ThongKe_GUI extends javax.swing.JInternalFrame {
                         .addComponent(jTextField45, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jTextField46, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel67)
-                        .addComponent(jButton23)
+                        .addComponent(btn_inthongke)
                         .addComponent(jLabel68))
                     .addComponent(jLabel69))
                 .addContainerGap(12, Short.MAX_VALUE))
@@ -184,6 +207,7 @@ public class ThongKe_GUI extends javax.swing.JInternalFrame {
         bus.docDS_CTHD();
          Vector header = new Vector();
             header.add("STT");
+            header.add("Mã HD");
             header.add("Tên SP");
             header.add("Đơn giá");
             header.add("Số lượng");
@@ -199,7 +223,8 @@ public class ThongKe_GUI extends javax.swing.JInternalFrame {
      
             Vector row = new Vector();
             row.add(k);
-            row.add(nv.tensp);
+            row.add(nv.id_hoadon);
+            row.add(nv.tensp);          
             row.add(nv.dongia);
             row.add(nv.soluong);
             row.add(nv.tongtien);
@@ -233,9 +258,110 @@ public class ThongKe_GUI extends javax.swing.JInternalFrame {
         showAll_CTHD();
     }//GEN-LAST:event_mn_hoadonActionPerformed
 
+    private void btn_inthongkeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inthongkeActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btn_inthongkeActionPerformed
+
+    private void btn_inthongkeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_inthongkeMouseClicked
+        // TODO add your handling code here:
+        inThongKe_HoaDon();
+    }//GEN-LAST:event_btn_inthongkeMouseClicked
+    static int k=0;
+    public void inThongKe_HoaDon(){
+        k++;
+        String path="D:\\";
+        JFileChooser j = new JFileChooser();
+        /*j.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        int x = j.showSaveDialog(this);
+        if(x == JFileChooser.APPROVE_OPTION){
+            path = j.getSelectedFile().getPath();
+        }*/
+
+        Document doc = new Document();
+        doc.addTitle("HÓA ĐƠN");
+        try {
+            PdfWriter.getInstance(doc, new FileOutputStream(path+"Thongke" + k +".pdf"));
+            BaseFont bf = BaseFont.createFont("c:\\windows\\fonts\\times.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+            Font font10 = new Font(bf, 10, Font.NORMAL);
+
+
+
+            doc.open();
+
+            PdfPTable tbl = new PdfPTable(10);
+            //header
+            Paragraph pa7 = new Paragraph("STT", font10);
+            tbl.addCell(pa7);
+            Paragraph pa8 = new Paragraph("Mã HD", font10);
+            tbl.addCell(pa8);
+            Paragraph pa9 = new Paragraph("Tên SP", font10);
+            tbl.addCell(pa9);
+            Paragraph pa10 = new Paragraph("Đơn giá", font10);
+            tbl.addCell(pa10);
+            Paragraph pa11 = new Paragraph("Số lượng", font10);
+            tbl.addCell(pa11);
+            Paragraph pa12 = new Paragraph("Tổng tiền", font10);
+            tbl.addCell(pa12);
+            Paragraph pa13 = new Paragraph("Ngày lập", font10);
+            tbl.addCell(pa13);
+            Paragraph pa19 = new Paragraph("Tên thành viên", font10);
+            tbl.addCell(pa19);
+            Paragraph pa20 = new Paragraph("Tên nhân viên", font10);
+            tbl.addCell(pa20);
+            Paragraph pa21 = new Paragraph("Ghi chú", font10);
+            tbl.addCell(pa21);
+            for(int i = 0; i < tbl_thongke.getRowCount(); i++){
+
+
+
+                String stt = tbl_thongke.getValueAt(i, 0).toString();
+                Paragraph pa1 = new Paragraph(stt, font10);
+                String ma_sp = tbl_thongke.getValueAt(i, 1).toString();
+                Paragraph pa2 = new Paragraph(ma_sp, font10);
+                String ten_sp = tbl_thongke.getValueAt(i, 2).toString();
+                Paragraph pa3 = new Paragraph(ten_sp, font10);
+                String dongia = tbl_thongke.getValueAt(i, 3).toString();
+                Paragraph pa4 = new Paragraph(dongia, font10);
+                String soluong = tbl_thongke.getValueAt(i, 4).toString();
+                Paragraph pa5 = new Paragraph(soluong, font10);
+                String tongtien = tbl_thongke.getValueAt(i, 5).toString();
+                Paragraph pa14 = new Paragraph(tongtien, font10);
+                String ngaylap = tbl_thongke.getValueAt(i, 6).toString();
+                Paragraph pa15 = new Paragraph(ngaylap, font10);
+                String ten_tv = tbl_thongke.getValueAt(i, 7).toString();
+                Paragraph pa16 = new Paragraph(ten_tv, font10);
+                String ten_nv = tbl_thongke.getValueAt(i, 8).toString();
+                Paragraph pa17 = new Paragraph(ten_nv, font10);
+                String ghichu = tbl_thongke.getValueAt(i, 9).toString();
+                Paragraph pa18 = new Paragraph(ghichu, font10);
+                
+                tbl.addCell(pa1);
+                tbl.addCell(pa2);
+                tbl.addCell(pa3);
+                tbl.addCell(pa4);
+                tbl.addCell(pa5);
+                tbl.addCell(pa14);
+                tbl.addCell(pa15);
+                tbl.addCell(pa16);
+                tbl.addCell(pa17);
+                tbl.addCell(pa18);
+                
+            }
+                
+            doc.add(tbl);
+
+                    } catch (FileNotFoundException ex) {
+            Logger.getLogger(BanHang_GUI.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (DocumentException | IOException ex) {
+            Logger.getLogger(BanHang_GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        doc.close();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Menu;
+    private javax.swing.JButton btn_inthongke;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -251,7 +377,6 @@ public class ThongKe_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
-    private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
