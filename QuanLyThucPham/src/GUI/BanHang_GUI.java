@@ -4,14 +4,43 @@
  */
 package GUI;
 
+
+import BUS.CTKhuyenMai_BUS;
 import BUS.SanPham_BUS;
+import DTO.CTKhuyenMai_DTO;
 import DTO.SanPham_DTO;
+import com.lowagie.text.Document;
+import com.lowagie.text.DocumentException;
+import com.lowagie.text.Font;
+import com.lowagie.text.Paragraph;
+import com.lowagie.text.pdf.BaseFont;
+import com.lowagie.text.pdf.PdfPTable;
+import com.lowagie.text.pdf.PdfWriter;
+import static java.awt.Frame.NORMAL;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import static java.lang.Float.parseFloat;
+import java.util.List;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+
 
 /**
  *
@@ -22,12 +51,15 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
     /**
      * Creates new form BangHang_UI
      */
+
     DefaultTableModel model = new DefaultTableModel();
+
     public BanHang_GUI() {
         initComponents();
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI ui = (BasicInternalFrameUI) this.getUI();
         ui.setNorthPane(null);
+
         
         showAll();
         
@@ -39,8 +71,8 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         Vector header = new Vector();
             header.add("STT");
             header.add("ID_SanPham");
-            header.add("ID_Loai");
-            header.add("ID_NCC");
+            header.add("Loại");
+            header.add("Ncc");
             header.add("Tên SP");
             header.add("Mô tả");
             header.add("Đơn giá");
@@ -63,6 +95,33 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         }
         tbl_sanpham.setModel(n);
     }
+    public void click_btn_rau(){
+        btn_rau.doClick();
+    }
+    public void click_btn_thit(){
+        btn_thit.doClick();
+    }
+    public void click_btn_luongthuc(){
+        btn_luongthuc.doClick();
+    }
+    public void click_btn_donglanh(){
+        btn_donglanh.doClick();
+    }
+    public void click_btn_giavi(){
+        btn_giavi.doClick();
+    }
+    public void click_btn_mitom(){
+        btn_mitom.doClick();
+    }
+    public void click_btn_nuoc(){
+        btn_bia.doClick();
+    }
+    public void click_btn_banhkeo(){
+        btn_banhkeo.doClick();
+    }
+    public void click_btn_khac(){
+        btn_khac.doClick();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -74,13 +133,18 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jPanel1 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
+        btn_inhoadon = new javax.swing.JButton();
         btn_thanhtoan = new javax.swing.JButton();
         btn_xoa = new javax.swing.JButton();
         txt_soluong = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         btn_chon = new javax.swing.JButton();
         btn_refresh = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        lb_tongtien = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbl_sanpham = new javax.swing.JTable();
@@ -88,15 +152,15 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_dachon = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
-        jButton5 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btn_giavi = new javax.swing.JButton();
+        btn_donglanh = new javax.swing.JButton();
         btn_rau = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
+        btn_thit = new javax.swing.JButton();
+        btn_luongthuc = new javax.swing.JButton();
+        btn_mitom = new javax.swing.JButton();
+        btn_khac = new javax.swing.JButton();
+        btn_bia = new javax.swing.JButton();
+        btn_banhkeo = new javax.swing.JButton();
 
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         setMinimumSize(new java.awt.Dimension(1050, 570));
@@ -109,7 +173,12 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Tùy chọn"));
 
-        jButton3.setText("In hóa đơn");
+        btn_inhoadon.setText("In hóa đơn");
+        btn_inhoadon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_inhoadonActionPerformed(evt);
+            }
+        });
 
         btn_thanhtoan.setText("Thanh toán");
         btn_thanhtoan.addActionListener(new java.awt.event.ActionListener() {
@@ -144,6 +213,21 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel2.setText("Tổng tiền:");
+
+        lb_tongtien.setBackground(new java.awt.Color(255, 255, 0));
+        lb_tongtien.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lb_tongtien.setText("VND");
+        lb_tongtien.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        lb_tongtien.setName(""); // NOI18N
+        lb_tongtien.setVerifyInputWhenFocusTarget(false);
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane3.setViewportView(jTextArea1);
+
+        jLabel3.setText("Ghi chú:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -151,7 +235,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(9, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txt_soluong, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -162,18 +246,30 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(btn_chon, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_xoa, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
+                        .addComponent(btn_inhoadon)
+                        .addGap(49, 49, 49)
+                        .addComponent(btn_refresh)
+                        .addGap(21, 21, 21))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton3)
-                        .addGap(115, 115, 115))))
+                        .addGap(16, 16, 16)
+                        .addComponent(btn_chon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_xoa, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12))))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(124, 124, 124)
-                .addComponent(btn_refresh)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(lb_tongtien, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,28 +283,36 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btn_xoa, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btn_chon, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(26, 26, 26)
-                .addComponent(btn_refresh)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_thanhtoan, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2)
+                    .addComponent(lb_tongtien))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btn_thanhtoan, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_inhoadon, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_refresh, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(682, 257, 380, 260));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(682, 257, 370, 290));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Sản phẩm"));
 
         tbl_sanpham.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "STT", "ID_SanPham", "ID_Loai", "ID_NCC", "Tên SP", "Mô tả", "Đơn giá", "Số lượng"
+                "STT", "Tên SP", "Mô tả", "Đơn giá", "Số lượng", "Title 6", "Title 7"
             }
         ));
         jScrollPane2.setViewportView(tbl_sanpham);
@@ -232,12 +336,14 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Đã chọn"));
 
+        tbl_dachon.setBackground(new java.awt.Color(255, 255, 0));
+        tbl_dachon.setForeground(new java.awt.Color(255, 51, 102));
         tbl_dachon.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "STT", "Mã SP", "Tên SP", "Số lượng", "Đơn giá"
+                "STT", "Mã SP", "Tên SP", "Số lượng", "Đơn giá", "Giá KM", "Tổng cộng"
             }
         ));
         jScrollPane1.setViewportView(tbl_dachon);
@@ -261,16 +367,24 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, -1, -1));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Loại sản phẩm"));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton5.setText("Gia vị");
-
-        jButton2.setText("Đông lạnh");
-        jButton2.setAutoscrolls(true);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_giavi.setText("Gia vị");
+        btn_giavi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_giaviActionPerformed(evt);
             }
         });
+        jPanel2.add(btn_giavi, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 83, 49));
+
+        btn_donglanh.setText("Đông lạnh");
+        btn_donglanh.setAutoscrolls(true);
+        btn_donglanh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_donglanhActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btn_donglanh, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 96, 90, 49));
 
         btn_rau.setText("Rau củ, trái cây");
         btn_rau.setAutoscrolls(true);
@@ -282,104 +396,181 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
                 btn_rauActionPerformed(evt);
             }
         });
+        jPanel2.add(btn_rau, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 28, 90, 50));
 
-        jButton7.setText("Thịt, Trứng");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btn_thit.setText("Thịt, Trứng");
+        btn_thit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btn_thitActionPerformed(evt);
             }
         });
+        jPanel2.add(btn_thit, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, -1, 50));
 
-        jButton4.setText("Lương thực");
+        btn_luongthuc.setText("Lương thực");
+        btn_luongthuc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_luongthucActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btn_luongthuc, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 108, 49));
 
-        jButton1.setText("Mì, miếng, phở, cháo");
-        jButton1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        btn_mitom.setText("Mì, miếng, phở, cháo");
+        btn_mitom.setAutoscrolls(true);
+        btn_mitom.setFocusTraversalPolicyProvider(true);
+        btn_mitom.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        btn_mitom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_mitomActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btn_mitom, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, 108, 49));
 
-        jButton6.setText("Khác...");
+        btn_khac.setText("Khác...");
+        btn_khac.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_khacActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btn_khac, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 108, 53));
 
-        jButton9.setText("Bia, nước ngọt");
+        btn_bia.setText("Bia, nước ngọt");
+        btn_bia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_biaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btn_bia, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 163, 90, 53));
 
-        jButton11.setText("Bánh kẹo");
+        btn_banhkeo.setText("Bánh kẹo");
+        btn_banhkeo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_banhkeoActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btn_banhkeo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 83, 53));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btn_rau)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addComponent(jButton9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton11)
-                .addGap(50, 50, 50)
-                .addComponent(jButton6)
-                .addGap(77, 77, 77))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_rau, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(13, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 380, 250));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 370, 250));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_rauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rauActionPerformed
         // TODO add your handling code here:
+
+        new SanPham_BUS().docSanPham_loai("1");
+        DefaultTableModel n = new DefaultTableModel();
+        SanPham_BUS bus = new SanPham_BUS();
+        bus.docSanPham();
+        Vector header = new Vector();
+            header.add("STT");
+            header.add("ID_SanPham");
+            header.add("Loại");
+            header.add("Ncc");
+            header.add("Tên SP");
+            header.add("Mô tả");
+            header.add("Đơn giá");
+            header.add("Số lượng");
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+        for (SanPham_DTO sp : SanPham_BUS.dssp_loai) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(sp.id_sanpham);
+            row.add(sp.id_loai);
+            row.add(sp.id_ncc);
+            row.add(sp.tensp);
+            row.add(sp.mota);
+            row.add(sp.giaban);
+            row.add(sp.soluong);
+            n.addRow(row);
+            k++;
+        }
+        tbl_sanpham.setModel(n);
     }//GEN-LAST:event_btn_rauActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void btn_thitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_thitActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+        new SanPham_BUS().docSanPham_loai("6");
+        DefaultTableModel n = new DefaultTableModel();
+        SanPham_BUS bus = new SanPham_BUS();
+        bus.docSanPham();
+        Vector header = new Vector();
+            header.add("STT");
+            header.add("ID_SanPham");
+            header.add("Loại");
+            header.add("Ncc");
+            header.add("Tên SP");
+            header.add("Mô tả");
+            header.add("Đơn giá");
+            header.add("Số lượng");
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+        for (SanPham_DTO sp : SanPham_BUS.dssp_loai) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(sp.id_sanpham);
+            row.add(sp.id_loai);
+            row.add(sp.id_ncc);
+            row.add(sp.tensp);
+            row.add(sp.mota);
+            row.add(sp.giaban);
+            row.add(sp.soluong);
+            n.addRow(row);
+            k++;
+        }
+        tbl_sanpham.setModel(n);
+    }//GEN-LAST:event_btn_thitActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btn_donglanhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_donglanhActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        new SanPham_BUS().docSanPham_loai("7");
+        DefaultTableModel n = new DefaultTableModel();
+        SanPham_BUS bus = new SanPham_BUS();
+        bus.docSanPham();
+        Vector header = new Vector();
+            header.add("STT");
+            header.add("ID_SanPham");
+            header.add("Loại");
+            header.add("Ncc");
+            header.add("Tên SP");
+            header.add("Mô tả");
+            header.add("Đơn giá");
+            header.add("Số lượng");
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+        for (SanPham_DTO sp : SanPham_BUS.dssp_loai) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(sp.id_sanpham);
+            row.add(sp.id_loai);
+            row.add(sp.id_ncc);
+            row.add(sp.tensp);
+            row.add(sp.mota);
+            row.add(sp.giaban);
+            row.add(sp.soluong);
+            n.addRow(row);
+            k++;
+        }
+        tbl_sanpham.setModel(n);
+    }//GEN-LAST:event_btn_donglanhActionPerformed
      
     private void btn_thanhtoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_thanhtoanActionPerformed
         // TODO add your handling code here:
         int i = model.getRowCount();
         if(i != 0){
+            inHoaDon();
         for(int j = i-1; j >= 0; j--){
-            String soluong1 = model.getValueAt(j, 3).toString();           
+            String soluong1 = String.valueOf(Math.round(parseFloat(model.getValueAt(j, 3).toString())));           
             String maSp = model.getValueAt(j, 1).toString();
             new SanPham_BUS().capNhatSlSp(soluong1, maSp);         
             model.removeRow(j);
         }
         showAll();
         JOptionPane.showMessageDialog(null, "Mua sản phẩm thành công !");
+        
         } else {
             JOptionPane.showMessageDialog(null, "Bạn chưa chọn sản phẩm !");
         }
@@ -390,79 +581,129 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         //Nhớ đổi Giá data base thành Int
         int index = 0;
         int flag = 0;
-        int soLuong = parseInt(txt_soluong.getText());
+        int flag1 = 0;
+        float soLuong = parseFloat(txt_soluong.getText());
         int i = tbl_sanpham.getSelectedRow();
        int count_row = model.getRowCount();
-       
+
+       new CTKhuyenMai_BUS().docDS_CTKM();
+       float gia_km = (float) 0.0;
+
+       for(CTKhuyenMai_DTO km : CTKhuyenMai_BUS.ds_ctkm){
+           if( tbl_sanpham.getValueAt(i, 1).toString().equals(km.id_sp)){
+               gia_km = (float) (parseFloat((km.giamcon)));
+               flag1 = 1;
+           }
+       }
+
         Vector header = new Vector();
             header.add("STT");
             header.add("Mã SP");
             header.add("Tên SP");
             header.add("Số lượng");
             header.add("Đơn giá");
+            header.add("Giá KM");
+            header.add("Tổng cộng");
             if(model.getRowCount() == 0)
             model = new DefaultTableModel(header,0);
-            
+
             //Cập nhật số lượng (trùng mã sp)
-            
-            String a = tbl_sanpham.getModel().getValueAt(i, 1).toString();
+
+            String a = tbl_sanpham.getValueAt(i, 1).toString();
             if(count_row > 0){
             for(int j = 0; j < count_row; j++){
+                //kiem tra ID trùng
             String b = model.getValueAt(j, 1).toString();
                 if(b.equals(a)){
                     index = j;
                     flag = 1;
                 }
+            }           
             }
-            }
+            //Kiem tra SP co khuyen mai
+
+
+            //nếu sp chưa có trên model
+            float dongia = parseFloat(tbl_sanpham.getModel().getValueAt(i, 6).toString());
+
             if(flag == 0){
-                
+
                 Vector row = new Vector();
             row.add(count_row++);
             row.add(tbl_sanpham.getModel().getValueAt(i, 1));
             row.add(tbl_sanpham.getModel().getValueAt(i, 4));
             row.add(txt_soluong.getText());
-            row.add(parseInt(tbl_sanpham.getModel().getValueAt(i, 6).toString())*soLuong);
+            row.add(dongia);
+            //Neu co khuyen mai thi add giá km, khong co thi add rỗng
+
+            if(flag1 == 1){
+                row.add(gia_km);
+                row.add(gia_km*soLuong);
+            } else {
+                row.add("");
+                row.add(dongia*soLuong);
+            }
             //so sánh lúc chọn 
-                if(parseInt(txt_soluong.getText()) <= parseInt(tbl_sanpham.getModel().getValueAt(i, 7).toString()) && parseInt(txt_soluong.getText()) > 0){
+                if(parseFloat(txt_soluong.getText()) <= parseFloat(tbl_sanpham.getModel().getValueAt(i, 7).toString()) && parseFloat(txt_soluong.getText()) > 0){
                 model.addRow(row);
                 tbl_dachon.setModel(model);
                 } else {
                     JOptionPane.showMessageDialog(null, "Số lượng không còn đủ trong kho");
                 }
-            } else {
-                
+            }
+            //Nếu sp có ở model rồi
+            else {
+
                 Vector row = new Vector();
                 row.add(model.getValueAt(index, 0));
             row.add(tbl_sanpham.getModel().getValueAt(i, 1));
             row.add(tbl_sanpham.getModel().getValueAt(i, 4));
             //Cập nhật số lượng và giá sản phẩm đã chọn
-            row.add(parseInt(txt_soluong.getText()) + parseInt(model.getValueAt(index, 3).toString()));
-            row.add(parseInt((tbl_sanpham.getModel().getValueAt(i, 6).toString()))*soLuong + parseInt(model.getValueAt(index, 4).toString()));
+            row.add(parseFloat(txt_soluong.getText()) + parseFloat(model.getValueAt(index, 3).toString()));
+            row.add(dongia);
+            //Neu co khuyen mai thi add giá km, khong co thi add rỗng
+            if(flag1 == 1){
+               row.add(gia_km);
+               row.add((gia_km)*soLuong + parseFloat(model.getValueAt(index, 3).toString())*gia_km);
+            } else {
+               row.add("");
+               row.add(dongia*soLuong + dongia*parseFloat(model.getValueAt(index, 3).toString()));
+
+            }
+
+
             //so sánh lúc chọn (sp đã có trên model)
-            int SoLuongDangChon = parseInt(txt_soluong.getText()) + parseInt(model.getValueAt(index, 3).toString());
-            if(SoLuongDangChon <= parseInt(tbl_sanpham.getModel().getValueAt(i, 7).toString()) && parseInt(txt_soluong.getText()) > 0){
+            float SoLuongDangChon = parseFloat(txt_soluong.getText()) + parseFloat(model.getValueAt(index, 3).toString());
+            //kiem tra khuyen mai
+
+            if(SoLuongDangChon <= parseFloat(tbl_sanpham.getModel().getValueAt(i, 7).toString()) && parseFloat(txt_soluong.getText()) > 0){
                 model.removeRow(index);
                 model.insertRow(index, row);
                 tbl_dachon.setModel(model);   
                 } else {
                     JOptionPane.showMessageDialog(null, "Số lượng không còn đủ trong kho");
                 }
-                     
+
+            }
+            float tongtien = 0;
+            for(int j = 0; j < tbl_dachon.getRowCount(); j++){
+
+                tongtien += parseFloat(tbl_dachon.getValueAt(j, 6).toString());
+                lb_tongtien.setText(String.valueOf(tongtien) + "VND");
             }
     }//GEN-LAST:event_btn_chonActionPerformed
 
     private void btn_xoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_xoaActionPerformed
         // TODO add your handling code here:
         int i = tbl_dachon.getSelectedRow();
-        if(parseInt(txt_soluong.getText()) > parseInt(tbl_dachon.getModel().getValueAt(i, 3).toString())){
+        if(parseInt(txt_soluong.getText()) >= parseFloat(tbl_dachon.getModel().getValueAt(i, 3).toString())){
             model.removeRow(i);
         for(int j = 0; j < model.getRowCount(); j++ ){
             model.setValueAt(j, j, 0);
         }
         } else {
-            int a = parseInt(tbl_dachon.getValueAt(i, 3).toString());
-            int b = parseInt(txt_soluong.getText());
+            float a = parseFloat(tbl_dachon.getValueAt(i, 3).toString());
+            float b = parseFloat(txt_soluong.getText());
             tbl_dachon.setValueAt(a - b, i, 3);
             model.setValueAt(a - b, i, 3);
             tbl_dachon.setModel(model);
@@ -477,30 +718,325 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
         showAll();
     }//GEN-LAST:event_btn_refreshActionPerformed
 
+    private void btn_luongthucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_luongthucActionPerformed
+        // TODO add your handling code here:
+        new SanPham_BUS().docSanPham_loai("8");
+        DefaultTableModel n = new DefaultTableModel();
+        SanPham_BUS bus = new SanPham_BUS();
+        bus.docSanPham();
+        Vector header = new Vector();
+            header.add("STT");
+            header.add("ID_SanPham");
+            header.add("Loại");
+            header.add("Ncc");
+            header.add("Tên SP");
+            header.add("Mô tả");
+            header.add("Đơn giá");
+            header.add("Số lượng");
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+        for (SanPham_DTO sp : SanPham_BUS.dssp_loai) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(sp.id_sanpham);
+            row.add(sp.id_loai);
+            row.add(sp.id_ncc);
+            row.add(sp.tensp);
+            row.add(sp.mota);
+            row.add(sp.giaban);
+            row.add(sp.soluong);
+            n.addRow(row);
+            k++;
+        }
+        tbl_sanpham.setModel(n);
+    }//GEN-LAST:event_btn_luongthucActionPerformed
+
+    private void btn_giaviActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_giaviActionPerformed
+        // TODO add your handling code here:
+        new SanPham_BUS().docSanPham_loai("9");
+        DefaultTableModel n = new DefaultTableModel();
+        SanPham_BUS bus = new SanPham_BUS();
+        bus.docSanPham();
+        Vector header = new Vector();
+            header.add("STT");
+            header.add("ID_SanPham");
+            header.add("Loại");
+            header.add("Ncc");
+            header.add("Tên SP");
+            header.add("Mô tả");
+            header.add("Đơn giá");
+            header.add("Số lượng");
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+        for (SanPham_DTO sp : SanPham_BUS.dssp_loai) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(sp.id_sanpham);
+            row.add(sp.id_loai);
+            row.add(sp.id_ncc);
+            row.add(sp.tensp);
+            row.add(sp.mota);
+            row.add(sp.giaban);
+            row.add(sp.soluong);
+            n.addRow(row);
+            k++;
+        }
+        tbl_sanpham.setModel(n);
+    }//GEN-LAST:event_btn_giaviActionPerformed
+
+    private void btn_mitomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mitomActionPerformed
+        // TODO add your handling code here:
+        new SanPham_BUS().docSanPham_loai("10");
+        DefaultTableModel n = new DefaultTableModel();
+        SanPham_BUS bus = new SanPham_BUS();
+        bus.docSanPham();
+        Vector header = new Vector();
+            header.add("STT");
+            header.add("ID_SanPham");
+            header.add("Loại");
+            header.add("Ncc");
+            header.add("Tên SP");
+            header.add("Mô tả");
+            header.add("Đơn giá");
+            header.add("Số lượng");
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+        for (SanPham_DTO sp : SanPham_BUS.dssp_loai) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(sp.id_sanpham);
+            row.add(sp.id_loai);
+            row.add(sp.id_ncc);
+            row.add(sp.tensp);
+            row.add(sp.mota);
+            row.add(sp.giaban);
+            row.add(sp.soluong);
+            n.addRow(row);
+            k++;
+        }
+        tbl_sanpham.setModel(n);
+    }//GEN-LAST:event_btn_mitomActionPerformed
+
+    private void btn_biaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_biaActionPerformed
+        // TODO add your handling code here:
+        new SanPham_BUS().docSanPham_loai("11");
+        DefaultTableModel n = new DefaultTableModel();
+        SanPham_BUS bus = new SanPham_BUS();
+        bus.docSanPham();
+        Vector header = new Vector();
+            header.add("STT");
+            header.add("ID_SanPham");
+            header.add("Loại");
+            header.add("Ncc");
+            header.add("Tên SP");
+            header.add("Mô tả");
+            header.add("Đơn giá");
+            header.add("Số lượng");
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+        for (SanPham_DTO sp : SanPham_BUS.dssp_loai) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(sp.id_sanpham);
+            row.add(sp.id_loai);
+            row.add(sp.id_ncc);
+            row.add(sp.tensp);
+            row.add(sp.mota);
+            row.add(sp.giaban);
+            row.add(sp.soluong);
+            n.addRow(row);
+            k++;
+        }
+        tbl_sanpham.setModel(n);
+    }//GEN-LAST:event_btn_biaActionPerformed
+
+    private void btn_banhkeoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_banhkeoActionPerformed
+        // TODO add your handling code here:
+        new SanPham_BUS().docSanPham_loai("12");
+        DefaultTableModel n = new DefaultTableModel();
+        SanPham_BUS bus = new SanPham_BUS();
+        bus.docSanPham();
+        Vector header = new Vector();
+            header.add("STT");
+            header.add("ID_SanPham");
+            header.add("Loại");
+            header.add("Ncc");
+            header.add("Tên SP");
+            header.add("Mô tả");
+            header.add("Đơn giá");
+            header.add("Số lượng");
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+        for (SanPham_DTO sp : SanPham_BUS.dssp_loai) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(sp.id_sanpham);
+            row.add(sp.id_loai);
+            row.add(sp.id_ncc);
+            row.add(sp.tensp);
+            row.add(sp.mota);
+            row.add(sp.giaban);
+            row.add(sp.soluong);
+            n.addRow(row);
+            k++;
+        }
+        tbl_sanpham.setModel(n);
+    }//GEN-LAST:event_btn_banhkeoActionPerformed
+
+    private void btn_khacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_khacActionPerformed
+        // TODO add your handling code here:
+        new SanPham_BUS().docSanPham_loai("13");
+        DefaultTableModel n = new DefaultTableModel();
+        SanPham_BUS bus = new SanPham_BUS();
+        bus.docSanPham();
+        Vector header = new Vector();
+            header.add("STT");
+            header.add("ID_SanPham");
+            header.add("Loại");
+            header.add("Ncc");
+            header.add("Tên SP");
+            header.add("Mô tả");
+            header.add("Đơn giá");
+            header.add("Số lượng");
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+        for (SanPham_DTO sp : SanPham_BUS.dssp_loai) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(sp.id_sanpham);
+            row.add(sp.id_loai);
+            row.add(sp.id_ncc);
+            row.add(sp.tensp);
+            row.add(sp.mota);
+            row.add(sp.giaban);
+            row.add(sp.soluong);
+            n.addRow(row);
+            k++;
+        }
+        tbl_sanpham.setModel(n);
+    }//GEN-LAST:event_btn_khacActionPerformed
+    int k = 0;
+    public void inHoaDon(){
+        k++;
+        String path="D:\\";
+        JFileChooser j = new JFileChooser();
+        /*j.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        int x = j.showSaveDialog(this);
+        if(x == JFileChooser.APPROVE_OPTION){
+            path = j.getSelectedFile().getPath();
+        }*/
+
+        Document doc = new Document();
+        doc.addTitle("HÓA ĐƠN");
+        try {
+            PdfWriter.getInstance(doc, new FileOutputStream(path+"Hoadon" + k +".pdf"));
+            BaseFont bf = BaseFont.createFont("c:\\windows\\fonts\\times.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+            Font font10 = new Font(bf, 10, Font.NORMAL);
+
+
+
+            doc.open();
+
+            PdfPTable tbl = new PdfPTable(7);
+            //header
+            Paragraph pa7 = new Paragraph("STT", font10);
+            tbl.addCell(pa7);
+            Paragraph pa8 = new Paragraph("Mã SP", font10);
+            tbl.addCell(pa8);
+            Paragraph pa9 = new Paragraph("Tên SP", font10);
+            tbl.addCell(pa9);
+            Paragraph pa10 = new Paragraph("Số lượng", font10);
+            tbl.addCell(pa10);
+            Paragraph pa11 = new Paragraph("Đơn giá", font10);
+            tbl.addCell(pa11);
+            Paragraph pa12 = new Paragraph("Giá KM", font10);
+            tbl.addCell(pa12);
+            Paragraph pa13 = new Paragraph("Tổng cộng", font10);
+            tbl.addCell(pa13);
+            String tong = lb_tongtien.getText();
+            for(int i = 0; i < tbl_dachon.getRowCount(); i++){
+
+
+
+                String stt = tbl_dachon.getValueAt(i, 0).toString();
+                Paragraph pa1 = new Paragraph(stt, font10);
+                String ma_sp = tbl_dachon.getValueAt(i, 1).toString();
+                Paragraph pa2 = new Paragraph(ma_sp, font10);
+                String ten_sp = tbl_dachon.getValueAt(i, 2).toString();
+                Paragraph pa3 = new Paragraph(ten_sp, font10);
+                String soluong = tbl_dachon.getValueAt(i, 3).toString();
+                Paragraph pa4 = new Paragraph(soluong, font10);
+                String don_gia = tbl_dachon.getValueAt(i, 4).toString();
+                Paragraph pa5 = new Paragraph(don_gia, font10);
+                String gia_km = tbl_dachon.getValueAt(i, 5).toString();
+                Paragraph pa14 = new Paragraph(gia_km, font10);
+                String tongcong = tbl_dachon.getValueAt(i, 6).toString();
+                Paragraph pa15 = new Paragraph(tongcong, font10);
+                tbl.addCell(pa1);
+                tbl.addCell(pa2);
+                tbl.addCell(pa3);
+                tbl.addCell(pa4);
+                tbl.addCell(pa5);
+                tbl.addCell(pa14);
+                tbl.addCell(pa15);
+            }
+                tbl.addCell("");
+                tbl.addCell("");
+                tbl.addCell("");
+                tbl.addCell("");
+                tbl.addCell("");
+                Paragraph pa6 = new Paragraph("Tổng tiền", font10);
+                tbl.addCell(pa6);
+                tbl.addCell(tong);
+            doc.add(tbl);
+
+                    } catch (FileNotFoundException ex) {
+            Logger.getLogger(BanHang_GUI.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (DocumentException | IOException ex) {
+            Logger.getLogger(BanHang_GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        doc.close();
+    }
+    private void btn_inhoadonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inhoadonActionPerformed
+        // TODO add your handling code here:
+        inHoaDon();
+    }//GEN-LAST:event_btn_inhoadonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btn_banhkeo;
+    public javax.swing.JButton btn_bia;
     private javax.swing.JButton btn_chon;
-    private javax.swing.JButton btn_rau;
+    public javax.swing.JButton btn_donglanh;
+    public javax.swing.JButton btn_giavi;
+    private javax.swing.JButton btn_inhoadon;
+    public javax.swing.JButton btn_khac;
+    public javax.swing.JButton btn_luongthuc;
+    public javax.swing.JButton btn_mitom;
+    public javax.swing.JButton btn_rau;
     private javax.swing.JButton btn_refresh;
     private javax.swing.JButton btn_thanhtoan;
+    public javax.swing.JButton btn_thit;
     private javax.swing.JButton btn_xoa;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton9;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel lb_tongtien;
     private javax.swing.JTable tbl_dachon;
     private javax.swing.JTable tbl_sanpham;
     private javax.swing.JTextField txt_soluong;

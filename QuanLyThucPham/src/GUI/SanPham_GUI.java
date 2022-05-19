@@ -4,11 +4,14 @@
  */
 package GUI;
 
+
 import BUS.SanPham_BUS;
 import DTO.SanPham_DTO;
 import java.util.Vector;
+import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
+
 
 /**
  *
@@ -24,6 +27,7 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI ui = (BasicInternalFrameUI) this.getUI();
         ui.setNorthPane(null);
+        showAll();
     }
 
     /**
@@ -48,9 +52,9 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         jButton4 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         btn_refresh = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btn_them = new javax.swing.JButton();
+        btn_xoa = new javax.swing.JButton();
+        btn_sua = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         txt_masp = new javax.swing.JTextField();
         txt_maloai = new javax.swing.JTextField();
@@ -164,11 +168,26 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton1.setText("Thêm");
+        btn_them.setText("Thêm");
+        btn_them.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_themActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Xóa");
+        btn_xoa.setText("Xóa");
+        btn_xoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_xoaActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Sửa");
+        btn_sua.setText("Sửa");
+        btn_sua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_suaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -179,11 +198,11 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btn_refresh)
                         .addGap(44, 44, 44)
-                        .addComponent(jButton1))
+                        .addComponent(btn_them))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton2)
+                        .addComponent(btn_xoa)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton3)))
+                        .addComponent(btn_sua)))
                 .addContainerGap(172, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -192,11 +211,11 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_refresh)
-                    .addComponent(jButton1))
+                    .addComponent(btn_them))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(btn_xoa)
+                    .addComponent(btn_sua))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
@@ -293,10 +312,11 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
     public void showAll(){
         DefaultTableModel n = new DefaultTableModel();
         SanPham_BUS bus = new SanPham_BUS();
-        bus.docSanPham();
+        bus.docSanPham_edit();
         Vector header = new Vector();
             header.add("STT");
             header.add("ID_SanPham");
@@ -324,6 +344,7 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         }
         tbl_sanpham.setModel(n);
     }
+    
     private void btn_refreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_refreshActionPerformed
         // TODO add your handling code here:
         showAll();
@@ -342,12 +363,58 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_tbl_sanphamMouseClicked
 
+    private void btn_themActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_themActionPerformed
+        // TODO add your handling code here:
+        int flag = 0;
+        String id_sp = txt_masp.getText();
+        int row = tbl_sanpham.getModel().getRowCount();
+        for(int i = 0; i < row; i++){
+        if(id_sp.equals(tbl_sanpham.getValueAt(i, 1).toString())){
+            flag = 1;
+        }
+        } 
+        if(flag == 0){
+            String ma_sp = txt_masp.getText();
+        String ma_loai = txt_maloai.getText();
+        String ma_ncc = txt_mancc.getText();
+        String ten_sp = txt_tensp.getText();
+        String mo_ta = txt_mota.getText();
+        String gia = txt_gia.getText();
+        String sl = txt_soluong.getText();
+        new SanPham_BUS().them_sp(ma_sp, ma_loai, ma_ncc, ten_sp, mo_ta, gia, sl);
+        JOptionPane.showMessageDialog(null, "Thêm sản phẩm thành công !");
+        showAll();
+        }else JOptionPane.showMessageDialog(null, "Mã sản phẩm đã tồn tại !");
+    }//GEN-LAST:event_btn_themActionPerformed
+
+    private void btn_suaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_suaActionPerformed
+        // TODO add your handling code here:
+        int i = tbl_sanpham.getSelectedRow();
+        String ma_sp = txt_masp.getText();
+        String ma_loai = txt_maloai.getText();
+        String ma_ncc = txt_mancc.getText();
+        String ten_sp = txt_tensp.getText();
+        String mo_ta = txt_mota.getText();
+        String gia = txt_gia.getText();
+        String sl = txt_soluong.getText();
+        new SanPham_BUS().sua_sp(ma_sp, ma_loai, ma_ncc, ten_sp, mo_ta, gia, sl);
+        showAll();
+    }//GEN-LAST:event_btn_suaActionPerformed
+
+    private void btn_xoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_xoaActionPerformed
+        // TODO add your handling code here:
+        int i = tbl_sanpham.getSelectedRow();
+        String id_sp = tbl_sanpham.getValueAt(i, 1).toString();
+        new SanPham_BUS().xoa_sp(id_sp);
+        showAll();
+    }//GEN-LAST:event_btn_xoaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_refresh;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btn_sua;
+    private javax.swing.JButton btn_them;
+    private javax.swing.JButton btn_xoa;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
