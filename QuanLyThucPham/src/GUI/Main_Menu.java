@@ -24,6 +24,7 @@ public class Main_Menu extends javax.swing.JFrame {
     /**
      * Creates new form Main_Menu
      */
+    public static String id_nv;
     Color DefaultColor, ClickedColor;
     public Main_Menu() {
         initComponents();

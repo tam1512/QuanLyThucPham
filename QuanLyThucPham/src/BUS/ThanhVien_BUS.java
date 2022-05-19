@@ -29,4 +29,7 @@ public class ThanhVien_BUS {
      public void xoa_ThanhVien(String ID_ThanhVien){
          new ThanhVien_DAO().xoa_ThanhVien(ID_ThanhVien);
      }
+     public String docThanhVien_SDT(String sdt){
+         return new ThanhVien_DAO().docThanhVien_SDT(sdt);   
+     }
 }

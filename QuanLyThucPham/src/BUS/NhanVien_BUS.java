@@ -27,4 +27,5 @@ public class NhanVien_BUS {
      public void xoa_NhanVien(String ID_NhanVien){
          new NhanVien_DAO().xoa_NhanVien(ID_NhanVien);
      }
+     
 }

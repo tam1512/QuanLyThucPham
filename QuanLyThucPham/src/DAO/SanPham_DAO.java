@@ -144,13 +144,16 @@ public class SanPham_DAO {
             Logger.getLogger(SanPham_DAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    public void xoa_sp(String id_sp){
+    public boolean xoa_sp(String id_sp){
+        
         try{
             String query = "DELETE FROM sanpham WHERE ID_SanPham='" + id_sp + "'";
             st = conn.createStatement();
             st.executeUpdate(query);           
         } catch (SQLException ex) {
             Logger.getLogger(SanPham_DAO.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
         }
+       return true; 
     }
 }

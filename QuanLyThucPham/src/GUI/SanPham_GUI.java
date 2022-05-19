@@ -52,9 +52,9 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         jButton4 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         btn_refresh = new javax.swing.JButton();
-        btn_them = new javax.swing.JButton();
-        btn_xoa = new javax.swing.JButton();
         btn_sua = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         txt_masp = new javax.swing.JTextField();
         txt_maloai = new javax.swing.JTextField();
@@ -168,20 +168,6 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
             }
         });
 
-        btn_them.setText("Thêm");
-        btn_them.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_themActionPerformed(evt);
-            }
-        });
-
-        btn_xoa.setText("Xóa");
-        btn_xoa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_xoaActionPerformed(evt);
-            }
-        });
-
         btn_sua.setText("Sửa");
         btn_sua.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -189,37 +175,40 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel9.setText("Ảnh sản phẩm");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_refresh)
+                    .addComponent(btn_sua))
+                .addGap(62, 62, 62)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btn_refresh)
-                        .addGap(44, 44, 44)
-                        .addComponent(btn_them))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btn_xoa)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_sua)))
-                .addContainerGap(172, Short.MAX_VALUE))
+                        .addComponent(jLabel9)
+                        .addGap(0, 165, Short.MAX_VALUE))
+                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_refresh)
-                    .addComponent(btn_them))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_xoa)
-                    .addComponent(btn_sua))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(btn_refresh)
+                        .addGap(26, 26, 26)
+                        .addComponent(btn_sua)
+                        .addContainerGap(123, Short.MAX_VALUE))))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 370, 370, 150));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 280, 390, 250));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Thông tin sản phẩm"));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -363,30 +352,6 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_tbl_sanphamMouseClicked
 
-    private void btn_themActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_themActionPerformed
-        // TODO add your handling code here:
-        int flag = 0;
-        String id_sp = txt_masp.getText();
-        int row = tbl_sanpham.getModel().getRowCount();
-        for(int i = 0; i < row; i++){
-        if(id_sp.equals(tbl_sanpham.getValueAt(i, 1).toString())){
-            flag = 1;
-        }
-        } 
-        if(flag == 0){
-            String ma_sp = txt_masp.getText();
-        String ma_loai = txt_maloai.getText();
-        String ma_ncc = txt_mancc.getText();
-        String ten_sp = txt_tensp.getText();
-        String mo_ta = txt_mota.getText();
-        String gia = txt_gia.getText();
-        String sl = txt_soluong.getText();
-        new SanPham_BUS().them_sp(ma_sp, ma_loai, ma_ncc, ten_sp, mo_ta, gia, sl);
-        JOptionPane.showMessageDialog(null, "Thêm sản phẩm thành công !");
-        showAll();
-        }else JOptionPane.showMessageDialog(null, "Mã sản phẩm đã tồn tại !");
-    }//GEN-LAST:event_btn_themActionPerformed
-
     private void btn_suaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_suaActionPerformed
         // TODO add your handling code here:
         int i = tbl_sanpham.getSelectedRow();
@@ -401,20 +366,10 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         showAll();
     }//GEN-LAST:event_btn_suaActionPerformed
 
-    private void btn_xoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_xoaActionPerformed
-        // TODO add your handling code here:
-        int i = tbl_sanpham.getSelectedRow();
-        String id_sp = tbl_sanpham.getValueAt(i, 1).toString();
-        new SanPham_BUS().xoa_sp(id_sp);
-        showAll();
-    }//GEN-LAST:event_btn_xoaActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_refresh;
     private javax.swing.JButton btn_sua;
-    private javax.swing.JButton btn_them;
-    private javax.swing.JButton btn_xoa;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -423,6 +378,8 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

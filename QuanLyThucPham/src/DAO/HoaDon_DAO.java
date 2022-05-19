@@ -29,6 +29,23 @@ public class HoaDon_DAO {
             Logger.getLogger(HoaDon_DAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    public String dem_slhd(){
+        
+        String sl_hd = null;
+        try{
+            String query = "SELECT COUNT(ID_HoaDon) FROM hoadon;";
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()){
+                
+                sl_hd = rs.getString(1);
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(NhanVien_DTO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return sl_hd;
+    }
     public ArrayList docHD(){
         ArrayList ds_hd = new ArrayList<HoaDon_DTO>();
         try{

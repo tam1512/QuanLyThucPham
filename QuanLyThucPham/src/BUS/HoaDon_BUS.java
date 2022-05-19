@@ -37,4 +37,8 @@ public class HoaDon_BUS {
             }
         return false;
     }
+    public String dem_slnv(){
+         String sl_hd = new HoaDon_DAO().dem_slhd();
+        return sl_hd;
+     }
 }

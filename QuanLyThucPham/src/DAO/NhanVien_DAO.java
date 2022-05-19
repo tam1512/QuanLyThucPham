@@ -46,7 +46,8 @@ public class NhanVien_DAO {
         }
          return nv;
     }
-      public ArrayList docNhanVien(){
+    
+    public ArrayList docNhanVien(){
         ArrayList dsnv = new ArrayList<NhanVien_DTO>();
         try{
             String query = "Select * FROM nhanvien ";

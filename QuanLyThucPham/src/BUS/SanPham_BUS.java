@@ -37,7 +37,10 @@ public class SanPham_BUS {
     public void them_sp(String id_sp, String id_loai,String id_ncc,String ten_sp,String mota, String giaban, String soluong){
         new SanPham_DAO().them_sp(id_sp, id_loai, id_ncc, ten_sp, mota, giaban, soluong);
     }
-    public void xoa_sp(String id_sp){
-        new SanPham_DAO().xoa_sp(id_sp);
+    public boolean xoa_sp(String id_sp){
+        if(!new SanPham_DAO().xoa_sp(id_sp)){
+            return false;
+        }
+        return true;
     }
 }
