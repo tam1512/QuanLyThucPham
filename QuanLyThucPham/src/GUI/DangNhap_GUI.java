@@ -144,6 +144,7 @@ public  String TenDangNhap;
                 menu.setVisible(true);
                 menu.login_scr(TenDangNhap);
                 flag = dn.check_account(TenDangNhap, PasswordTxt.getText());
+                Main_Menu.id_nv = dn.getID_nv(TenDangNhap, PasswordTxt.getText());
                 this.dispose();
 
             }else{

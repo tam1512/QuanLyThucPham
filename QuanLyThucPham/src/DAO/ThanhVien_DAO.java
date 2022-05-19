@@ -68,7 +68,24 @@ public class ThanhVien_DAO {
         }
         return dstv;
     }
-      
+    public String docThanhVien_SDT(String sdt){
+        ThanhVien_DTO tv = new ThanhVien_DTO();
+        try{
+            String query = "Select * FROM thanhvien tv where SoDienThoai ='" +sdt+"'";
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            rs.next();
+                
+                tv.ID_ThanhVien = rs.getString(1);
+                 tv.HoVaTen = rs.getString(2);
+                tv.SoDienThoai = rs.getString(3);
+                 tv.NgayDangKi = rs.getString(4);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ThanhVien_DTO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return tv.ID_ThanhVien;
+    }  
       public void suaThanhVien(String ID_ThanhVien,String HoVaTen,String DiaChi,String Email,String SoDienThoai){
           try {
                String query = "UPDATE `thanhvien` SET `HoVaTen`='"+HoVaTen+"',`Email`='"+Email+"',`DiaChi`='"+DiaChi+"',`SoDienThoai`='"+SoDienThoai+"' WHERE ID_ThanhVien='"+ID_ThanhVien+"'" ;

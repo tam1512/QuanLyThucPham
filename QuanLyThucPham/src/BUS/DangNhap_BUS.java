@@ -29,4 +29,10 @@ public class DangNhap_BUS {
         }
         return check;
     }
+    public String getID_nv(String TenDangNhap,String MatKhau){
+        DAO.NhanVien_DAO nv_DAO= new DAO.NhanVien_DAO();
+        NhanVien_DTO nv_DTO = new NhanVien_DTO();
+        nv_DTO = nv_DAO.DangNhap(TenDangNhap, MatKhau);
+        return nv_DTO.ID_NhanVien;
+    }
 }
