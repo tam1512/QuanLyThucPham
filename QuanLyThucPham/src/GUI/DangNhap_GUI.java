@@ -97,6 +97,11 @@ public  String TenDangNhap;
         getContentPane().add(TenDangNhapTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 200, 40));
 
         PasswordTxt.setText("123456");
+        PasswordTxt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PasswordTxtMouseClicked(evt);
+            }
+        });
         PasswordTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PasswordTxtActionPerformed(evt);
@@ -184,6 +189,11 @@ public  String TenDangNhap;
             loginButton.doClick();
         }
     }//GEN-LAST:event_TenDangNhapTxtKeyPressed
+
+    private void PasswordTxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PasswordTxtMouseClicked
+        // TODO add your handling code here:
+        PasswordTxt.setText("");
+    }//GEN-LAST:event_PasswordTxtMouseClicked
 
     /**
      * @param args the command line arguments

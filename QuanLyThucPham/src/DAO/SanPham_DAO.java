@@ -156,4 +156,163 @@ public class SanPham_DAO {
         }
        return true; 
     }
+    public ArrayList TimSanPham_masp(String masp){
+        ArrayList dssp = new ArrayList<SanPham_DTO>();
+        try{
+            String query = "Select sp.ID_SanPham, l.ID_Loai, ncc.ID_NCC, sp.TenSanPham, sp.MoTa, sp.GiaBan, sp.SoLuong from sanpham sp, loai l, nhacungcap ncc where sp.ID_Loai = l.ID_Loai and ncc.ID_NCC = sp.ID_NhaCungCap and sp.ID_SanPham='" + masp + "'";
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()){
+                SanPham_DTO sp = new SanPham_DTO();
+                sp.id_sanpham = rs.getString(1);
+                sp.id_loai = rs.getString(2);
+                sp.id_ncc = rs.getString(3);
+                sp.tensp = rs.getString(4);
+                sp.mota = rs.getString(5);
+                sp.giaban = rs.getString(6);
+                sp.soluong = rs.getString(7);
+                dssp.add(sp);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(SanPham_DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return dssp;
+    }
+    public ArrayList TimSanPham_tenloai(String tenloai){
+        ArrayList dssp = new ArrayList<SanPham_DTO>();
+        try{
+            String query = "Select sp.ID_SanPham, l.ID_Loai, ncc.ID_NCC, sp.TenSanPham, sp.MoTa, sp.GiaBan, sp.SoLuong from sanpham sp, loai l, nhacungcap ncc where sp.ID_Loai = l.ID_Loai and ncc.ID_NCC = sp.ID_NhaCungCap and l.TenLoai LIKE'%" + tenloai + "%'";
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()){
+                SanPham_DTO sp = new SanPham_DTO();
+                sp.id_sanpham = rs.getString(1);
+                sp.id_loai = rs.getString(2);
+                sp.id_ncc = rs.getString(3);
+                sp.tensp = rs.getString(4);
+                sp.mota = rs.getString(5);
+                sp.giaban = rs.getString(6);
+                sp.soluong = rs.getString(7);
+                dssp.add(sp);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(SanPham_DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return dssp;
+    }
+    public ArrayList TimSanPham_tenncc(String tenncc){
+        ArrayList dssp = new ArrayList<SanPham_DTO>();
+        try{
+            String query = "Select sp.ID_SanPham, l.ID_Loai, ncc.ID_NCC, sp.TenSanPham, sp.MoTa, sp.GiaBan, sp.SoLuong from sanpham sp, loai l, nhacungcap ncc where sp.ID_Loai = l.ID_Loai and ncc.ID_NCC = sp.ID_NhaCungCap and ncc.TenNCC LIKE '%" +tenncc+"%'";
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()){
+                SanPham_DTO sp = new SanPham_DTO();
+                sp.id_sanpham = rs.getString(1);
+                sp.id_loai = rs.getString(2);
+                sp.id_ncc = rs.getString(3);
+                sp.tensp = rs.getString(4);
+                sp.mota = rs.getString(5);
+                sp.giaban = rs.getString(6);
+                sp.soluong = rs.getString(7);
+                dssp.add(sp);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(SanPham_DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return dssp;
+    }
+    public ArrayList TimSanPham_tensp(String tensp){
+        ArrayList dssp = new ArrayList<SanPham_DTO>();
+        try{
+            String query = "Select sp.ID_SanPham, l.ID_Loai, ncc.ID_NCC, sp.TenSanPham, sp.MoTa, sp.GiaBan, sp.SoLuong from sanpham sp, loai l, nhacungcap ncc where sp.ID_Loai = l.ID_Loai and ncc.ID_NCC = sp.ID_NhaCungCap and sp.TenSanPham LIKE '%" +tensp+"%'";
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()){
+                SanPham_DTO sp = new SanPham_DTO();
+                sp.id_sanpham = rs.getString(1);
+                sp.id_loai = rs.getString(2);
+                sp.id_ncc = rs.getString(3);
+                sp.tensp = rs.getString(4);
+                sp.mota = rs.getString(5);
+                sp.giaban = rs.getString(6);
+                sp.soluong = rs.getString(7);
+                dssp.add(sp);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(SanPham_DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return dssp;
+    }
+    public ArrayList TimSanPham_dongia(String dongia){
+        ArrayList dssp = new ArrayList<SanPham_DTO>();
+        try{
+            String query = "Select sp.ID_SanPham, l.ID_Loai, ncc.ID_NCC, sp.TenSanPham, sp.MoTa, sp.GiaBan, sp.SoLuong from sanpham sp, loai l, nhacungcap ncc where sp.ID_Loai = l.ID_Loai and ncc.ID_NCC = sp.ID_NhaCungCap and sp.GiaBan = '" +dongia+"'";
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()){
+                SanPham_DTO sp = new SanPham_DTO();
+                sp.id_sanpham = rs.getString(1);
+                sp.id_loai = rs.getString(2);
+                sp.id_ncc = rs.getString(3);
+                sp.tensp = rs.getString(4);
+                sp.mota = rs.getString(5);
+                sp.giaban = rs.getString(6);
+                sp.soluong = rs.getString(7);
+                dssp.add(sp);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(SanPham_DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return dssp;
+    }
+    public ArrayList TimSanPham_soluong(String soluong){
+        ArrayList dssp = new ArrayList<SanPham_DTO>();
+        try{
+            String query = "Select sp.ID_SanPham, l.ID_Loai, ncc.ID_NCC, sp.TenSanPham, sp.MoTa, sp.GiaBan, sp.SoLuong from sanpham sp, loai l, nhacungcap ncc where sp.ID_Loai = l.ID_Loai and ncc.ID_NCC = sp.ID_NhaCungCap and sp.SoLuong >= " +soluong;
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()){
+                SanPham_DTO sp = new SanPham_DTO();
+                sp.id_sanpham = rs.getString(1);
+                sp.id_loai = rs.getString(2);
+                sp.id_ncc = rs.getString(3);
+                sp.tensp = rs.getString(4);
+                sp.mota = rs.getString(5);
+                sp.giaban = rs.getString(6);
+                sp.soluong = rs.getString(7);
+                dssp.add(sp);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(SanPham_DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return dssp;
+    }
+    public ArrayList TimSanPham_stt(int stt){
+        ArrayList dssp = new ArrayList<SanPham_DTO>();
+        try{
+            String query = "Select sp.ID_SanPham, l.ID_Loai, ncc.ID_NCC, sp.TenSanPham, sp.MoTa, sp.GiaBan, sp.SoLuong "
+                    + "from sanpham sp, loai l, nhacungcap ncc where sp.ID_Loai = l.ID_Loai and ncc.ID_NCC = sp.ID_NhaCungCap";
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            int count = 0;
+            while (rs.next()){
+                if(count == stt){
+                SanPham_DTO sp = new SanPham_DTO();
+                sp.id_sanpham = rs.getString(1);
+                sp.id_loai = rs.getString(2);
+                sp.id_ncc = rs.getString(3);
+                sp.tensp = rs.getString(4);
+                sp.mota = rs.getString(5);
+                sp.giaban = rs.getString(6);
+                sp.soluong = rs.getString(7);
+                dssp.add(sp);
+                }
+                count++;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(SanPham_DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return dssp;
+    }
 }

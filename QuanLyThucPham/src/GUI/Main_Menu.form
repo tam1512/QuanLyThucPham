@@ -52,7 +52,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="80" width="130" height="590"/>
+          <AbsoluteConstraints x="0" y="80" width="130" height="600"/>
         </Constraint>
       </Constraints>
 
@@ -73,8 +73,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <Component id="lb_home" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jPanel2" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -129,7 +128,7 @@
                       <Component id="pnl_thongke" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="pnl_nhaphang" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="38" max="32767" attributes="0"/>
+                      <EmptySpace pref="44" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -514,9 +513,17 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JDesktopPane" name="container">
+      <Properties>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[1075, 600]"/>
+        </Property>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[1075, 600]"/>
+        </Property>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="130" y="80" width="1070" height="590"/>
+          <AbsoluteConstraints x="130" y="80" width="1070" height="600"/>
         </Constraint>
       </Constraints>
 
@@ -559,7 +566,7 @@
                       </Group>
                       <Component id="backGround" alignment="0" min="-2" pref="1069" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="1" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -598,7 +605,7 @@
                           <Component id="pn_giavi" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="11" pref="50" max="32767" attributes="0"/>
+                  <EmptySpace min="11" pref="60" max="32767" attributes="0"/>
               </Group>
               <Component id="backGround" alignment="0" pref="0" max="32767" attributes="0"/>
           </Group>

@@ -28,4 +28,19 @@ public class KhuyenMai_BUS {
     public void suaKM(String id_new, String ten, String batdau, String ketthuc, String id){
         new KhuyenMai_DAO().suaKM(id_new, ten, batdau, ketthuc, id);
     }
+    public void timKM_ma(String ma){
+        dskm = new KhuyenMai_DAO().timKM_ma(ma);
+    }
+    public void timKM_ten(String ten){
+        dskm = new KhuyenMai_DAO().timKM_ten(ten);
+    }
+    public void timKM_ngaybd(String ngaybd){
+        dskm = new KhuyenMai_DAO().timKM_ngaybd(ngaybd);
+    }
+    public void timKM_ngaykt(String ngaykt){
+        dskm = new KhuyenMai_DAO().timKM_ngaykt(ngaykt);
+    }
+    public void timKM_khoangtg(String ngaybd, String ngaykt){
+        dskm = new KhuyenMai_DAO().timKM_khoangtg(ngaybd, ngaykt);
+    }
 }

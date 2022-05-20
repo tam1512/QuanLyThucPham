@@ -79,9 +79,9 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
         btn_themctpn = new javax.swing.JButton();
         btn_xoactpn = new javax.swing.JButton();
 
-        setMaximumSize(new java.awt.Dimension(1075, 590));
-        setMinimumSize(new java.awt.Dimension(1075, 590));
-        setPreferredSize(new java.awt.Dimension(1075, 590));
+        setMaximumSize(new java.awt.Dimension(1075, 600));
+        setMinimumSize(new java.awt.Dimension(1075, 600));
+        setPreferredSize(new java.awt.Dimension(1075, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Tìm kiếm"));

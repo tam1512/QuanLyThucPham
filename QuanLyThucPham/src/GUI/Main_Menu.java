@@ -324,7 +324,7 @@ public class Main_Menu extends javax.swing.JFrame {
                 .addComponent(pnl_thongke, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pnl_nhaphang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout MenuBarLayout = new javax.swing.GroupLayout(MenuBar);
@@ -342,11 +342,10 @@ public class Main_Menu extends javax.swing.JFrame {
             .addGroup(MenuBarLayout.createSequentialGroup()
                 .addComponent(lb_home)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(MenuBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 130, 590));
+        getContentPane().add(MenuBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 130, 600));
 
         jPanel1.setBackground(new java.awt.Color(255, 153, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -383,6 +382,9 @@ public class Main_Menu extends javax.swing.JFrame {
         jPanel1.add(txt_taikhoan, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 30, 130, 20));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 80));
+
+        container.setMaximumSize(new java.awt.Dimension(1075, 600));
+        container.setMinimumSize(new java.awt.Dimension(1075, 600));
 
         pn_donglanh.setBackground(new java.awt.Color(153, 201, 245));
         pn_donglanh.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -756,7 +758,7 @@ public class Main_Menu extends javax.swing.JFrame {
                         .addGap(450, 450, 450)
                         .addComponent(pn_giavi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(backGround, javax.swing.GroupLayout.PREFERRED_SIZE, 1069, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(1, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         containerLayout.setVerticalGroup(
             containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -785,11 +787,11 @@ public class Main_Menu extends javax.swing.JFrame {
                     .addGroup(containerLayout.createSequentialGroup()
                         .addGap(210, 210, 210)
                         .addComponent(pn_giavi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(11, 50, Short.MAX_VALUE))
+                .addGap(11, 60, Short.MAX_VALUE))
             .addComponent(backGround, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
 
-        getContentPane().add(container, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 1070, 590));
+        getContentPane().add(container, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 1070, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -151,6 +151,9 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
         nv_btn_Them = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1075, 600));
+        setMinimumSize(new java.awt.Dimension(1075, 600));
+        setPreferredSize(new java.awt.Dimension(1075, 600));
 
         jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
