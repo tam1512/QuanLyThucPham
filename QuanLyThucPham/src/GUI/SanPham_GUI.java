@@ -41,15 +41,15 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
 
         timkiem_sp = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        jRadioButton7 = new javax.swing.JRadioButton();
-        jTextField1 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
+        rbtn_stt = new javax.swing.JRadioButton();
+        rbtn_masp = new javax.swing.JRadioButton();
+        rbtn_tenloai = new javax.swing.JRadioButton();
+        rbtn_soluong = new javax.swing.JRadioButton();
+        rbtn_dongia = new javax.swing.JRadioButton();
+        rbtn_tenncc = new javax.swing.JRadioButton();
+        rbtn_tensp = new javax.swing.JRadioButton();
+        txt_timkiem = new javax.swing.JTextField();
+        btn_timkiem = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         btn_refresh = new javax.swing.JButton();
         btn_sua = new javax.swing.JButton();
@@ -75,36 +75,42 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tbl_sanpham = new javax.swing.JTable();
 
-        setMinimumSize(new java.awt.Dimension(1060, 580));
-        setPreferredSize(new java.awt.Dimension(1068, 580));
+        setMaximumSize(new java.awt.Dimension(1075, 600));
+        setMinimumSize(new java.awt.Dimension(1075, 600));
+        setPreferredSize(new java.awt.Dimension(1075, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Tìm kiếm"));
 
-        timkiem_sp.add(jRadioButton1);
-        jRadioButton1.setText("Số TT");
+        timkiem_sp.add(rbtn_stt);
+        rbtn_stt.setText("Số TT");
 
-        timkiem_sp.add(jRadioButton2);
-        jRadioButton2.setText("Mã sp");
+        timkiem_sp.add(rbtn_masp);
+        rbtn_masp.setText("Mã sp");
 
-        timkiem_sp.add(jRadioButton3);
-        jRadioButton3.setText("Mã loại");
+        timkiem_sp.add(rbtn_tenloai);
+        rbtn_tenloai.setText("Tên loại");
 
-        timkiem_sp.add(jRadioButton4);
-        jRadioButton4.setText("Số lượng");
+        timkiem_sp.add(rbtn_soluong);
+        rbtn_soluong.setText("Số lượng");
 
-        timkiem_sp.add(jRadioButton5);
-        jRadioButton5.setText("Đơn giá");
+        timkiem_sp.add(rbtn_dongia);
+        rbtn_dongia.setText("Đơn giá");
 
-        timkiem_sp.add(jRadioButton6);
-        jRadioButton6.setText("Mã NCC");
+        timkiem_sp.add(rbtn_tenncc);
+        rbtn_tenncc.setText("Tên NCC");
 
-        timkiem_sp.add(jRadioButton7);
-        jRadioButton7.setText("Tên SP");
+        timkiem_sp.add(rbtn_tensp);
+        rbtn_tensp.setText("Tên SP");
 
-        jTextField1.setColumns(5);
+        txt_timkiem.setColumns(5);
 
-        jButton4.setText("Tìm kiếm");
+        btn_timkiem.setText("Tìm kiếm");
+        btn_timkiem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_timkiemActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -114,25 +120,25 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
                 .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jRadioButton1)
+                        .addComponent(rbtn_stt)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jRadioButton7))
+                            .addComponent(rbtn_masp)
+                            .addComponent(rbtn_tensp))
                         .addGap(53, 53, 53)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton3)
-                            .addComponent(jRadioButton5))
+                            .addComponent(rbtn_tenloai)
+                            .addComponent(rbtn_dongia))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton6)
-                            .addComponent(jRadioButton4))
+                            .addComponent(rbtn_tenncc)
+                            .addComponent(rbtn_soluong))
                         .addGap(38, 38, 38))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField1)
+                        .addComponent(txt_timkiem)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton4)
+                        .addComponent(btn_timkiem)
                         .addGap(51, 51, 51))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -140,20 +146,20 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton6)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton3))
+                    .addComponent(rbtn_tenncc)
+                    .addComponent(rbtn_masp)
+                    .addComponent(rbtn_tenloai))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton4)
-                    .addComponent(jRadioButton5)
-                    .addComponent(jRadioButton7))
+                    .addComponent(rbtn_soluong)
+                    .addComponent(rbtn_dongia)
+                    .addComponent(rbtn_tensp))
                 .addGap(18, 18, 18)
-                .addComponent(jRadioButton1)
+                .addComponent(rbtn_stt)
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4))
+                    .addComponent(txt_timkiem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_timkiem))
                 .addContainerGap(71, Short.MAX_VALUE))
         );
 
@@ -272,7 +278,7 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "STT", "ID_SanPham", "ID_Loai", "ID_NCC", "Tên SP", "Mô tả", "Đơn giá", "Số lượng"
+                "STT", "ID_SanPham", "Tên loại", "Tên NCC", "Tên SP", "Mô tả", "Đơn giá", "Số lượng"
             }
         ));
         tbl_sanpham.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -301,7 +307,7 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     public void showAll(){
         DefaultTableModel n = new DefaultTableModel();
         SanPham_BUS bus = new SanPham_BUS();
@@ -365,12 +371,233 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         new SanPham_BUS().sua_sp(ma_sp, ma_loai, ma_ncc, ten_sp, mo_ta, gia, sl);
         showAll();
     }//GEN-LAST:event_btn_suaActionPerformed
+    
+    private void btn_timkiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_timkiemActionPerformed
+        // TODO add your handling code here:
+        String keyWord = txt_timkiem.getText();
+        if(rbtn_masp.isSelected()){
+            DefaultTableModel n = new DefaultTableModel();
+        SanPham_BUS bus = new SanPham_BUS();
+        bus.TimSanPham_masp(keyWord);
+        Vector header = new Vector();
+            header.add("STT");
+            header.add("ID_SanPham");
+            header.add("ID_Loai");
+            header.add("ID_NCC");
+            header.add("Tên SP");
+            header.add("Mô tả");
+            header.add("Đơn giá");
+            header.add("Số lượng");
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+        for (SanPham_DTO sp : SanPham_BUS.dssp) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(sp.id_sanpham);
+            row.add(sp.id_loai);
+            row.add(sp.id_ncc);
+            row.add(sp.tensp);
+            row.add(sp.mota);
+            row.add(sp.giaban);
+            row.add(sp.soluong);
+            n.addRow(row);
+            k++;
+        }
+        tbl_sanpham.setModel(n);}
+        if(rbtn_tenloai.isSelected()){
+            DefaultTableModel n = new DefaultTableModel();
+        SanPham_BUS bus = new SanPham_BUS();
+        bus.TimSanPham_tenloai(keyWord);
+        Vector header = new Vector();
+            header.add("STT");
+            header.add("ID_SanPham");
+            header.add("ID_Loai");
+            header.add("ID_NCC");
+            header.add("Tên SP");
+            header.add("Mô tả");
+            header.add("Đơn giá");
+            header.add("Số lượng");
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+        for (SanPham_DTO sp : SanPham_BUS.dssp) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(sp.id_sanpham);
+            row.add(sp.id_loai);
+            row.add(sp.id_ncc);
+            row.add(sp.tensp);
+            row.add(sp.mota);
+            row.add(sp.giaban);
+            row.add(sp.soluong);
+            n.addRow(row);
+            k++;
+        }
+        tbl_sanpham.setModel(n);
+        }
+        if(rbtn_tenncc.isSelected()){
+            DefaultTableModel n = new DefaultTableModel();
+        SanPham_BUS bus = new SanPham_BUS();
+        bus.TimSanPham_tenncc(keyWord);
+        Vector header = new Vector();
+            header.add("STT");
+            header.add("ID_SanPham");
+            header.add("ID_Loai");
+            header.add("ID_NCC");
+            header.add("Tên SP");
+            header.add("Mô tả");
+            header.add("Đơn giá");
+            header.add("Số lượng");
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+        for (SanPham_DTO sp : SanPham_BUS.dssp) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(sp.id_sanpham);
+            row.add(sp.id_loai);
+            row.add(sp.id_ncc);
+            row.add(sp.tensp);
+            row.add(sp.mota);
+            row.add(sp.giaban);
+            row.add(sp.soluong);
+            n.addRow(row);
+            k++;
+        }
+        tbl_sanpham.setModel(n);
+        }
+        if(rbtn_tensp.isSelected()){
+            DefaultTableModel n = new DefaultTableModel();
+        SanPham_BUS bus = new SanPham_BUS();
+        bus.TimSanPham_tensp(keyWord);
+        Vector header = new Vector();
+            header.add("STT");
+            header.add("ID_SanPham");
+            header.add("ID_Loai");
+            header.add("ID_NCC");
+            header.add("Tên SP");
+            header.add("Mô tả");
+            header.add("Đơn giá");
+            header.add("Số lượng");
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+        for (SanPham_DTO sp : SanPham_BUS.dssp) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(sp.id_sanpham);
+            row.add(sp.id_loai);
+            row.add(sp.id_ncc);
+            row.add(sp.tensp);
+            row.add(sp.mota);
+            row.add(sp.giaban);
+            row.add(sp.soluong);
+            n.addRow(row);
+            k++;
+        }
+        tbl_sanpham.setModel(n);
+        }
+        if(rbtn_dongia.isSelected()){
+            DefaultTableModel n = new DefaultTableModel();
+        SanPham_BUS bus = new SanPham_BUS();
+        bus.TimSanPham_dongia(keyWord);
+        Vector header = new Vector();
+            header.add("STT");
+            header.add("ID_SanPham");
+            header.add("ID_Loai");
+            header.add("ID_NCC");
+            header.add("Tên SP");
+            header.add("Mô tả");
+            header.add("Đơn giá");
+            header.add("Số lượng");
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+        for (SanPham_DTO sp : SanPham_BUS.dssp) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(sp.id_sanpham);
+            row.add(sp.id_loai);
+            row.add(sp.id_ncc);
+            row.add(sp.tensp);
+            row.add(sp.mota);
+            row.add(sp.giaban);
+            row.add(sp.soluong);
+            n.addRow(row);
+            k++;
+        }
+        tbl_sanpham.setModel(n);
+        }
+        if(rbtn_soluong.isSelected()){
+            DefaultTableModel n = new DefaultTableModel();
+        SanPham_BUS bus = new SanPham_BUS();
+        bus.TimSanPham_soluong(keyWord);
+        Vector header = new Vector();
+            header.add("STT");
+            header.add("ID_SanPham");
+            header.add("ID_Loai");
+            header.add("ID_NCC");
+            header.add("Tên SP");
+            header.add("Mô tả");
+            header.add("Đơn giá");
+            header.add("Số lượng");
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+        for (SanPham_DTO sp : SanPham_BUS.dssp) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(sp.id_sanpham);
+            row.add(sp.id_loai);
+            row.add(sp.id_ncc);
+            row.add(sp.tensp);
+            row.add(sp.mota);
+            row.add(sp.giaban);
+            row.add(sp.soluong);
+            n.addRow(row);
+            k++;
+        }
+        tbl_sanpham.setModel(n);
+        }
+        if(rbtn_stt.isSelected()){
+            DefaultTableModel n = new DefaultTableModel();
+        SanPham_BUS bus = new SanPham_BUS();
+        bus.TimSanPham_stt(keyWord);
+        Vector header = new Vector();
+            header.add("STT");
+            header.add("ID_SanPham");
+            header.add("ID_Loai");
+            header.add("ID_NCC");
+            header.add("Tên SP");
+            header.add("Mô tả");
+            header.add("Đơn giá");
+            header.add("Số lượng");
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+        for (SanPham_DTO sp : SanPham_BUS.dssp) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(sp.id_sanpham);
+            row.add(sp.id_loai);
+            row.add(sp.id_ncc);
+            row.add(sp.tensp);
+            row.add(sp.mota);
+            row.add(sp.giaban);
+            row.add(sp.soluong);
+            n.addRow(row);
+            k++;
+        }
+        tbl_sanpham.setModel(n);
+        }
+    }//GEN-LAST:event_btn_timkiemActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_refresh;
     private javax.swing.JButton btn_sua;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btn_timkiem;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -384,16 +611,15 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JRadioButton rbtn_dongia;
+    private javax.swing.JRadioButton rbtn_masp;
+    private javax.swing.JRadioButton rbtn_soluong;
+    private javax.swing.JRadioButton rbtn_stt;
+    private javax.swing.JRadioButton rbtn_tenloai;
+    private javax.swing.JRadioButton rbtn_tenncc;
+    private javax.swing.JRadioButton rbtn_tensp;
     private javax.swing.JTable tbl_sanpham;
     private javax.swing.ButtonGroup timkiem_sp;
     private javax.swing.JTextField txt_gia;
@@ -403,5 +629,6 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JTextArea txt_mota;
     private javax.swing.JTextField txt_soluong;
     private javax.swing.JTextField txt_tensp;
+    private javax.swing.JTextField txt_timkiem;
     // End of variables declaration//GEN-END:variables
 }

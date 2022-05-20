@@ -6,7 +6,10 @@ package BUS;
 
 import DAO.SanPham_DAO;
 import DTO.*;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -42,5 +45,27 @@ public class SanPham_BUS {
             return false;
         }
         return true;
+    }
+    public void TimSanPham_masp(String masp){      
+        dssp = new SanPham_DAO().TimSanPham_masp(masp);
+    }
+    public void TimSanPham_tenloai(String tenloai){      
+        dssp = new SanPham_DAO().TimSanPham_tenloai(tenloai);
+    }
+    public void TimSanPham_tenncc(String tenncc){      
+        dssp = new SanPham_DAO().TimSanPham_tenncc(tenncc);
+    }
+    public void TimSanPham_tensp(String tensp){      
+        dssp = new SanPham_DAO().TimSanPham_tensp(tensp);
+    }
+    public void TimSanPham_dongia(String dongia){      
+        dssp = new SanPham_DAO().TimSanPham_dongia(dongia);
+    }
+    public void TimSanPham_soluong(String soluong){      
+        dssp = new SanPham_DAO().TimSanPham_soluong(soluong);
+    }
+    public void TimSanPham_stt(String stt){
+        int x = Integer.parseInt(stt);
+        dssp = new SanPham_DAO().TimSanPham_stt(x);
     }
 }

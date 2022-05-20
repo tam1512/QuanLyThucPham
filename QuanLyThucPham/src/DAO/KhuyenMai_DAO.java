@@ -78,4 +78,99 @@ public class KhuyenMai_DAO {
             Logger.getLogger(KhuyenMai_DAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    public ArrayList timKM_ten(String ten){
+        ArrayList dskm_ten = new ArrayList<KhuyenMai_DTO>();
+        try{
+            String query = "Select * from khuyenmai where TenCTKhuyenMai LIKE '%" +ten+ "%'";
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()){
+                KhuyenMai_DTO sp = new KhuyenMai_DTO();
+                sp.id_km = rs.getString(1);
+                sp.ten_km = rs.getString(2);
+                sp.batdau = rs.getString(3);
+                sp.ketthuc = rs.getString(4);
+                dskm_ten.add(sp);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(KhuyenMai_DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return dskm_ten;
+    }
+    public ArrayList timKM_ma(String ma){
+        ArrayList dskm_ngaybd = new ArrayList<KhuyenMai_DTO>();
+        try{
+            String query = "Select * from khuyenmai where ID_KhuyenMai = '" + ma+ "'";
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()){
+                KhuyenMai_DTO sp = new KhuyenMai_DTO();
+                sp.id_km = rs.getString(1);
+                sp.ten_km = rs.getString(2);
+                sp.batdau = rs.getString(3);
+                sp.ketthuc = rs.getString(4);
+                dskm_ngaybd.add(sp);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(KhuyenMai_DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return dskm_ngaybd;
+    }
+    public ArrayList timKM_ngaybd(String ngaybd){
+        ArrayList dskm_ngaybd = new ArrayList<KhuyenMai_DTO>();
+        try{
+            String query = "Select * from khuyenmai where ThoiGianBatDau = '" + ngaybd+ "'";
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()){
+                KhuyenMai_DTO sp = new KhuyenMai_DTO();
+                sp.id_km = rs.getString(1);
+                sp.ten_km = rs.getString(2);
+                sp.batdau = rs.getString(3);
+                sp.ketthuc = rs.getString(4);
+                dskm_ngaybd.add(sp);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(KhuyenMai_DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return dskm_ngaybd;
+    }
+    public ArrayList timKM_ngaykt(String ngaykt){
+        ArrayList dskm_ngaykt = new ArrayList<KhuyenMai_DTO>();
+        try{
+            String query = "Select * from khuyenmai where ThoiGianKetThuc = '" + ngaykt+ "'";
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()){
+                KhuyenMai_DTO sp = new KhuyenMai_DTO();
+                sp.id_km = rs.getString(1);
+                sp.ten_km = rs.getString(2);
+                sp.batdau = rs.getString(3);
+                sp.ketthuc = rs.getString(4);
+                dskm_ngaykt.add(sp);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(KhuyenMai_DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return dskm_ngaykt;
+    }
+    public ArrayList timKM_khoangtg(String ngaybd, String ngaykt){
+        ArrayList dskm_khoangtg = new ArrayList<KhuyenMai_DTO>();
+        try{
+            String query = "Select * from khuyenmai where ThoiGianBatDau BETWEEN '" + ngaybd + "' AND '" + ngaykt + "'";
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()){
+                KhuyenMai_DTO sp = new KhuyenMai_DTO();
+                sp.id_km = rs.getString(1);
+                sp.ten_km = rs.getString(2);
+                sp.batdau = rs.getString(3);
+                sp.ketthuc = rs.getString(4);
+                dskm_khoangtg.add(sp);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(KhuyenMai_DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return dskm_khoangtg;
+    }
 }
