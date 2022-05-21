@@ -18,4 +18,7 @@ public class CTKhuyenMai_BUS {
     public void docDS_CTKM(){
         ds_ctkm = new CTKhuyenMai_DAO().docDS_CTKM();
     }
+    public void docDS_CTKM_ID(String id_km){
+        ds_ctkm = new CTKhuyenMai_DAO().docDS_CTKM_ID(id_km);
+    }
 }
