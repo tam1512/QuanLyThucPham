@@ -21,4 +21,13 @@ public class CTKhuyenMai_BUS {
     public void docDS_CTKM_ID(String id_km){
         ds_ctkm = new CTKhuyenMai_DAO().docDS_CTKM_ID(id_km);
     }
+    public void sua_CTKM(String id_km, String id_sp, String gtkm){
+        new CTKhuyenMai_DAO().suaCTKM(id_km, id_sp, gtkm);
+    }
+    public void them_CTKM(String id_km, String id_sp, String gtkm){
+        new CTKhuyenMai_DAO().themCTKM(id_km, id_sp, gtkm);
+    }
+    public void xoa_CTKM(String id_km, String id_sp){
+        new CTKhuyenMai_DAO().xoaCTKM(id_km, id_sp);
+    }
 }

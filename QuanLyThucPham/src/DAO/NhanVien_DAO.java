@@ -109,6 +109,7 @@ public class NhanVien_DAO {
             Logger.getLogger(NhanVien_DAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+<<<<<<< Updated upstream
          public ArrayList timNhanVien_ten(String TenNhanVien){
         ArrayList dsnv = new ArrayList<NhanVien_DTO>();
         try{
@@ -175,4 +176,15 @@ public class NhanVien_DAO {
         }
         return dsnv;
          }
+=======
+         public void them_NhanVien(String ID_NhanVien,String HoVaTen,String DiaChi,String Email,String SoDienThoai){
+        try{
+            String query = "DELETE FROM nhanvien WHERE ID_NhanVien='" + ID_NhanVien + "'";
+            st = conn.createStatement();
+            st.executeUpdate(query);           
+        } catch (SQLException ex) {
+            Logger.getLogger(NhanVien_DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+}
+>>>>>>> Stashed changes
 }
