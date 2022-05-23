@@ -49,7 +49,7 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_khuyenmai = new javax.swing.JTable();
-        jPanel3 = new javax.swing.JPanel();
+        pnl_km = new javax.swing.JPanel();
         txt_batdau = new javax.swing.JTextField();
         txt_makm = new javax.swing.JTextField();
         txt_tenkm = new javax.swing.JTextField();
@@ -74,7 +74,7 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
         txt_ngaykt = new javax.swing.JTextField();
         btn_lammoi = new javax.swing.JButton();
-        jPanel11 = new javax.swing.JPanel();
+        pnl_ctkm = new javax.swing.JPanel();
         ttkm_makm = new javax.swing.JTextField();
         ttkm_masp = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
@@ -133,8 +133,8 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
 
         jPanel6.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 300, 500, 300));
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Khuyến mãi"));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pnl_km.setBorder(javax.swing.BorderFactory.createTitledBorder("Khuyến mãi"));
+        pnl_km.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txt_batdau.setColumns(10);
         txt_batdau.addActionListener(new java.awt.event.ActionListener() {
@@ -142,13 +142,13 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
                 txt_batdauActionPerformed(evt);
             }
         });
-        jPanel3.add(txt_batdau, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 109, -1));
+        pnl_km.add(txt_batdau, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 109, -1));
 
         txt_makm.setColumns(3);
-        jPanel3.add(txt_makm, new org.netbeans.lib.awtextra.AbsoluteConstraints(83, 24, -1, -1));
+        pnl_km.add(txt_makm, new org.netbeans.lib.awtextra.AbsoluteConstraints(83, 24, -1, -1));
 
         txt_tenkm.setColumns(10);
-        jPanel3.add(txt_tenkm, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 380, -1));
+        pnl_km.add(txt_tenkm, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 380, -1));
 
         txt_ketthuc.setColumns(10);
         txt_ketthuc.addActionListener(new java.awt.event.ActionListener() {
@@ -156,19 +156,19 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
                 txt_ketthucActionPerformed(evt);
             }
         });
-        jPanel3.add(txt_ketthuc, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 115, -1));
+        pnl_km.add(txt_ketthuc, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 115, -1));
 
         jLabel2.setText("Tên KM:");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+        pnl_km.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
         jLabel3.setText("Mã KM:");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 27, -1, -1));
+        pnl_km.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 27, -1, -1));
 
         jLabel4.setText("Bắt đầu:");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+        pnl_km.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
 
         jLabel5.setText("Kết thúc:");
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, -1, -1));
+        pnl_km.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, -1, -1));
 
         btn_them.setText("Thêm");
         btn_them.addActionListener(new java.awt.event.ActionListener() {
@@ -176,7 +176,7 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
                 btn_themActionPerformed(evt);
             }
         });
-        jPanel3.add(btn_them, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
+        pnl_km.add(btn_them, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
 
         btn_xoa.setText("Xóa");
         btn_xoa.addActionListener(new java.awt.event.ActionListener() {
@@ -184,7 +184,7 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
                 btn_xoaActionPerformed(evt);
             }
         });
-        jPanel3.add(btn_xoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, -1, -1));
+        pnl_km.add(btn_xoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, -1, -1));
 
         btn_sua.setText("Sửa");
         btn_sua.addActionListener(new java.awt.event.ActionListener() {
@@ -192,9 +192,9 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
                 btn_suaActionPerformed(evt);
             }
         });
-        jPanel3.add(btn_sua, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, -1, -1));
+        pnl_km.add(btn_sua, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, -1, -1));
 
-        jPanel6.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 414, 550, 190));
+        jPanel6.add(pnl_km, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 414, 550, 190));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Tìm kiếm"));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -250,7 +250,7 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
 
         jPanel6.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 360, 300));
 
-        jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder("Chi tiết khuyến mãi"));
+        pnl_ctkm.setBorder(javax.swing.BorderFactory.createTitledBorder("Chi tiết khuyến mãi"));
 
         ttkm_makm.setColumns(3);
 
@@ -290,20 +290,20 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnl_ctkmLayout = new javax.swing.GroupLayout(pnl_ctkm);
+        pnl_ctkm.setLayout(pnl_ctkmLayout);
+        pnl_ctkmLayout.setHorizontalGroup(
+            pnl_ctkmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_ctkmLayout.createSequentialGroup()
+                .addGroup(pnl_ctkmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnl_ctkmLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_them1)
                         .addGap(48, 48, 48)
                         .addComponent(btn_xoa1)
                         .addGap(48, 48, 48)
                         .addComponent(btn_sua1))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
+                    .addGroup(pnl_ctkmLayout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addComponent(jLabel17)
                         .addGap(18, 18, 18)
@@ -318,11 +318,11 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
                 .addComponent(ttkm_masp, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
         );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
+        pnl_ctkmLayout.setVerticalGroup(
+            pnl_ctkmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_ctkmLayout.createSequentialGroup()
                 .addGap(6, 6, 6)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnl_ctkmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
                     .addComponent(ttkm_makm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -330,14 +330,14 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
                     .addComponent(jLabel20)
                     .addComponent(ttkm_gtkm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnl_ctkmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_them1)
                     .addComponent(btn_xoa1)
                     .addComponent(btn_sua1))
                 .addGap(18, 18, 18))
         );
 
-        jPanel6.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 300, 550, 110));
+        jPanel6.add(pnl_ctkm, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 300, 550, 110));
 
         jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder("Chi tiết khuyến mãi"));
 
@@ -401,6 +401,8 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
         txt_tenkm.setText(tbl_khuyenmai.getModel().getValueAt(i,2).toString());
         txt_batdau.setText(tbl_khuyenmai.getModel().getValueAt(i,3).toString());
         txt_ketthuc.setText(tbl_khuyenmai.getModel().getValueAt(i,4).toString());
+        pnl_ctkm.setVisible(false);
+        pnl_km.setVisible(true);
         //Hiện chi tiết khuyến mãi
         CTKhuyenMai_BUS bus = new CTKhuyenMai_BUS();  
         bus.docDS_CTKM_ID(tbl_khuyenmai.getValueAt(i, 1).toString());
@@ -618,6 +620,8 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
 
     private void tbl_ctkhuyenmaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_ctkhuyenmaiMouseClicked
         // TODO add your handling code here:
+        pnl_ctkm.setVisible(true);
+        pnl_km.setVisible(false);
         int i = tbl_ctkhuyenmai.getSelectedRow();
         ttkm_makm.setText(tbl_ctkhuyenmai.getModel().getValueAt(i, 1).toString());
         ttkm_gtkm.setText(tbl_ctkhuyenmai.getModel().getValueAt(i,4).toString());
@@ -713,13 +717,13 @@ public class KhuyenMai_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JPanel pnl_ctkm;
+    private javax.swing.JPanel pnl_km;
     private javax.swing.JRadioButton rbtn_khoangtg;
     private javax.swing.JRadioButton rbtn_ma;
     private javax.swing.JRadioButton rbtn_ngaybd;
