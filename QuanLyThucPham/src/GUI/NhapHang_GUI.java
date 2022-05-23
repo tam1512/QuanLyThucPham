@@ -43,11 +43,11 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        jRadioButton7 = new javax.swing.JRadioButton();
-        jTextField1 = new javax.swing.JTextField();
+        rbtn_mapn = new javax.swing.JRadioButton();
+        rbtn_mancc = new javax.swing.JRadioButton();
+        rbtn_ngaynhap = new javax.swing.JRadioButton();
+        rbtn_manv = new javax.swing.JRadioButton();
+        txt_timkiempn = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         btn_refresh = new javax.swing.JButton();
         pn_pn = new javax.swing.JPanel();
@@ -86,17 +86,27 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Tìm kiếm"));
 
-        jRadioButton2.setText("Mã PN");
+        rbtn_mapn.setText("Mã PN");
+        rbtn_mapn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtn_mapnActionPerformed(evt);
+            }
+        });
 
-        jRadioButton3.setText("Mã NCC");
+        rbtn_mancc.setText("Mã NCC");
 
-        jRadioButton6.setText("Ngày nhập");
+        rbtn_ngaynhap.setText("Ngày nhập");
 
-        jRadioButton7.setText("Mã NV");
+        rbtn_manv.setText("Mã NV");
 
-        jTextField1.setColumns(5);
+        txt_timkiempn.setColumns(5);
 
         jButton4.setText("Tìm kiếm");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         btn_refresh.setText("Refresh");
         btn_refresh.addActionListener(new java.awt.event.ActionListener() {
@@ -112,17 +122,17 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1)
+                    .addComponent(txt_timkiempn)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jRadioButton7))
+                            .addComponent(rbtn_mapn)
+                            .addComponent(rbtn_manv))
                         .addGap(53, 53, 53)
-                        .addComponent(jRadioButton3)))
+                        .addComponent(rbtn_mancc)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                        .addComponent(jRadioButton6)
+                        .addComponent(rbtn_ngaynhap)
                         .addGap(38, 38, 38))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(41, 41, 41)
@@ -138,14 +148,14 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton6)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton3))
+                    .addComponent(rbtn_ngaynhap)
+                    .addComponent(rbtn_mapn)
+                    .addComponent(rbtn_mancc))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton7)
+                .addComponent(rbtn_manv)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_timkiempn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addComponent(btn_refresh))
@@ -566,18 +576,119 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
         }else JOptionPane.showMessageDialog(null, "Lỗi khi xóa chi tiết phiếu nhập");
     }//GEN-LAST:event_btn_xoactpnActionPerformed
 
-    private void txt_mactpnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_mactpnMouseClicked
-        // TODO add your handling code here:
-        txt_mactpn.setText("");
-    }//GEN-LAST:event_txt_mactpnMouseClicked
 
-    private void txt_maspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_maspActionPerformed
+    private void rbtn_mapnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtn_mapnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_maspActionPerformed
+    }//GEN-LAST:event_rbtn_mapnActionPerformed
 
-    private void txt_soluongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_soluongActionPerformed
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_soluongActionPerformed
+        if (rbtn_mancc.isSelected()) {
+             new PhieuNhap_BUS().timPN_IDNCC(txt_timkiempn.getText());
+             DefaultTableModel n = new DefaultTableModel();
+       
+        
+        Vector header = new Vector();
+            header.add("STT");
+            header.add("Mã PN");
+            header.add("Mã NCC");
+            header.add("Ngày nhập");
+            header.add("Mã NV");
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+        for (PhieuNhap_DTO pn : PhieuNhap_BUS.dspn) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(pn.id_phieunhap);
+            row.add(pn.id_ncc);
+            row.add(pn.ngaynhap);
+            row.add(pn.id_nhanvien);
+            n.addRow(row);
+            k++;
+        }
+        tbl_phieunhap.setModel(n);
+        }
+         if (rbtn_mapn.isSelected()) {
+             new PhieuNhap_BUS().timPN_ma(txt_timkiempn.getText());
+             DefaultTableModel n = new DefaultTableModel();
+       
+        
+        Vector header = new Vector();
+            header.add("STT");
+            header.add("Mã PN");
+            header.add("Mã NCC");
+            header.add("Ngày nhập");
+            header.add("Mã NV");
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+        for (PhieuNhap_DTO pn : PhieuNhap_BUS.dspn) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(pn.id_phieunhap);
+            row.add(pn.id_ncc);
+            row.add(pn.ngaynhap);
+            row.add(pn.id_nhanvien);
+            n.addRow(row);
+            k++;
+        }
+        tbl_phieunhap.setModel(n);
+        }
+          if (rbtn_ngaynhap.isSelected()) {
+             new PhieuNhap_BUS().timPN_NgayNhap(txt_timkiempn.getText());
+             DefaultTableModel n = new DefaultTableModel();
+       
+        
+        Vector header = new Vector();
+            header.add("STT");
+            header.add("Mã PN");
+            header.add("Mã NCC");
+            header.add("Ngày nhập");
+            header.add("Mã NV");
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+        for (PhieuNhap_DTO pn : PhieuNhap_BUS.dspn) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(pn.id_phieunhap);
+            row.add(pn.id_ncc);
+            row.add(pn.ngaynhap);
+            row.add(pn.id_nhanvien);
+            n.addRow(row);
+            k++;
+        }
+        tbl_phieunhap.setModel(n);
+        }
+           if (rbtn_manv.isSelected()) {
+             new PhieuNhap_BUS().timPN_IDNV(txt_timkiempn.getText());
+             DefaultTableModel n = new DefaultTableModel();
+       
+        
+        Vector header = new Vector();
+            header.add("STT");
+            header.add("Mã PN");
+            header.add("Mã NCC");
+            header.add("Ngày nhập");
+            header.add("Mã NV");
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+        for (PhieuNhap_DTO pn : PhieuNhap_BUS.dspn) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(pn.id_phieunhap);
+            row.add(pn.id_ncc);
+            row.add(pn.ngaynhap);
+            row.add(pn.id_nhanvien);
+            n.addRow(row);
+            k++;
+        }
+        tbl_phieunhap.setModel(n);
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -598,16 +709,15 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel pn_ctpn;
     private javax.swing.JPanel pn_phieunhap;
     private javax.swing.JPanel pn_pn;
+    private javax.swing.JRadioButton rbtn_mancc;
+    private javax.swing.JRadioButton rbtn_manv;
+    private javax.swing.JRadioButton rbtn_mapn;
+    private javax.swing.JRadioButton rbtn_ngaynhap;
     private javax.swing.JTable tbl_ctphieunhap;
     private javax.swing.JTable tbl_phieunhap;
     private javax.swing.JTextField txt_mactpn;
@@ -617,5 +727,6 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txt_masp;
     private javax.swing.JTextField txt_ngaynhap;
     private javax.swing.JTextField txt_soluong;
+    private javax.swing.JTextField txt_timkiempn;
     // End of variables declaration//GEN-END:variables
 }
