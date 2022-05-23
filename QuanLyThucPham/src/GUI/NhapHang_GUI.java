@@ -155,9 +155,17 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
 
         pn_pn.setBorder(javax.swing.BorderFactory.createTitledBorder("Phiếu nhập"));
         pn_pn.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txt_mapn.setText("ID_PN");
         pn_pn.add(txt_mapn, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 140, -1));
+
+        txt_mancc.setText("MaNCC");
         pn_pn.add(txt_mancc, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 140, -1));
+
+        txt_ngaynhap.setText("NgayNhap");
         pn_pn.add(txt_ngaynhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 140, -1));
+
+        txt_manv.setText("MaNV");
         pn_pn.add(txt_manv, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 140, -1));
 
         jLabel1.setText("Mã PN:");
@@ -272,27 +280,15 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
 
         pn_ctpn.setBorder(javax.swing.BorderFactory.createTitledBorder("Chi tiết phiếu nhập"));
 
-        txt_masp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_maspActionPerformed(evt);
-            }
-        });
+        txt_masp.setText("Mã sản phẩm");
 
         jLabel5.setText("Mã SP:");
 
-        txt_soluong.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_soluongActionPerformed(evt);
-            }
-        });
+        txt_soluong.setText("Số lượng");
 
         jLabel6.setText("Số lượng:");
 
-        txt_mactpn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txt_mactpnMouseClicked(evt);
-            }
-        });
+        txt_mactpn.setText("ID_PN");
 
         jLabel7.setText("Mã PN:");
 
@@ -434,7 +430,8 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
     }
     private void tbl_phieunhapMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_phieunhapMouseClicked
         // TODO add your handling code here:
-        
+        pn_ctpn.setVisible(false);
+        pn_pn.setVisible(true);
         int i = tbl_phieunhap.getSelectedRow();
         DefaultTableModel n = new DefaultTableModel();
         CTPhieuNhap_BUS bus = new CTPhieuNhap_BUS();
@@ -516,7 +513,8 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
 
     private void tbl_ctphieunhapMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_ctphieunhapMouseClicked
         // TODO add your handling code here: 
-        
+        pn_ctpn.setVisible(true);
+        pn_pn.setVisible(false);
         
         int i = tbl_ctphieunhap.getSelectedRow();   
         txt_mactpn.setText(tbl_ctphieunhap.getValueAt(i, 1).toString());
@@ -565,19 +563,6 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
             showAll_CTPN();
         }else JOptionPane.showMessageDialog(null, "Lỗi khi xóa chi tiết phiếu nhập");
     }//GEN-LAST:event_btn_xoactpnActionPerformed
-
-    private void txt_mactpnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_mactpnMouseClicked
-        // TODO add your handling code here:
-        txt_mactpn.setText("");
-    }//GEN-LAST:event_txt_mactpnMouseClicked
-
-    private void txt_maspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_maspActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_maspActionPerformed
-
-    private void txt_soluongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_soluongActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_soluongActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

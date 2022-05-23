@@ -310,9 +310,6 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Theo m&#xe3;"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtn_maActionPerformed"/>
-                  </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="28" y="37" width="-1" height="-1"/>
@@ -343,9 +340,6 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="T&#xec;m ki&#x1ebf;m"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_timkiemActionPerformed"/>
-                  </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="189" y="127" width="-1" height="-1"/>
@@ -393,7 +387,7 @@
                       <Component id="jPanel8" min="-2" pref="626" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="13" max="32767" attributes="0"/>
+                      <EmptySpace pref="10" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -493,36 +487,33 @@
                           <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-<<<<<<< Updated upstream
                                   <Component id="txt_timkiem1" min="-2" pref="177" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                                   <Component id="btn_timkiem1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="44" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="rbtn_theoma" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="rbtn_theoten" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="rbtn_theotendn" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-=======
-                                  <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="rbtn_email" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                  <Component id="Email" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                                  <Component id="rbtn_ten2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="jRadioButton6" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="35" max="32767" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="rbtn_ten1" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          <Component id="rbtn_ten1" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                                      </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="txt_timkiem1" min="-2" pref="177" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                                          <Component id="btn_timkiem1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace min="0" pref="47" max="32767" attributes="0"/>
->>>>>>> Stashed changes
+                                  <Component id="rbtn_ten3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -533,17 +524,16 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-<<<<<<< Updated upstream
-                              <Component id="rbtn_theoma" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="rbtn_theoten" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="rbtn_theotendn" alignment="3" min="-2" max="-2" attributes="0"/>
-=======
                               <Component id="jRadioButton4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="rbtn_email" alignment="3" min="-2" max="-2" attributes="0"/>
->>>>>>> Stashed changes
+                              <Component id="rbtn_ten1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtn_ten3" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="rbtn_ten1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="Email" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtn_ten2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jRadioButton6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="txt_timkiem1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -555,12 +545,12 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JRadioButton" name="rbtn_theoma">
+                <Component class="javax.swing.JRadioButton" name="jRadioButton4">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Theo m&#xe3;"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="rbtn_theoten">
+                <Component class="javax.swing.JRadioButton" name="rbtn_ten1">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Theo T&#xea;n"/>
                   </Properties>
@@ -571,19 +561,25 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="T&#xec;m ki&#x1ebf;m"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_timkiem1ActionPerformed"/>
-                  </Events>
                 </Component>
-<<<<<<< Updated upstream
-                <Component class="javax.swing.JRadioButton" name="rbtn_theotendn">
+                <Component class="javax.swing.JRadioButton" name="Email">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Theo T&#xea;n &#x110;&#x103;ng Nh&#x1ead;p"/>
-=======
-                <Component class="javax.swing.JRadioButton" name="rbtn_email">
+                    <Property name="text" type="java.lang.String" value="Theo m&#xe3;"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="rbtn_ten2">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Theo t&#xea;n &#x111;&#x103;ng nh&#x1ead;p"/>
->>>>>>> Stashed changes
+                    <Property name="text" type="java.lang.String" value="Theo T&#xea;n"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="jRadioButton6">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Theo m&#xe3;"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="rbtn_ten3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Theo T&#xea;n"/>
                   </Properties>
                 </Component>
               </SubComponents>

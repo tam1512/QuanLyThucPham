@@ -32,16 +32,4 @@ public class ThanhVien_BUS {
      public String docThanhVien_SDT(String sdt){
          return new ThanhVien_DAO().docThanhVien_SDT(sdt);   
      }
-     public void timThanhVien_ten(String TenThanhVien){
-         dstv = new ThanhVien_DAO().timThanhVien_ten(TenThanhVien);
-     }
-      public void timThanhVien_ma(String  ID_ThanhVien){
-           dstv = new ThanhVien_DAO().timThanhVien_ma(ID_ThanhVien);
-     }
-       public void timThanhVien_SDT(String SoDienThoai){
-           dstv = new ThanhVien_DAO().timThanhVien_SDT(SoDienThoai);
-     }
-        public void timThanhVien_NgayDK(String NgayDangKi){
-         dstv = new ThanhVien_DAO().timThanhVien_NgayDK(NgayDangKi);
-     }
 }
