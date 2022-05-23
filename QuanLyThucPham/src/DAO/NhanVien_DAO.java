@@ -109,4 +109,70 @@ public class NhanVien_DAO {
             Logger.getLogger(NhanVien_DAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+         public ArrayList timNhanVien_ten(String TenNhanVien){
+        ArrayList dsnv = new ArrayList<NhanVien_DTO>();
+        try{
+            String query = "Select * FROM nhanvien WHERE HoVaTen LIKE'%" +TenNhanVien+"%' ";
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()){
+                NhanVien_DTO nv = new NhanVien_DTO();
+                nv.ID_NhanVien = rs.getString(1);
+                nv.TenDangNhap = rs.getString(2);
+                nv.MatKhau = rs.getString(3);
+                nv.Email = rs.getString(4);
+                nv.HoVaTen = rs.getString(5);
+                nv.DiaChi = rs.getString(6);
+                nv.SoDienThoai = rs.getString(7);
+                dsnv.add(nv);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(NhanVien_DTO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return dsnv;
+         }
+          public ArrayList timNhanVien_ID(String ID_NhanVien){
+        ArrayList dsnv = new ArrayList<NhanVien_DTO>();
+        try{
+            String query = "Select * FROM nhanvien WHERE ID_NhanVien='" +ID_NhanVien+"' ";
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()){
+                NhanVien_DTO nv = new NhanVien_DTO();
+                nv.ID_NhanVien = rs.getString(1);
+                nv.TenDangNhap = rs.getString(2);
+                nv.MatKhau = rs.getString(3);
+                nv.Email = rs.getString(4);
+                nv.HoVaTen = rs.getString(5);
+                nv.DiaChi = rs.getString(6);
+                nv.SoDienThoai = rs.getString(7);
+                dsnv.add(nv);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(NhanVien_DTO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return dsnv;
+         }
+     public ArrayList timNhanVien_TenDangNhap(String TenDangNhap){
+        ArrayList dsnv = new ArrayList<NhanVien_DTO>();
+        try{
+            String query = "Select * FROM nhanvien WHERE TenDangNhap='" +TenDangNhap+"' ";
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()){
+                NhanVien_DTO nv = new NhanVien_DTO();
+                nv.ID_NhanVien = rs.getString(1);
+                nv.TenDangNhap = rs.getString(2);
+                nv.MatKhau = rs.getString(3);
+                nv.Email = rs.getString(4);
+                nv.HoVaTen = rs.getString(5);
+                nv.DiaChi = rs.getString(6);
+                nv.SoDienThoai = rs.getString(7);
+                dsnv.add(nv);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(NhanVien_DTO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return dsnv;
+         }
 }

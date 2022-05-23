@@ -430,8 +430,7 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
     }
     private void tbl_phieunhapMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_phieunhapMouseClicked
         // TODO add your handling code here:
-        pn_ctpn.setVisible(false);
-        pn_pn.setVisible(true);
+        
         int i = tbl_phieunhap.getSelectedRow();
         DefaultTableModel n = new DefaultTableModel();
         CTPhieuNhap_BUS bus = new CTPhieuNhap_BUS();
@@ -513,8 +512,7 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
 
     private void tbl_ctphieunhapMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_ctphieunhapMouseClicked
         // TODO add your handling code here: 
-        pn_ctpn.setVisible(true);
-        pn_pn.setVisible(false);
+        
         
         int i = tbl_ctphieunhap.getSelectedRow();   
         txt_mactpn.setText(tbl_ctphieunhap.getValueAt(i, 1).toString());

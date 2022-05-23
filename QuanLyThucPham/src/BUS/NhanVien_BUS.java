@@ -27,5 +27,13 @@ public class NhanVien_BUS {
      public void xoa_NhanVien(String ID_NhanVien){
          new NhanVien_DAO().xoa_NhanVien(ID_NhanVien);
      }
-     
+    public void timNhanVien_ten(String TenNhanVien){
+        dsnv =  new NhanVien_DAO().timNhanVien_ten(TenNhanVien);
+    } 
+    public void timNhanVien_ID(String ID_NhanVien){
+        dsnv = new NhanVien_DAO().timNhanVien_ID(ID_NhanVien);
+    }
+    public void timNhanVien_TenDangNhap(String TenDangNhap){
+        dsnv = new NhanVien_DAO().timNhanVien_TenDangNhap(TenDangNhap);
+    }
 }
