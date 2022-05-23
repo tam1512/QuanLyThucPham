@@ -165,17 +165,9 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
 
         pn_pn.setBorder(javax.swing.BorderFactory.createTitledBorder("Phiếu nhập"));
         pn_pn.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        txt_mapn.setText("ID_PN");
         pn_pn.add(txt_mapn, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 140, -1));
-
-        txt_mancc.setText("MaNCC");
         pn_pn.add(txt_mancc, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 140, -1));
-
-        txt_ngaynhap.setText("NgayNhap");
         pn_pn.add(txt_ngaynhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 140, -1));
-
-        txt_manv.setText("MaNV");
         pn_pn.add(txt_manv, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 140, -1));
 
         jLabel1.setText("Mã PN:");
@@ -290,15 +282,27 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
 
         pn_ctpn.setBorder(javax.swing.BorderFactory.createTitledBorder("Chi tiết phiếu nhập"));
 
-        txt_masp.setText("Mã sản phẩm");
+        txt_masp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_maspActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Mã SP:");
 
-        txt_soluong.setText("Số lượng");
+        txt_soluong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_soluongActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Số lượng:");
 
-        txt_mactpn.setText("ID_PN");
+        txt_mactpn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txt_mactpnMouseClicked(evt);
+            }
+        });
 
         jLabel7.setText("Mã PN:");
 
@@ -572,6 +576,7 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
         }else JOptionPane.showMessageDialog(null, "Lỗi khi xóa chi tiết phiếu nhập");
     }//GEN-LAST:event_btn_xoactpnActionPerformed
 
+
     private void rbtn_mapnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtn_mapnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rbtn_mapnActionPerformed
@@ -683,6 +688,7 @@ public class NhapHang_GUI extends javax.swing.JInternalFrame {
         tbl_phieunhap.setModel(n);
         }
     }//GEN-LAST:event_jButton4ActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

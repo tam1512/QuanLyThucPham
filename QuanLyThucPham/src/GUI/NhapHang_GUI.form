@@ -170,9 +170,6 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JTextField" name="txt_mapn">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="ID_PN"/>
-          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="80" y="50" width="140" height="-1"/>
@@ -180,9 +177,6 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="txt_mancc">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="MaNCC"/>
-          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="80" y="110" width="140" height="-1"/>
@@ -190,9 +184,6 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="txt_ngaynhap">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="NgayNhap"/>
-          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="80" y="200" width="140" height="-1"/>
@@ -200,9 +191,6 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="txt_manv">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="MaNV"/>
-          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="80" y="150" width="140" height="-1"/>
@@ -555,9 +543,9 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JTextField" name="txt_masp">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="M&#xe3; s&#x1ea3;n ph&#x1ea9;m"/>
-          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_maspActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
@@ -565,9 +553,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txt_soluong">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng"/>
-          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_soluongActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
@@ -575,9 +563,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txt_mactpn">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="ID_PN"/>
-          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txt_mactpnMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>

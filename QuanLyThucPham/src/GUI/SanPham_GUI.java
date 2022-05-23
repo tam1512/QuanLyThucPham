@@ -187,23 +187,11 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Thông tin sản phẩm"));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        txt_masp.setText("ID_SanPham");
         jPanel3.add(txt_masp, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 48, -1, -1));
-
-        txt_maloai.setText("ID_Loai");
         jPanel3.add(txt_maloai, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 48, -1, -1));
-
-        txt_mancc.setText("ID_NCC");
         jPanel3.add(txt_mancc, new org.netbeans.lib.awtextra.AbsoluteConstraints(362, 48, -1, -1));
-
-        txt_tensp.setText("Tên SP");
         jPanel3.add(txt_tensp, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 103, 220, -1));
-
-        txt_soluong.setText("Số lượng");
         jPanel3.add(txt_soluong, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 48, -1, -1));
-
-        txt_gia.setText("Đơn giá");
         jPanel3.add(txt_gia, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 100, -1));
 
         jLabel1.setText("Mã SP:");

@@ -16,6 +16,8 @@ import com.lowagie.text.pdf.PdfWriter;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import static java.lang.Double.parseDouble;
+import static java.lang.Float.parseFloat;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -61,6 +63,9 @@ public class ThongKe_GUI extends javax.swing.JInternalFrame {
         jLabel68 = new javax.swing.JLabel();
         jLabel69 = new javax.swing.JLabel();
         btn_inthongke = new javax.swing.JButton();
+        txt_tongDT = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menu = new javax.swing.JMenu();
         mn_doanhthu = new javax.swing.JMenuItem();
@@ -88,7 +93,7 @@ public class ThongKe_GUI extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tbl_thongke);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1060, 520));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1050, -1));
 
         jComboBox23.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Theo ngày", "Theo tuần", "Theo tháng", "Theo năm" }));
 
@@ -161,6 +166,13 @@ public class ThongKe_GUI extends javax.swing.JInternalFrame {
         );
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, 0, 1060, 50));
+        jPanel2.add(txt_tongDT, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 490, 200, -1));
+
+        jLabel1.setText("Tổng doanh thu:");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 490, 90, 20));
+
+        jLabel2.setText("VND");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 490, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 560));
 
@@ -256,6 +268,14 @@ public class ThongKe_GUI extends javax.swing.JInternalFrame {
     private void mn_hoadonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mn_hoadonActionPerformed
         // TODO add your handling code here:
         showAll_CTHD();
+        double S = 0;
+        int i = tbl_thongke.getRowCount();
+        for(int j = 0; j < i; j++){
+            S += parseDouble(tbl_thongke.getValueAt(j, 5).toString());
+        }
+        long S_long = (long) S;
+        String tong = String.valueOf(S_long);
+        txt_tongDT.setText(tong);
     }//GEN-LAST:event_mn_hoadonActionPerformed
 
     private void btn_inthongkeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inthongkeActionPerformed
@@ -363,6 +383,8 @@ public class ThongKe_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JMenu Menu;
     private javax.swing.JButton btn_inthongke;
     private javax.swing.JComboBox<String> jComboBox23;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
@@ -377,5 +399,6 @@ public class ThongKe_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JMenuItem mn_nhap;
     private javax.swing.JMenuItem mn_spbanchay;
     private javax.swing.JTable tbl_thongke;
+    private javax.swing.JTextField txt_tongDT;
     // End of variables declaration//GEN-END:variables
 }
