@@ -44,16 +44,4 @@ public class PhieuNhap_BUS {
             }
         return false;
     }
-    public void timPN_ma(String ID_PhieuNhap){
-        dspn= new PhieuNhap_DAO().timPN_ma(ID_PhieuNhap);
-    }
-     public void timPN_IDNCC(String ID_NCC){
-        dspn= new PhieuNhap_DAO().timPN_IDNCC(ID_NCC);
-    }
-      public void timPN_NgayNhap(String NgayNhap){
-        dspn= new PhieuNhap_DAO().timPN_NgayNhap(NgayNhap);
-    }
-       public void timPN_IDNV(String ID_NhanVien){
-        dspn= new PhieuNhap_DAO().timPN_IDNV(ID_NhanVien);
-    }
 }
