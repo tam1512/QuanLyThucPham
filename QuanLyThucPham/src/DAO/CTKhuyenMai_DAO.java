@@ -72,31 +72,5 @@ public class CTKhuyenMai_DAO {
         }
         return ds_ctkm_id;
     }
-    public void themCTKM(String id_km, String id_sp, String gtkm){
-        try{
-            String query = "INSERT INTO `chitietkhuyenmai`(`ID_KhuyenMai`, `ID_SanPham`, `PhanTramKM`) VALUES ('"+id_km+"','"+id_sp+"','"+gtkm+"')";
-            st = conn.createStatement();
-            st.executeUpdate(query);
-    }   catch (SQLException ex) {
-            Logger.getLogger(KhuyenMai_DAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    public void xoaCTKM(String id_km, String id_sp){
-        try{
-            String query = "DELETE FROM `chitietkhuyenmai` WHERE `ID_KhuyenMai`='"+id_km+"' AND `ID_SanPham`='"+id_sp+"'";
-            st = conn.createStatement();
-            st.executeUpdate(query);
-    }   catch (SQLException ex) {
-            Logger.getLogger(KhuyenMai_DAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    public void suaCTKM(String id_km, String id_sp, String gtkm){
-        try{
-            String query = "UPDATE `chitietkhuyenmai` SET `ID_KhuyenMai`='"+id_km+"',`ID_SanPham`='"+id_sp+"',`PhanTramKM`='"+gtkm+"' WHERE `ID_KhuyenMai`='"+id_km+"' AND `ID_SanPham`='"+id_sp+"'";
-            st = conn.createStatement();
-            st.executeUpdate(query);
-    }   catch (SQLException ex) {
-            Logger.getLogger(KhuyenMai_DAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+    
 }

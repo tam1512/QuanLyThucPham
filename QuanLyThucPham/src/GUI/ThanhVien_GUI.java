@@ -133,11 +133,7 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
         rbtn_theoten = new javax.swing.JRadioButton();
         txt_timkiem1 = new javax.swing.JTextField();
         btn_timkiem1 = new javax.swing.JButton();
-<<<<<<< Updated upstream
         rbtn_theotendn = new javax.swing.JRadioButton();
-=======
-        rbtn_email = new javax.swing.JRadioButton();
->>>>>>> Stashed changes
         jPanel8 = new javax.swing.JPanel();
         txt_DiaChiNV = new javax.swing.JTextField();
         txt_TenNhanVien = new javax.swing.JTextField();
@@ -342,11 +338,7 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
             }
         });
 
-<<<<<<< Updated upstream
         rbtn_theotendn.setText("Theo Tên Đăng Nhập");
-=======
-        rbtn_email.setText("Theo tên đăng nhập");
->>>>>>> Stashed changes
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -356,7 +348,6 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
                 .addGap(23, 23, 23)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
-<<<<<<< Updated upstream
                         .addComponent(txt_timkiem1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(46, 46, 46)
                         .addComponent(btn_timkiem1)
@@ -368,36 +359,15 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addComponent(rbtn_theotendn)
                         .addGap(32, 32, 32))))
-=======
-                        .addComponent(jRadioButton4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(rbtn_email)
-                        .addGap(32, 32, 32))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rbtn_ten1)
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addComponent(txt_timkiem1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(46, 46, 46)
-                                .addComponent(btn_timkiem1)))
-                        .addGap(0, 47, Short.MAX_VALUE))))
->>>>>>> Stashed changes
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-<<<<<<< Updated upstream
                     .addComponent(rbtn_theoma)
                     .addComponent(rbtn_theoten)
                     .addComponent(rbtn_theotendn))
-=======
-                    .addComponent(jRadioButton4)
-                    .addComponent(rbtn_email))
-                .addGap(28, 28, 28)
-                .addComponent(rbtn_ten1)
->>>>>>> Stashed changes
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_timkiem1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -905,28 +875,19 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-<<<<<<< Updated upstream
-=======
-    private javax.swing.JRadioButton jRadioButton4;
->>>>>>> Stashed changes
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton nv_btn_Them;
     private javax.swing.JButton nv_btn_sua;
     private javax.swing.JButton nv_btn_xoa;
-    private javax.swing.JRadioButton rbtn_email;
     private javax.swing.JRadioButton rbtn_ma;
     private javax.swing.JRadioButton rbtn_ngaydk;
     private javax.swing.JRadioButton rbtn_sdt;
     private javax.swing.JRadioButton rbtn_ten;
-<<<<<<< Updated upstream
     private javax.swing.JRadioButton rbtn_theoma;
     private javax.swing.JRadioButton rbtn_theoten;
     private javax.swing.JRadioButton rbtn_theotendn;
-=======
-    private javax.swing.JRadioButton rbtn_ten1;
->>>>>>> Stashed changes
     private javax.swing.JTable tbl_NhanVien;
     private javax.swing.JTable tbl_ThanhVien;
     private javax.swing.JTextField ttkm_makm3;

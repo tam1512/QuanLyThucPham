@@ -3,11 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/GUI/NhapHang_GUI.java</file>
+            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/GUI/SanPham_GUI.java</file>
+            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/DAO/CTHoaDon_DAO.java</file>
+            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/DAO/SanPham_DAO.java</file>
+            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/GUI/ThanhVien_GUI.java</file>
+            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/DAO/PhieuNhap_DAO.java</file>
+            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/DAO/CTPhieuNhap_DAO.java</file>
+            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/DAO/KhuyenMai_DAO.java</file>
+            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/DAO/MyConnect.java</file>
             <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/GUI/ThongKe_GUI.java</file>
-            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/GUI/KhuyenMai_GUI.java</file>
-            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/GUI/NewJFrame.java</file>
-            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/GUI/DangNhap_GUI.java</file>
-            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/GUI/BanHang_GUI.java</file>
+            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/DAO/CTKhuyenMai_DAO.java</file>
+            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/GUI/Main_Menu.java</file>
+            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/DAO/HoaDon_DAO.java</file>
+            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/DAO/NhanVien_DAO.java</file>
+            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/BUS/HoaDon_BUS.java</file>
+            <file>file:/C:/Users/blemb/OneDrive/Documents/GitHub/QuanLyThucPham/QuanLyThucPham/src/DAO/ThanhVien_DAO.java</file>
         </group>
     </open-files>
 </project-private>
