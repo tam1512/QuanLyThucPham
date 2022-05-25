@@ -6,6 +6,8 @@ package BUS;
 
 import DAO.HoaDon_DAO;
 import DTO.*;
+import static java.lang.Float.parseFloat;
+import java.util.ArrayList;
 
 /**
  *
@@ -41,4 +43,29 @@ public class HoaDon_BUS {
          String sl_hd = new HoaDon_DAO().dem_slhd();
         return sl_hd;
      }
+ 
+    public float tongtienHD(){
+        float tongtien = 0;
+        ArrayList<HoaDon_DTO> arr;
+        arr = new HoaDon_DAO().docHD();
+        for(HoaDon_DTO hd : arr){
+            tongtien += parseFloat(hd.tongtien);
+        }
+        return tongtien;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

@@ -16,7 +16,9 @@ public class MyConnect {
     String user = "root";
     String password = "";
     String host = "localhost";
-    String database = " webbanhang";
+
+    String database = "ql_banhang";
+
     String url = "jdbc:mysql://" + host + ":3306/" + database;
     Connection conn = null;
     public MyConnect(){}

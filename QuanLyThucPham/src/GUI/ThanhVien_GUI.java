@@ -129,14 +129,11 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_NhanVien = new javax.swing.JTable();
         jPanel9 = new javax.swing.JPanel();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        rbtn_ten1 = new javax.swing.JRadioButton();
+        rbtn_theoma = new javax.swing.JRadioButton();
+        rbtn_theoten = new javax.swing.JRadioButton();
         txt_timkiem1 = new javax.swing.JTextField();
         btn_timkiem1 = new javax.swing.JButton();
-        Email = new javax.swing.JRadioButton();
-        rbtn_ten2 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        rbtn_ten3 = new javax.swing.JRadioButton();
+        rbtn_theotendn = new javax.swing.JRadioButton();
         jPanel8 = new javax.swing.JPanel();
         txt_DiaChiNV = new javax.swing.JTextField();
         txt_TenNhanVien = new javax.swing.JTextField();
@@ -263,6 +260,11 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         rbtn_ma.setText("Theo mã");
+        rbtn_ma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtn_maActionPerformed(evt);
+            }
+        });
         jPanel1.add(rbtn_ma, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 37, -1, -1));
 
         rbtn_ten.setText("Theo Tên");
@@ -276,6 +278,11 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
         jPanel1.add(txt_timkiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 127, 155, -1));
 
         btn_timkiem.setText("Tìm kiếm");
+        btn_timkiem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_timkiemActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn_timkiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 127, -1, -1));
 
         rbtn_sdt.setText("Theo SDT");
@@ -320,19 +327,18 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
 
         jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Tìm kiếm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP));
 
-        jRadioButton4.setText("Theo mã");
+        rbtn_theoma.setText("Theo mã");
 
-        rbtn_ten1.setText("Theo Tên");
+        rbtn_theoten.setText("Theo Tên");
 
         btn_timkiem1.setText("Tìm kiếm");
+        btn_timkiem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_timkiem1ActionPerformed(evt);
+            }
+        });
 
-        Email.setText("Theo mã");
-
-        rbtn_ten2.setText("Theo Tên");
-
-        jRadioButton6.setText("Theo mã");
-
-        rbtn_ten3.setText("Theo Tên");
+        rbtn_theotendn.setText("Theo Tên Đăng Nhập");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -345,24 +351,13 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
                         .addComponent(txt_timkiem1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(46, 46, 46)
                         .addComponent(btn_timkiem1)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 44, Short.MAX_VALUE))
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(Email)
-                        .addGap(54, 54, 54)
-                        .addComponent(rbtn_ten2)
-                        .addGap(50, 50, 50)
-                        .addComponent(jRadioButton6)
-                        .addContainerGap(35, Short.MAX_VALUE))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(rbtn_ten1)
-                                .addGap(50, 50, 50))
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addComponent(jRadioButton4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addComponent(rbtn_ten3)
+                        .addComponent(rbtn_theoma)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(rbtn_theoten)
+                        .addGap(18, 18, 18)
+                        .addComponent(rbtn_theotendn)
                         .addGap(32, 32, 32))))
         );
         jPanel9Layout.setVerticalGroup(
@@ -370,14 +365,9 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton4)
-                    .addComponent(rbtn_ten1)
-                    .addComponent(rbtn_ten3))
-                .addGap(27, 27, 27)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Email)
-                    .addComponent(rbtn_ten2)
-                    .addComponent(jRadioButton6))
+                    .addComponent(rbtn_theoma)
+                    .addComponent(rbtn_theoten)
+                    .addComponent(rbtn_theotendn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_timkiem1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -472,7 +462,7 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 626, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -618,6 +608,209 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
     private void txt_tendnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_tendnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_tendnActionPerformed
+
+    private void rbtn_maActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtn_maActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbtn_maActionPerformed
+
+    private void btn_timkiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_timkiemActionPerformed
+        // TODO add your handling code here:
+        if (rbtn_ma.isSelected()) {
+            new ThanhVien_BUS().timThanhVien_ma(txt_timkiem.getText());
+            DefaultTableModel n = new DefaultTableModel();
+        
+         Vector header = new Vector();
+            header.add("STT");
+            header.add("ID Thành Viên");
+            header.add("Tên thành viên");
+            header.add("Số điện thoại");
+            header.add("Ngày đăng kí");
+           
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+             for (ThanhVien_DTO tv : ThanhVien_BUS.dstv) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(tv.ID_ThanhVien);
+            row.add(tv.HoVaTen);
+            row.add(tv.SoDienThoai);
+            row.add(tv.NgayDangKi);
+            n.addRow(row);
+            k++;
+        }
+        tbl_ThanhVien.setModel(n);
+        }
+     if (rbtn_ten.isSelected()) {
+            new ThanhVien_BUS().timThanhVien_ten(txt_timkiem.getText());
+            DefaultTableModel n = new DefaultTableModel();
+        
+         Vector header = new Vector();
+            header.add("STT");
+            header.add("ID Thành Viên");
+            header.add("Tên thành viên");
+            header.add("Số điện thoại");
+            header.add("Ngày đăng kí");
+           
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+             for (ThanhVien_DTO tv : ThanhVien_BUS.dstv) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(tv.ID_ThanhVien);
+            row.add(tv.HoVaTen);
+            row.add(tv.SoDienThoai);
+            row.add(tv.NgayDangKi);
+            n.addRow(row);
+            k++;
+        }
+        tbl_ThanhVien.setModel(n);
+        }
+     if (rbtn_sdt.isSelected()) {
+            new ThanhVien_BUS().timThanhVien_SDT(txt_timkiem.getText());
+            DefaultTableModel n = new DefaultTableModel();
+        
+         Vector header = new Vector();
+            header.add("STT");
+            header.add("ID Thành Viên");
+            header.add("Tên thành viên");
+            header.add("Số điện thoại");
+            header.add("Ngày đăng kí");
+           
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+             for (ThanhVien_DTO tv : ThanhVien_BUS.dstv) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(tv.ID_ThanhVien);
+            row.add(tv.HoVaTen);
+            row.add(tv.SoDienThoai);
+            row.add(tv.NgayDangKi);
+            n.addRow(row);
+            k++;
+        }
+        tbl_ThanhVien.setModel(n);
+        }
+     if (rbtn_ngaydk.isSelected()) {
+            new ThanhVien_BUS().timThanhVien_NgayDK(txt_timkiem.getText());
+            DefaultTableModel n = new DefaultTableModel();
+        
+         Vector header = new Vector();
+            header.add("STT");
+            header.add("ID Thành Viên");
+            header.add("Tên thành viên");
+            header.add("Số điện thoại");
+            header.add("Ngày đăng kí");
+           
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+             for (ThanhVien_DTO tv : ThanhVien_BUS.dstv) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(tv.ID_ThanhVien);
+            row.add(tv.HoVaTen);
+            row.add(tv.SoDienThoai);
+            row.add(tv.NgayDangKi);
+            n.addRow(row);
+            k++;
+        }
+        tbl_ThanhVien.setModel(n);
+        }
+    }//GEN-LAST:event_btn_timkiemActionPerformed
+
+    private void btn_timkiem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_timkiem1ActionPerformed
+        // TODO add your handling code here:
+        if (rbtn_theoma.isSelected()) {
+            new NhanVien_BUS().timNhanVien_ID(txt_timkiem1.getText());
+             DefaultTableModel n = new DefaultTableModel();
+         Vector header = new Vector();
+            header.add("STT");  
+            header.add("ID Thành Viên");
+            header.add("Tên thành viên");
+            header.add("Email");
+            header.add("Địa chỉ");
+            header.add("Số điện thoại");
+            header.add("Tên đăng nhập");
+           
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+             for (NhanVien_DTO nv : NhanVien_BUS.dsnv) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(nv.ID_NhanVien);
+            row.add(nv.HoVaTen);
+            row.add(nv.Email);
+            row.add(nv.DiaChi);
+            row.add(nv.SoDienThoai);
+            row.add(nv.TenDangNhap);
+            n.addRow(row);
+            k++;
+        }
+        tbl_NhanVien.setModel(n);
+        }
+        if (rbtn_theoten.isSelected()) {
+            new NhanVien_BUS().timNhanVien_ten(txt_timkiem1.getText());
+             DefaultTableModel n = new DefaultTableModel();
+         Vector header = new Vector();
+            header.add("STT");  
+            header.add("ID Thành Viên");
+            header.add("Tên thành viên");
+            header.add("Email");
+            header.add("Địa chỉ");
+            header.add("Số điện thoại");
+            header.add("Tên đăng nhập");
+           
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+             for (NhanVien_DTO nv : NhanVien_BUS.dsnv) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(nv.ID_NhanVien);
+            row.add(nv.HoVaTen);
+            row.add(nv.Email);
+            row.add(nv.DiaChi);
+            row.add(nv.SoDienThoai);
+            row.add(nv.TenDangNhap);
+            n.addRow(row);
+            k++;
+        }
+        tbl_NhanVien.setModel(n);
+        }
+        if (rbtn_theotendn.isSelected()) {
+            new NhanVien_BUS().timNhanVien_TenDangNhap(txt_timkiem1.getText());
+             DefaultTableModel n = new DefaultTableModel();
+         Vector header = new Vector();
+            header.add("STT");  
+            header.add("ID Thành Viên");
+            header.add("Tên thành viên");
+            header.add("Email");
+            header.add("Địa chỉ");
+            header.add("Số điện thoại");
+            header.add("Tên đăng nhập");
+           
+            n = new DefaultTableModel(header,0);
+            int k = 0;
+             for (NhanVien_DTO nv : NhanVien_BUS.dsnv) {
+     
+            Vector row = new Vector();
+            row.add(k);
+            row.add(nv.ID_NhanVien);
+            row.add(nv.HoVaTen);
+            row.add(nv.Email);
+            row.add(nv.DiaChi);
+            row.add(nv.SoDienThoai);
+            row.add(nv.TenDangNhap);
+            n.addRow(row);
+            k++;
+        }
+        tbl_NhanVien.setModel(n);
+        }
+    }//GEN-LAST:event_btn_timkiem1ActionPerformed
     public void admin(){
         nv_btn_xoa.setEnabled(true);
     }
@@ -660,7 +853,6 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton Email;
     private javax.swing.JButton btn_lammoi;
     private javax.swing.JButton btn_lammoi_nv;
     private javax.swing.JButton btn_sua;
@@ -683,8 +875,6 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
@@ -695,9 +885,9 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JRadioButton rbtn_ngaydk;
     private javax.swing.JRadioButton rbtn_sdt;
     private javax.swing.JRadioButton rbtn_ten;
-    private javax.swing.JRadioButton rbtn_ten1;
-    private javax.swing.JRadioButton rbtn_ten2;
-    private javax.swing.JRadioButton rbtn_ten3;
+    private javax.swing.JRadioButton rbtn_theoma;
+    private javax.swing.JRadioButton rbtn_theoten;
+    private javax.swing.JRadioButton rbtn_theotendn;
     private javax.swing.JTable tbl_NhanVien;
     private javax.swing.JTable tbl_ThanhVien;
     private javax.swing.JTextField ttkm_makm3;
