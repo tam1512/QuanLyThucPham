@@ -75,6 +75,7 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
             header.add("Địa chỉ");
             header.add("Số điện thoại");
             header.add("Tên đăng nhập");
+            header.add("Mật khẩu");
            
             n = new DefaultTableModel(header,0);
             int k = 0;
@@ -88,6 +89,7 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
             row.add(nv.DiaChi);
             row.add(nv.SoDienThoai);
             row.add(nv.TenDangNhap);
+            row.add(nv.MatKhau);
             n.addRow(row);
             k++;
         }
@@ -102,6 +104,7 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPane2 = new javax.swing.JTabbedPane();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel6 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
@@ -150,6 +153,8 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
         nv_btn_xoa = new javax.swing.JButton();
         nv_btn_sua = new javax.swing.JButton();
         nv_btn_Them = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        txt_mk = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1075, 600));
@@ -453,6 +458,16 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
         });
         jPanel8.add(nv_btn_Them, new org.netbeans.lib.awtextra.AbsoluteConstraints(498, 153, -1, -1));
 
+        jLabel1.setText("MK:");
+        jPanel8.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, -1, -1));
+
+        txt_mk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_mkActionPerformed(evt);
+            }
+        });
+        jPanel8.add(txt_mk, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 110, -1));
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -486,21 +501,17 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1050, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 564, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 12, Short.MAX_VALUE)
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 12, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 12, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 12, Short.MAX_VALUE))
         );
 
         pack();
@@ -593,6 +604,15 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
 
     private void nv_btn_ThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nv_btn_ThemActionPerformed
         // TODO add your handling code here:
+        String tenDN = txt_tendn.getText();
+        String matKhau = txt_mk.getText();
+        String Email = txt_EmailNV.getText();
+        String HoVaTen = txt_TenNhanVien.getText();
+        String DiaChi = txt_DiaChiNV.getText();
+        String SoDienThoai = txt_SoDienThoaiNV.getText();
+        NhanVien_BUS nv = new NhanVien_BUS();
+        
+        nv.them_NhanVien(tenDN, matKhau, HoVaTen, DiaChi, Email, SoDienThoai);
     }//GEN-LAST:event_nv_btn_ThemActionPerformed
 
     private void tbl_NhanVienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_NhanVienMouseClicked
@@ -603,6 +623,7 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
         txt_EmailNV.setText(tbl_NhanVien.getModel().getValueAt(i,3).toString());
         txt_SoDienThoaiNV.setText(tbl_NhanVien.getModel().getValueAt(i,5).toString());
         txt_tendn.setText(tbl_NhanVien.getModel().getValueAt(i,6).toString());
+        txt_mk.setText(tbl_NhanVien.getModel().getValueAt(i,7).toString());
     }//GEN-LAST:event_tbl_NhanVienMouseClicked
 
     private void txt_tendnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_tendnActionPerformed
@@ -811,6 +832,10 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
         tbl_NhanVien.setModel(n);
         }
     }//GEN-LAST:event_btn_timkiem1ActionPerformed
+
+    private void txt_mkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_mkActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_mkActionPerformed
     public void admin(){
         nv_btn_xoa.setEnabled(true);
     }
@@ -859,6 +884,7 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JButton btn_timkiem;
     private javax.swing.JButton btn_timkiem1;
     private javax.swing.JButton btn_xoa;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
@@ -878,6 +904,7 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JButton nv_btn_Them;
     private javax.swing.JButton nv_btn_sua;
     private javax.swing.JButton nv_btn_xoa;
@@ -896,6 +923,7 @@ public class ThanhVien_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txt_SoDienThoaiNV;
     private javax.swing.JTextField txt_TenNhanVien;
     private javax.swing.JTextField txt_date;
+    private javax.swing.JTextField txt_mk;
     private javax.swing.JTextField txt_sdt;
     private javax.swing.JTextField txt_tendn;
     private javax.swing.JTextField txt_tenkhachhang;

@@ -46,7 +46,17 @@ public class NhanVien_DAO {
         }
          return nv;
     }
-    
+    public void themNV(String tenDN, String matKhau,String HoVaTen,String DiaChi,String Email,String SoDienThoai){
+        try{
+            String query = "INSERT INTO `nhanvien`(`TenDangNhap`, `MatKhau`, `Email`, `HoVaTen`, `DiaChi`, `SoDienThoai`) "
+                    + "VALUES ('"+tenDN+"','"+matKhau+"','"+Email+"','"+HoVaTen+"','"+DiaChi+"','"+SoDienThoai+"')";
+            st = conn.createStatement();
+            st.executeUpdate(query);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(SanPham_DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     public ArrayList docNhanVien(){
         ArrayList dsnv = new ArrayList<NhanVien_DTO>();
         try{
@@ -72,17 +82,18 @@ public class NhanVien_DAO {
       public ArrayList docNhanVien_edit(){
         ArrayList dsnv = new ArrayList<NhanVien_DTO>();
         try{
-            String query = "Select ID_NhanVien,HoVaTen,Email,DiaChi,SoDienThoai,TenDangNhap FROM Nhanvien";
+            String query = "Select ID_NhanVien,HoVaTen,Email,DiaChi,SoDienThoai,TenDangNhap,MatKhau FROM Nhanvien";
             st = conn.createStatement();
             rs = st.executeQuery(query);
             while (rs.next()){
                 NhanVien_DTO tv = new NhanVien_DTO();
                 tv.ID_NhanVien = rs.getString(1);
-                 tv.HoVaTen = rs.getString(2);
+                tv.HoVaTen = rs.getString(2);
                 tv.Email = rs.getString(3);
                 tv.DiaChi = rs.getString(4);
                 tv.SoDienThoai = rs.getString(5);
-                 tv.TenDangNhap = rs.getString(6);
+                tv.TenDangNhap = rs.getString(6);
+                tv.MatKhau = rs.getString(7); 
                 dsnv.add(tv);
             }
         } catch (SQLException ex) {

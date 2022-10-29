@@ -14,13 +14,27 @@ import java.util.ArrayList;
  */
 public class NhanVien_BUS {
      public static ArrayList<NhanVien_DTO> dsnv;
-    public NhanVien_BUS(){}
+    public NhanVien_BUS(){
+    dsnv = new NhanVien_DAO().docNhanVien();}
      public void docNhanVien(){
         dsnv = new NhanVien_DAO().docNhanVien();
     }
       public void docNhanVien_edit(){
         dsnv = new NhanVien_DAO().docNhanVien_edit();
     }
+    public String them_NhanVien(String tenDN, String matKhau,String HoVaTen,String DiaChi,String Email,String SoDienThoai){
+        boolean flag = true;
+        NhanVien_BUS nv1 = new NhanVien_BUS();
+        for (NhanVien_DTO nv : NhanVien_BUS.dsnv){
+            if(nv.TenDangNhap.equals(tenDN)){
+                flag = false;
+            }
+        }
+        if(flag == true){
+         new NhanVien_DAO().themNV(tenDN, matKhau, HoVaTen, DiaChi, Email, SoDienThoai);
+         return "Đăng kí thành công";
+        } else return "Tên đăng nhập đã tồn tại";
+     }
      public void sua_NhanVien(String ID_NhanVien,String HoVaTen,String DiaChi,String Email,String SoDienThoai){
          new NhanVien_DAO().suaNhanVien(ID_NhanVien, HoVaTen, DiaChi, Email, SoDienThoai);
      }

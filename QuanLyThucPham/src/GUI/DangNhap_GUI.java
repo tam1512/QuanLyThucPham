@@ -48,6 +48,7 @@ public  String TenDangNhap;
         TenDangNhapTxt = new javax.swing.JTextField();
         PasswordTxt = new javax.swing.JPasswordField();
         loginButton = new javax.swing.JButton();
+        btn_dangKi = new javax.swing.JButton();
         BackGround = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -83,7 +84,7 @@ public  String TenDangNhap;
         getContentPane().add(TitileMatKhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, -1, -1));
 
         TenDangNhapTxt.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        TenDangNhapTxt.setText("nhatanh123");
+        TenDangNhapTxt.setText("nhanvien1");
         TenDangNhapTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TenDangNhapTxtActionPerformed(evt);
@@ -96,7 +97,7 @@ public  String TenDangNhap;
         });
         getContentPane().add(TenDangNhapTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 200, 40));
 
-        PasswordTxt.setText("123456");
+        PasswordTxt.setText("123");
         PasswordTxt.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 PasswordTxtMouseClicked(evt);
@@ -121,7 +122,15 @@ public  String TenDangNhap;
                 loginButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 350, -1, -1));
+        getContentPane().add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, -1, -1));
+
+        btn_dangKi.setText("Đăng kí");
+        btn_dangKi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_dangKiActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_dangKi, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, -1, -1));
 
         BackGround.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/background-login.jpg"))); // NOI18N
         BackGround.setName(""); // NOI18N
@@ -195,6 +204,12 @@ public  String TenDangNhap;
         PasswordTxt.setText("");
     }//GEN-LAST:event_PasswordTxtMouseClicked
 
+    private void btn_dangKiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_dangKiActionPerformed
+        // TODO add your handling code here:
+        DangKi_GUI dk = new DangKi_GUI();
+        dk.setVisible(true);
+    }//GEN-LAST:event_btn_dangKiActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -237,6 +252,7 @@ public  String TenDangNhap;
     private javax.swing.JLabel TieuDe;
     private javax.swing.JLabel TitileMatKhau;
     private javax.swing.JLabel TitleTenDangNhap;
+    private javax.swing.JButton btn_dangKi;
     private javax.swing.JLabel lb_exit_login;
     private javax.swing.JButton loginButton;
     // End of variables declaration//GEN-END:variables
