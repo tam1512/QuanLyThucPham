@@ -4,6 +4,7 @@
  */
 package GUI;
 
+import BUS.DangKi_BUS;
 import BUS.NhanVien_BUS;
 import BUS.SanPham_BUS;
 import DTO.SanPham_DTO;
@@ -165,11 +166,18 @@ public class DangKi_GUI extends javax.swing.JFrame {
         String DiaChi = "null";
         String SoDienThoai = "null";
         NhanVien_BUS nv = new NhanVien_BUS();
-        String a = nv.them_NhanVien(tenDN, matKhau, HoVaTen, DiaChi, Email, SoDienThoai);
-        JOptionPane.showMessageDialog(rootPane, a);
-        DangNhap_GUI dn = new DangNhap_GUI();
-        dn.setVisible(true);
-        this.dispose();
+        DangKi_BUS dk = new DangKi_BUS();
+        if(dk.check_passwrd(matKhau, nhaplai_Mk)){           
+            if(nv.them_NhanVien(tenDN, matKhau, HoVaTen, DiaChi, Email, SoDienThoai)){           
+                JOptionPane.showMessageDialog(rootPane, "Đăng kí thành công"); 
+                DangNhap_GUI dn = new DangNhap_GUI();
+                dn.setVisible(true);
+                this.dispose();
+            }
+            else 
+                JOptionPane.showMessageDialog(rootPane, "Tên đăng nhập đã tồn tại");       
+        } else JOptionPane.showMessageDialog(rootPane, "Mật khẩu không khớp");
+        
         
     }//GEN-LAST:event_btn_dangKiActionPerformed
 

@@ -7,6 +7,8 @@ package GUI;
 
 import BUS.SanPham_BUS;
 import DTO.SanPham_DTO;
+import static java.lang.Double.parseDouble;
+import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
@@ -43,10 +45,10 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         rbtn_stt = new javax.swing.JRadioButton();
         rbtn_masp = new javax.swing.JRadioButton();
-        rbtn_tenloai = new javax.swing.JRadioButton();
+        rbtn_idloai = new javax.swing.JRadioButton();
         rbtn_soluong = new javax.swing.JRadioButton();
         rbtn_dongia = new javax.swing.JRadioButton();
-        rbtn_tenncc = new javax.swing.JRadioButton();
+        rbtn_idncc = new javax.swing.JRadioButton();
         rbtn_tensp = new javax.swing.JRadioButton();
         txt_timkiem = new javax.swing.JTextField();
         btn_timkiem = new javax.swing.JButton();
@@ -87,8 +89,8 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         timkiem_sp.add(rbtn_masp);
         rbtn_masp.setText("Mã sp");
 
-        timkiem_sp.add(rbtn_tenloai);
-        rbtn_tenloai.setText("Tên loại");
+        timkiem_sp.add(rbtn_idloai);
+        rbtn_idloai.setText("Mã Loại");
 
         timkiem_sp.add(rbtn_soluong);
         rbtn_soluong.setText("Số lượng");
@@ -96,8 +98,8 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         timkiem_sp.add(rbtn_dongia);
         rbtn_dongia.setText("Đơn giá");
 
-        timkiem_sp.add(rbtn_tenncc);
-        rbtn_tenncc.setText("Tên NCC");
+        timkiem_sp.add(rbtn_idncc);
+        rbtn_idncc.setText("Mã NCC");
 
         timkiem_sp.add(rbtn_tensp);
         rbtn_tensp.setText("Tên SP");
@@ -127,11 +129,11 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
                             .addComponent(rbtn_tensp))
                         .addGap(53, 53, 53)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rbtn_tenloai)
+                            .addComponent(rbtn_idloai)
                             .addComponent(rbtn_dongia))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rbtn_tenncc)
+                            .addComponent(rbtn_idncc)
                             .addComponent(rbtn_soluong))
                         .addGap(38, 38, 38))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -145,21 +147,21 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rbtn_tenncc)
+                    .addComponent(rbtn_idncc)
                     .addComponent(rbtn_masp)
-                    .addComponent(rbtn_tenloai))
+                    .addComponent(rbtn_idloai))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rbtn_soluong)
                     .addComponent(rbtn_dongia)
                     .addComponent(rbtn_tensp))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(rbtn_stt)
-                .addGap(35, 35, 35)
+                .addGap(41, 41, 41)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_timkiem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_timkiem))
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, 390, 260));
@@ -359,10 +361,13 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
     
     private void btn_timkiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_timkiemActionPerformed
         // TODO add your handling code here:
+        
         String keyWord = txt_timkiem.getText();
-        if(rbtn_masp.isSelected()){
-            DefaultTableModel n = new DefaultTableModel();
         SanPham_BUS bus = new SanPham_BUS();
+        
+        if(rbtn_masp.isSelected()){
+            ArrayList<SanPham_DTO> result = null;
+            DefaultTableModel n = new DefaultTableModel();
         bus.TimSanPham_masp(keyWord);
         Vector header = new Vector();
             header.add("STT");
@@ -374,9 +379,8 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
             header.add("Đơn giá");
             header.add("Số lượng");
             n = new DefaultTableModel(header,0);
-            int k = 0;
-        for (SanPham_DTO sp : SanPham_BUS.dssp) {
-     
+            int k = 0;       
+        for (SanPham_DTO sp : result = bus.TimSanPham_tensp(keyWord)) {   
             Vector row = new Vector();
             row.add(k);
             row.add(sp.id_sanpham);
@@ -389,11 +393,13 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
             n.addRow(row);
             k++;
         }
-        tbl_sanpham.setModel(n);}
-        if(rbtn_tenloai.isSelected()){
+        tbl_sanpham.setModel(n);
+        }      
+        
+        if(rbtn_idloai.isSelected()){
+            ArrayList<SanPham_DTO> result = null;
             DefaultTableModel n = new DefaultTableModel();
-        SanPham_BUS bus = new SanPham_BUS();
-        bus.TimSanPham_tenloai(keyWord);
+        
         Vector header = new Vector();
             header.add("STT");
             header.add("ID_SanPham");
@@ -405,8 +411,7 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
             header.add("Số lượng");
             n = new DefaultTableModel(header,0);
             int k = 0;
-        for (SanPham_DTO sp : SanPham_BUS.dssp) {
-     
+        for (SanPham_DTO sp : result = bus.TimSanPham_ID_loai(keyWord)) {    
             Vector row = new Vector();
             row.add(k);
             row.add(sp.id_sanpham);
@@ -421,10 +426,9 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         }
         tbl_sanpham.setModel(n);
         }
-        if(rbtn_tenncc.isSelected()){
+        if(rbtn_idncc.isSelected()){
+            ArrayList<SanPham_DTO> result = null;
             DefaultTableModel n = new DefaultTableModel();
-        SanPham_BUS bus = new SanPham_BUS();
-        bus.TimSanPham_tenncc(keyWord);
         Vector header = new Vector();
             header.add("STT");
             header.add("ID_SanPham");
@@ -436,7 +440,7 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
             header.add("Số lượng");
             n = new DefaultTableModel(header,0);
             int k = 0;
-        for (SanPham_DTO sp : SanPham_BUS.dssp) {
+        for (SanPham_DTO sp : result = bus.TimSanPham_id_ncc(keyWord)) {
      
             Vector row = new Vector();
             row.add(k);
@@ -453,8 +457,8 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         tbl_sanpham.setModel(n);
         }
         if(rbtn_tensp.isSelected()){
+            ArrayList<SanPham_DTO> result = null;
             DefaultTableModel n = new DefaultTableModel();
-        SanPham_BUS bus = new SanPham_BUS();
         bus.TimSanPham_tensp(keyWord);
         Vector header = new Vector();
             header.add("STT");
@@ -467,7 +471,7 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
             header.add("Số lượng");
             n = new DefaultTableModel(header,0);
             int k = 0;
-        for (SanPham_DTO sp : SanPham_BUS.dssp) {
+        for (SanPham_DTO sp : result = bus.TimSanPham_tensp(keyWord)) {
      
             Vector row = new Vector();
             row.add(k);
@@ -484,8 +488,8 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         tbl_sanpham.setModel(n);
         }
         if(rbtn_dongia.isSelected()){
+            ArrayList<SanPham_DTO> result = null;
             DefaultTableModel n = new DefaultTableModel();
-        SanPham_BUS bus = new SanPham_BUS();
         bus.TimSanPham_dongia(keyWord);
         Vector header = new Vector();
             header.add("STT");
@@ -498,7 +502,7 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
             header.add("Số lượng");
             n = new DefaultTableModel(header,0);
             int k = 0;
-        for (SanPham_DTO sp : SanPham_BUS.dssp) {
+        for (SanPham_DTO sp : result = bus.TimSanPham_tensp(keyWord)) {
      
             Vector row = new Vector();
             row.add(k);
@@ -515,8 +519,8 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         tbl_sanpham.setModel(n);
         }
         if(rbtn_soluong.isSelected()){
+            ArrayList<SanPham_DTO> result = null;
             DefaultTableModel n = new DefaultTableModel();
-        SanPham_BUS bus = new SanPham_BUS();
         bus.TimSanPham_soluong(keyWord);
         Vector header = new Vector();
             header.add("STT");
@@ -529,7 +533,7 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
             header.add("Số lượng");
             n = new DefaultTableModel(header,0);
             int k = 0;
-        for (SanPham_DTO sp : SanPham_BUS.dssp) {
+       for (SanPham_DTO sp : result = bus.TimSanPham_soluong(keyWord)) {
      
             Vector row = new Vector();
             row.add(k);
@@ -546,9 +550,9 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         tbl_sanpham.setModel(n);
         }
         if(rbtn_stt.isSelected()){
+            ArrayList<SanPham_DTO> result = null;
             DefaultTableModel n = new DefaultTableModel();
-        SanPham_BUS bus = new SanPham_BUS();
-        bus.TimSanPham_stt(keyWord);
+        
         Vector header = new Vector();
             header.add("STT");
             header.add("ID_SanPham");
@@ -560,7 +564,7 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
             header.add("Số lượng");
             n = new DefaultTableModel(header,0);
             int k = 0;
-        for (SanPham_DTO sp : SanPham_BUS.dssp) {
+        for (SanPham_DTO sp : result = bus.TimSanPham_stt(keyWord)){
      
             Vector row = new Vector();
             row.add(k);
@@ -598,11 +602,11 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JRadioButton rbtn_dongia;
+    private javax.swing.JRadioButton rbtn_idloai;
+    private javax.swing.JRadioButton rbtn_idncc;
     private javax.swing.JRadioButton rbtn_masp;
     private javax.swing.JRadioButton rbtn_soluong;
     private javax.swing.JRadioButton rbtn_stt;
-    private javax.swing.JRadioButton rbtn_tenloai;
-    private javax.swing.JRadioButton rbtn_tenncc;
     private javax.swing.JRadioButton rbtn_tensp;
     private javax.swing.JTable tbl_sanpham;
     private javax.swing.ButtonGroup timkiem_sp;

@@ -22,7 +22,7 @@ public class NhanVien_BUS {
       public void docNhanVien_edit(){
         dsnv = new NhanVien_DAO().docNhanVien_edit();
     }
-    public String them_NhanVien(String tenDN, String matKhau,String HoVaTen,String DiaChi,String Email,String SoDienThoai){
+    public boolean them_NhanVien(String tenDN, String matKhau,String HoVaTen,String DiaChi,String Email,String SoDienThoai){
         boolean flag = true;
         NhanVien_BUS nv1 = new NhanVien_BUS();
         for (NhanVien_DTO nv : NhanVien_BUS.dsnv){
@@ -32,8 +32,8 @@ public class NhanVien_BUS {
         }
         if(flag == true){
          new NhanVien_DAO().themNV(tenDN, matKhau, HoVaTen, DiaChi, Email, SoDienThoai);
-         return "Đăng kí thành công";
-        } else return "Tên đăng nhập đã tồn tại";
+         return flag;
+        } else return flag;
      }
      public void sua_NhanVien(String ID_NhanVien,String HoVaTen,String DiaChi,String Email,String SoDienThoai){
          new NhanVien_DAO().suaNhanVien(ID_NhanVien, HoVaTen, DiaChi, Email, SoDienThoai);

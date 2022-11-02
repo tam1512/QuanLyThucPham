@@ -67,12 +67,12 @@
                           </Group>
                           <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="rbtn_tenloai" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtn_idloai" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="rbtn_dongia" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="72" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="rbtn_tenncc" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtn_idncc" min="-2" max="-2" attributes="0"/>
                               <Component id="rbtn_soluong" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
@@ -92,9 +92,9 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="rbtn_tenncc" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbtn_idncc" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="rbtn_masp" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="rbtn_tenloai" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbtn_idloai" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -102,14 +102,14 @@
                       <Component id="rbtn_dongia" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="rbtn_tensp" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="rbtn_stt" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="txt_timkiem" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btn_timkiem" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="71" max="32767" attributes="0"/>
+                  <EmptySpace pref="67" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -131,12 +131,12 @@
             <Property name="text" type="java.lang.String" value="M&#xe3; sp"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="rbtn_tenloai">
+        <Component class="javax.swing.JRadioButton" name="rbtn_idloai">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="timkiem_sp"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="T&#xea;n lo&#x1ea1;i"/>
+            <Property name="text" type="java.lang.String" value="M&#xe3; Lo&#x1ea1;i"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JRadioButton" name="rbtn_soluong">
@@ -155,12 +155,12 @@
             <Property name="text" type="java.lang.String" value="&#x110;&#x1a1;n gi&#xe1;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="rbtn_tenncc">
+        <Component class="javax.swing.JRadioButton" name="rbtn_idncc">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="timkiem_sp"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="T&#xea;n NCC"/>
+            <Property name="text" type="java.lang.String" value="M&#xe3; NCC"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JRadioButton" name="rbtn_tensp">

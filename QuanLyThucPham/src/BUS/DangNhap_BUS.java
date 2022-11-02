@@ -11,11 +11,11 @@ import DTO.NhanVien_DTO;
  */
 public class DangNhap_BUS {
     public boolean DangNhap(String TenDangNhap,String MatKhau){
-        DAO.NhanVien_DAO nv_DAO= new DAO.NhanVien_DAO();
-        NhanVien_DTO nv_DTO = new NhanVien_DTO();
-        nv_DTO = nv_DAO.DangNhap(TenDangNhap, MatKhau);
-        if(nv_DTO.MatKhau.equals(MatKhau) && nv_DTO.TenDangNhap.equals(TenDangNhap)){
-            return true;
+        NhanVien_BUS nv_bus = new NhanVien_BUS();
+        for (NhanVien_DTO nv : NhanVien_BUS.dsnv){
+            if(nv.TenDangNhap.equals(TenDangNhap) && nv.MatKhau.equals(MatKhau)){
+               return true;
+            }
         }
         return false;
     }

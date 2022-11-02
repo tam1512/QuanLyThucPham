@@ -124,13 +124,14 @@ public  String TenDangNhap;
         });
         getContentPane().add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, -1, -1));
 
+        btn_dangKi.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_dangKi.setText("Đăng kí");
         btn_dangKi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_dangKiActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_dangKi, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, -1, -1));
+        getContentPane().add(btn_dangKi, new org.netbeans.lib.awtextra.AbsoluteConstraints(345, 350, 100, -1));
 
         BackGround.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/background-login.jpg"))); // NOI18N
         BackGround.setName(""); // NOI18N
@@ -144,14 +145,14 @@ public  String TenDangNhap;
         
     }//GEN-LAST:event_TenDangNhapTxtActionPerformed
     public static int flag = 0;
-    
+    BUS.DangNhap_BUS dn= new BUS.DangNhap_BUS();
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        if(TenDangNhapTxt.getText().length()==0 && String.valueOf(PasswordTxt.getText()).length()==0){
+        if(TenDangNhapTxt.getText().isEmpty() || PasswordTxt.getText().isEmpty()){
             JOptionPane.showMessageDialog(null,"Bạn chưa nhập thông tin tài khoản mật khẩu!!");
         }else{
-            BUS.DangNhap_BUS dn= new BUS.DangNhap_BUS();
-
-            if(dn.DangNhap(TenDangNhapTxt.getText(), PasswordTxt.getText())){
+            
+            String pwd = new String(PasswordTxt.getPassword());
+            if(dn.DangNhap(TenDangNhapTxt.getText(), pwd)){
                 TenDangNhap=this.TenDangNhapTxt.getText();
                 Main_Menu menu= new Main_Menu();
                 this.setVisible(false);
@@ -162,7 +163,7 @@ public  String TenDangNhap;
                 this.dispose();
 
             }else{
-                JOptionPane.showMessageDialog(null, "Tài khoản không tồn tại","Thông báo",1);
+                JOptionPane.showMessageDialog(null, "Tên đăng nhập hoặc mật khẩu không đúng !");
             }
         }
 
