@@ -380,7 +380,7 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
             header.add("Số lượng");
             n = new DefaultTableModel(header,0);
             int k = 0;       
-        for (SanPham_DTO sp : result = bus.TimSanPham_tensp(keyWord)) {   
+        for (SanPham_DTO sp : result = BUS.SanPham_BUS.result) {   
             Vector row = new Vector();
             row.add(k);
             row.add(sp.id_sanpham);
@@ -399,7 +399,7 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         if(rbtn_idloai.isSelected()){
             ArrayList<SanPham_DTO> result = null;
             DefaultTableModel n = new DefaultTableModel();
-        
+        bus.TimSanPham_ID_loai(keyWord);
         Vector header = new Vector();
             header.add("STT");
             header.add("ID_SanPham");
@@ -411,7 +411,7 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
             header.add("Số lượng");
             n = new DefaultTableModel(header,0);
             int k = 0;
-        for (SanPham_DTO sp : result = bus.TimSanPham_ID_loai(keyWord)) {    
+        for (SanPham_DTO sp : result = BUS.SanPham_BUS.result) {    
             Vector row = new Vector();
             row.add(k);
             row.add(sp.id_sanpham);
@@ -429,6 +429,7 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         if(rbtn_idncc.isSelected()){
             ArrayList<SanPham_DTO> result = null;
             DefaultTableModel n = new DefaultTableModel();
+            bus.TimSanPham_id_ncc(keyWord);
         Vector header = new Vector();
             header.add("STT");
             header.add("ID_SanPham");
@@ -440,7 +441,7 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
             header.add("Số lượng");
             n = new DefaultTableModel(header,0);
             int k = 0;
-        for (SanPham_DTO sp : result = bus.TimSanPham_id_ncc(keyWord)) {
+        for (SanPham_DTO sp : result = BUS.SanPham_BUS.result) {
      
             Vector row = new Vector();
             row.add(k);
@@ -471,7 +472,7 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
             header.add("Số lượng");
             n = new DefaultTableModel(header,0);
             int k = 0;
-        for (SanPham_DTO sp : result = bus.TimSanPham_tensp(keyWord)) {
+        for (SanPham_DTO sp : result = BUS.SanPham_BUS.result) {
      
             Vector row = new Vector();
             row.add(k);
@@ -502,7 +503,7 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
             header.add("Số lượng");
             n = new DefaultTableModel(header,0);
             int k = 0;
-        for (SanPham_DTO sp : result = bus.TimSanPham_tensp(keyWord)) {
+        for (SanPham_DTO sp : result = BUS.SanPham_BUS.result) {
      
             Vector row = new Vector();
             row.add(k);
@@ -533,7 +534,7 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
             header.add("Số lượng");
             n = new DefaultTableModel(header,0);
             int k = 0;
-       for (SanPham_DTO sp : result = bus.TimSanPham_soluong(keyWord)) {
+       for (SanPham_DTO sp : result = BUS.SanPham_BUS.result) {
      
             Vector row = new Vector();
             row.add(k);
@@ -552,7 +553,7 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
         if(rbtn_stt.isSelected()){
             ArrayList<SanPham_DTO> result = null;
             DefaultTableModel n = new DefaultTableModel();
-        
+        bus.TimSanPham_stt(keyWord);
         Vector header = new Vector();
             header.add("STT");
             header.add("ID_SanPham");
@@ -564,7 +565,7 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
             header.add("Số lượng");
             n = new DefaultTableModel(header,0);
             int k = 0;
-        for (SanPham_DTO sp : result = bus.TimSanPham_stt(keyWord)){
+        for (SanPham_DTO sp : result = BUS.SanPham_BUS.result){
      
             Vector row = new Vector();
             row.add(k);

@@ -51,66 +51,92 @@ public class SanPham_BUS {
         return true;
     }
     
-    ArrayList result = new ArrayList<SanPham_DTO>();
-    public ArrayList TimSanPham_masp(String masp){ 
+    public static ArrayList result = new ArrayList<SanPham_DTO>();
+    public boolean TimSanPham_masp(String masp){ 
+       result.clear();
         for(DTO.SanPham_DTO sp : dssp){
            if(sp.id_sanpham.equals(masp)){
                result.add(sp);
+               return true;
            }
         }
-        return result;
+        return false;
     }
-    public ArrayList TimSanPham_ID_loai(String idloai){      
+    public boolean TimSanPham_ID_loai(String idloai){  
+        result.clear();
+        int k = 0;
         for(DTO.SanPham_DTO sp : dssp){
            if(sp.id_loai.contains(idloai)){
                result.add(sp);
+               k++;
            }
         }
-        return result;
+        if (k<=0) return false;
+        return true;
     }
-    public ArrayList TimSanPham_id_ncc(String idncc){      
+    public boolean TimSanPham_id_ncc(String idncc){      
+        result.clear();
+        int k = 0;
         for(DTO.SanPham_DTO sp : dssp){
            if(sp.id_ncc.contains(idncc)){
                result.add(sp);
+            k++;
            }
         }
-        return result;
+        if (k<=0) return false;
+        return true;
     }
-    public ArrayList TimSanPham_tensp(String tensp){      
+    public boolean TimSanPham_tensp(String tensp){   
+        result.clear();
+        int k = 0;
         for(DTO.SanPham_DTO sp : dssp){
            if(sp.tensp.contains(tensp)){
                result.add(sp);
+           k++;
            }
         }
-        return result;
+        if (k<=0) return false;
+        return true;
     }
-    public ArrayList TimSanPham_dongia(String dongia){      
+    public boolean TimSanPham_dongia(String dongia){   
+        result.clear();
+        int k = 0;
         for(DTO.SanPham_DTO sp : dssp){
-           if(sp.giaban.contains(dongia)){
+            double dg1 = Double.parseDouble(dongia);
+            double dg2 = Double.parseDouble(sp.giaban);
+           if(dg2 <= dg1){
                result.add(sp);
+           k++;
            }
         }
-        return result;
+        if (k<=0) return false;
+        return true;
     }
-    public ArrayList TimSanPham_soluong(String soluong){      
+    public boolean TimSanPham_soluong(String soluong){    
+        result.clear();
+        int k = 0;
         for(DTO.SanPham_DTO sp : dssp){
             double sl1 = Double.parseDouble(sp.soluong);
             double sl2 = Double.parseDouble(soluong);
            if(sl1 >= sl2){
                result.add(sp);
+            k++;
            }
         }
-        return result;
+        if (k<=0) return false;
+        return true;
     }
-    public ArrayList TimSanPham_stt(String stt){
+    public boolean TimSanPham_stt(String stt){
+        result.clear();
         int x = Integer.parseInt(stt);
         int k = 0;
         for(DTO.SanPham_DTO sp : dssp){
            if( k == x){
                result.add(sp);
+               return true;
            }
            k++;
         }
-        return result;
+        return false;
     }
 }
