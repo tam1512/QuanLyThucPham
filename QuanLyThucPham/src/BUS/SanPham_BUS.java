@@ -63,10 +63,11 @@ public class SanPham_BUS {
         return false;
     }
     public boolean TimSanPham_ID_loai(String idloai){  
+        docSanPham_edit();
         result.clear();
         int k = 0;
         for(DTO.SanPham_DTO sp : dssp){
-           if(sp.id_loai.contains(idloai)){
+           if(sp.id_loai.equals(idloai)){
                result.add(sp);
                k++;
            }

@@ -48,7 +48,6 @@ public class DangNhap_BUSTest {
         boolean expResult = true;
         boolean result = instance.DangNhap(TenDangNhap, MatKhau);
         assertEquals(expResult, result);
-        
     }
 
     

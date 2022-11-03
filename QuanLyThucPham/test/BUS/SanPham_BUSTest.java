@@ -169,13 +169,13 @@ public class SanPham_BUSTest {
     @Test
     public void testTimSanPham_masp() {
         System.out.println("TimSanPham_masp");
-        String masp = "";
+        String masp = "1001";
         SanPham_BUS instance = new SanPham_BUS();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.TimSanPham_masp(masp);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -184,13 +184,13 @@ public class SanPham_BUSTest {
     @Test
     public void testTimSanPham_ID_loai() {
         System.out.println("TimSanPham_ID_loai");
-        String idloai = "";
+        String idloai = "2000";
         SanPham_BUS instance = new SanPham_BUS();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.TimSanPham_ID_loai(idloai);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -199,13 +199,13 @@ public class SanPham_BUSTest {
     @Test
     public void testTimSanPham_id_ncc() {
         System.out.println("TimSanPham_id_ncc");
-        String idncc = "";
+        String idncc = "200";
         SanPham_BUS instance = new SanPham_BUS();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.TimSanPham_id_ncc(idncc);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -214,13 +214,13 @@ public class SanPham_BUSTest {
     @Test
     public void testTimSanPham_tensp() {
         System.out.println("TimSanPham_tensp");
-        String tensp = "";
+        String tensp = "Cà";
         SanPham_BUS instance = new SanPham_BUS();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.TimSanPham_tensp(tensp);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -229,13 +229,13 @@ public class SanPham_BUSTest {
     @Test
     public void testTimSanPham_dongia() {
         System.out.println("TimSanPham_dongia");
-        String dongia = "";
+        String dongia = "15000";
         SanPham_BUS instance = new SanPham_BUS();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.TimSanPham_dongia(dongia);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -244,13 +244,13 @@ public class SanPham_BUSTest {
     @Test
     public void testTimSanPham_soluong() {
         System.out.println("TimSanPham_soluong");
-        String soluong = "";
+        String soluong = "10";
         SanPham_BUS instance = new SanPham_BUS();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.TimSanPham_soluong(soluong);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -259,13 +259,13 @@ public class SanPham_BUSTest {
     @Test
     public void testTimSanPham_stt() {
         System.out.println("TimSanPham_stt");
-        String stt = "";
+        String stt = "1";
         SanPham_BUS instance = new SanPham_BUS();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.TimSanPham_stt(stt);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
     
 }
