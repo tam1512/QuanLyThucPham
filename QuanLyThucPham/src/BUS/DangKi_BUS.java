@@ -4,17 +4,28 @@
  */
 package BUS;
 
+import DTO.NhanVien_DTO;
+
 /**
  *
  * @author blemb
  */
 public class DangKi_BUS {
     public DangKi_BUS(){}
-    public boolean check_passwrd(String pass, String repeat_pass){
+    public String check_DangKi(String pass, String repeat_pass, String userName){
+        NhanVien_BUS nv = new NhanVien_BUS();
+        boolean flag = true;
+        for(NhanVien_DTO nvdto : NhanVien_BUS.dsnv){
+            if(nvdto.TenDangNhap.equals(userName)){
+                flag = false;
+            }
+        }
         if(pass.equals(repeat_pass)){
-            return true;
-        } else return false;
-        
-}
+            if(flag == true)
+               return "Đăng kí thành công";
+        } else return "Mật khẩu không trùng nhau";
+        return "Tên người dùng đã tồn tại";    
+    }
+
 }
 

@@ -4,10 +4,6 @@
  */
 package BUS;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -20,34 +16,46 @@ public class DangKi_BUSTest {
     public DangKi_BUSTest() {
     }
     
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
     /**
-     * Test of check_passwrd method, of class DangKi_BUS.
+     * Test of check_DangKi method, of class DangKi_BUS.
+     * 
      */
+    
     @Test
-    public void testCheck_passwrd() {
-        System.out.println("check_passwrd");
+    public void testCase1() {
+        System.out.println("testCase1");
+         String userName = "DauPhan1101";
         String pass = "123";
         String repeat_pass = "123";
         DangKi_BUS instance = new DangKi_BUS();
-        boolean expResult = true;
-        boolean result = instance.check_passwrd(pass, repeat_pass);
+        String expResult = "Đăng kí thành công";
+        String result = instance.check_DangKi(pass, repeat_pass, userName);
         assertEquals(expResult, result);
+        
     }
-    
+    @Test
+    public void testCase2() {
+        System.out.println("testCase2");
+        String userName = "DauPhan1101";
+        String pass = "";
+        String repeat_pass = "";
+        DangKi_BUS instance = new DangKi_BUS();
+        String expResult = "Mật khẩu trống";
+        String result = instance.check_DangKi(pass, repeat_pass, userName);
+        assertEquals(expResult, result);
+        
+    }
+    @Test
+    public void testCase3() {
+        System.out.println("testCase3");
+        String userName = "nhanvien1";
+        String pass = "123";
+        String repeat_pass = "1234";
+        DangKi_BUS instance = new DangKi_BUS();
+        String expResult = "Tên người dùng đã tồn tại";
+        String result = instance.check_DangKi(pass, repeat_pass, userName);
+        assertEquals(expResult, result);
+        
+    }
+       
 }

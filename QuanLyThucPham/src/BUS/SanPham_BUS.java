@@ -87,7 +87,7 @@ public class SanPham_BUS {
         if (k<=0) return false;
         return true;
     }
-    public boolean TimSanPham_tensp(String tensp){   
+    public String TimSanPham_tensp(String tensp){   
         result.clear();
         int k = 0;
         for(DTO.SanPham_DTO sp : dssp){
@@ -96,8 +96,8 @@ public class SanPham_BUS {
            k++;
            }
         }
-        if (k<=0) return false;
-        return true;
+        if (k<=0) return "Không tìm thấy sản phẩm";
+        return "Đã tìm thấy sản phẩm";
     }
     public boolean TimSanPham_dongia(String dongia){   
         result.clear();
@@ -113,7 +113,9 @@ public class SanPham_BUS {
         if (k<=0) return false;
         return true;
     }
-    public boolean TimSanPham_soluong(String soluong){    
+    public String TimSanPham_soluong(String soluong){ 
+        int sl= Integer.parseInt(soluong);
+        if(sl >= 0 && sl <= 10000){
         result.clear();
         int k = 0;
         for(DTO.SanPham_DTO sp : dssp){
@@ -124,8 +126,9 @@ public class SanPham_BUS {
             k++;
            }
         }
-        if (k<=0) return false;
-        return true;
+        return "Đã tìm thấy sản phẩm";
+       }
+        return "Không tìm thấy sản phẩm nào";
     }
     public boolean TimSanPham_stt(String stt){
         result.clear();

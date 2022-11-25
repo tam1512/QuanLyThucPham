@@ -20,35 +20,42 @@ public class DangNhap_BUSTest {
     public DangNhap_BUSTest() {
     }
     
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
+   
     /**
      * Test of DangNhap method, of class DangNhap_BUS.
      */
     @Test
-    public void testDangNhap() {
-        System.out.println("DangNhap");
+    public void testCase1() {
+        System.out.println("DangNhap_testCase1");
         String TenDangNhap = "nhanvien1";
         String MatKhau = "123";
         DangNhap_BUS instance = new DangNhap_BUS();
-        boolean expResult = true;
-        boolean result = instance.DangNhap(TenDangNhap, MatKhau);
+        String expResult = "Đăng nhập thành công";
+        String result = instance.DangNhap(TenDangNhap, MatKhau);
+        assertEquals(expResult, result);
+        
+    }
+    @Test
+    public void testCase2() {
+        System.out.println("DangNhap_testCase2");
+        String TenDangNhap = "-DauPhan1101";
+        String MatKhau = "dau123";
+        DangNhap_BUS instance = new DangNhap_BUS();
+        String expResult = "Tên người dùng không hợp lệ";
+        String result = instance.DangNhap(TenDangNhap, MatKhau);
         assertEquals(expResult, result);
     }
 
+  
+    @Test
+    public void testCase3() {
+        System.out.println("DangNhap_testCase3");
+        String TenDangNhap = "DauPhan1101";
+        String MatKhau = "dau1101";
+        DangNhap_BUS instance = new DangNhap_BUS();
+        String expResult = "Tên người dùng chưa được đăng kí";
+        String result = instance.DangNhap(TenDangNhap, MatKhau);
+        assertEquals(expResult, result);
+    }
     
 }

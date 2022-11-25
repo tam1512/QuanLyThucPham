@@ -10,14 +10,14 @@ import DTO.NhanVien_DTO;
  * @author DELL
  */
 public class DangNhap_BUS {
-    public boolean DangNhap(String TenDangNhap,String MatKhau){
+    public String DangNhap(String TenDangNhap,String MatKhau){
         NhanVien_BUS nv_bus = new NhanVien_BUS();
         for (NhanVien_DTO nv : NhanVien_BUS.dsnv){
             if(nv.TenDangNhap.equals(TenDangNhap) && nv.MatKhau.equals(MatKhau)){
-               return true;
+               return "Đăng nhập thành công";
             }
         }
-        return false;
+        return "Tài khoản hoặc mật khẩu không đúng";
     }
     public int check_account(String TenDangNhap,String MatKhau){
         int check = 0;

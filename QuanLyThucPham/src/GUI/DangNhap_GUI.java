@@ -152,7 +152,8 @@ public  String TenDangNhap;
         }else{
             
             String pwd = new String(PasswordTxt.getPassword());
-            if(dn.DangNhap(TenDangNhapTxt.getText(), pwd)){
+            if("Đăng nhập thành công".equals(dn.DangNhap(TenDangNhapTxt.getText(), pwd))){
+                JOptionPane.showMessageDialog(null,dn.DangNhap(TenDangNhapTxt.getText(), pwd)) ;
                 TenDangNhap=this.TenDangNhapTxt.getText();
                 Main_Menu menu= new Main_Menu();
                 this.setVisible(false);
@@ -163,7 +164,7 @@ public  String TenDangNhap;
                 this.dispose();
 
             }else{
-                JOptionPane.showMessageDialog(null, "Tên đăng nhập hoặc mật khẩu không đúng !");
+                JOptionPane.showMessageDialog(null,dn.DangNhap(TenDangNhapTxt.getText(), pwd)) ;
             }
         }
 

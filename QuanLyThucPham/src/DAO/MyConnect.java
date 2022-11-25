@@ -26,7 +26,7 @@ public class MyConnect {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             this.conn = DriverManager.getConnection(url,user,password);
-            System.out.println("Connect Susscesful !");
+            
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(MyConnect.class.getName()).log(Level.SEVERE, null, ex);
         }
