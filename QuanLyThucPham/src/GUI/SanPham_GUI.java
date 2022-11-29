@@ -473,8 +473,9 @@ public class SanPham_GUI extends javax.swing.JInternalFrame {
             n = new DefaultTableModel(header,0);
             int k = 0;
             if("Đã tìm thấy sản phẩm".equals(bus.TimSanPham_tensp(keyWord))){
+                JOptionPane.showMessageDialog(null, bus.TimSanPham_tensp(keyWord));
         for (SanPham_DTO sp : result = BUS.SanPham_BUS.result) {
-            JOptionPane.showMessageDialog(null, bus.TimSanPham_tensp(keyWord));
+            
             Vector row = new Vector();
             row.add(k);
             row.add(sp.id_sanpham);
