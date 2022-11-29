@@ -6,12 +6,10 @@ package GUI;
 
 import BUS.DangKi_BUS;
 import BUS.NhanVien_BUS;
-import BUS.SanPham_BUS;
-import DTO.SanPham_DTO;
-import java.awt.Dimension;
-import java.awt.Toolkit;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.KeyEvent;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -167,8 +165,7 @@ public class DangKi_GUI extends javax.swing.JFrame {
         String SoDienThoai = "null";
         NhanVien_BUS nv = new NhanVien_BUS();
         DangKi_BUS dk = new DangKi_BUS();
-             
-                JOptionPane.showMessageDialog(rootPane, dk.check_DangKi(Email, matKhau, Email)); 
+                JOptionPane.showMessageDialog(null, dk.check_DangKi(matKhau,nhaplai_Mk, tenDN));
                 DangNhap_GUI dn = new DangNhap_GUI();
                 dn.setVisible(true);
                 this.dispose();
