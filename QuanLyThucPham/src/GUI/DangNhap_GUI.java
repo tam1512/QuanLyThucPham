@@ -140,7 +140,7 @@ public  String TenDangNhap;
         if(TenDangNhapTxt.getText().length()==0 && String.valueOf(PasswordTxt.getText()).length()==0){
             JOptionPane.showMessageDialog(null,"Bạn chưa nhập thông tin tài khoản mật khẩu!!");
         }else{
-            BUS.DangNhap_BUS dn= new BUS.DangNhap_BUS();
+            bus.DangNhap_BUS dn= new bus.DangNhap_BUS();
 
             if(dn.DangNhap(TenDangNhapTxt.getText(), PasswordTxt.getText())){
                 TenDangNhap=this.TenDangNhapTxt.getText();

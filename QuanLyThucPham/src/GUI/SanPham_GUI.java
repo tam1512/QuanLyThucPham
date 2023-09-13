@@ -5,10 +5,9 @@
 package GUI;
 
 
-import BUS.SanPham_BUS;
+import bus.SanPham_BUS;
 import DTO.SanPham_DTO;
 import java.util.Vector;
-import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 

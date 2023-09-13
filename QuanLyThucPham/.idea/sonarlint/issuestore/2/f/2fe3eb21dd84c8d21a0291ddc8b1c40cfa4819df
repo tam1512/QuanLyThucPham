@@ -1,0 +1,116 @@
+
+b
+java:S1192I"GDefine a constant instead of duplicating this literal "Tahoma" 5 times.(ìÔ®îıÿÿÿÿ
+>
+java:S1604W"(Make this anonymous inner class a lambda(â†–
+>
+java:S1604i"(Make this anonymous inner class a lambda(àåĞ‘
+C
+java:S1604w"(Make this anonymous inner class a lambda(™‹‚’øÿÿÿÿ
+D
+java:S1604â"(Make this anonymous inner class a lambda(¨í¡§úÿÿÿÿ
+d
+java:S1104 "NMake rs a static final constant or non-public and provide accessors if needed.(æ’´·
+e
+java:S1104!"OMake pst a static final constant or non-public and provide accessors if needed.(ñÇŒ’
+r
+java:S1104""WMake TenDangNhap a static final constant or non-public and provide accessors if needed.(¨Ş•èûÿÿÿÿ
+l
+java:S1104‰"PMake flag a static final constant or non-public and provide accessors if needed.(ÕÈ¾ëüÿÿÿÿ
+q
+java:S1104ì"ZMake TenDangNhapTxt a static final constant or non-public and provide accessors if needed.(§ŠƒÄ
+>
+java:S1444 "(Make this "public static rs" field final(æ’´·
+?
+java:S1444!")Make this "public static pst" field final(ñÇŒ’
+F
+java:S1444‰"*Make this "public static flag" field final(ÕÈ¾ëüÿÿÿÿ
+K
+java:S1444ì"4Make this "public static TenDangNhapTxt" field final(§ŠƒÄ
+b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Êé­
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(İØ˜úÿÿÿÿ
+p	java:S116""VRename this field "TenDangNhap" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨Ş•èûÿÿÿÿ
+k	java:S116ê"URename this field "BackGround" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(üÔœ
+q	java:S116ë"VRename this field "PasswordTxt" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î«Äíûÿÿÿÿ
+l	java:S116í"QRename this field "TieuDe" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ØÂ®øÿÿÿÿ
+n	java:S116î"XRename this field "TitileMatKhau" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïËıÿ
+p	java:S116ï"[Rename this field "TitleTenDangNhap" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿²Ëw
+m	java:S116ğ"XRename this field "lb_exit_login" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÊŸ–-
+p
+java:S3008ì"YRename this field "TenDangNhapTxt" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§ŠƒÄ
+p
+java:S1450ê"YRemove the "BackGround" field and declare it as a local variable in the relevant methods.(üÔœ
+q
+java:S1450í"URemove the "TieuDe" field and declare it as a local variable in the relevant methods.(ØÂ®øÿÿÿÿ
+s
+java:S1450î"\Remove the "TitileMatKhau" field and declare it as a local variable in the relevant methods.(ïËıÿ
+u
+java:S1450ï"_Remove the "TitleTenDangNhap" field and declare it as a local variable in the relevant methods.(¿²Ëw
+r
+java:S1450ğ"\Remove the "lb_exit_login" field and declare it as a local variable in the relevant methods.(ÊŸ–-
+d
+java:S3252"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(òÆ¸ÿÿÿÿÿ
+P
+java:S2209"5Change this instance-reference to a static reference.(òÆ¸ÿÿÿÿÿ
+L
+java:S26960"6Make the enclosing method "static" or remove this set.(‡ş‚
+U
+java:S1161;":Add the "@Override" annotation above this method signature(óÚ°ùÿÿÿÿ
+P
+java:S1161C":Add the "@Override" annotation above this method signature(†ŒË³
+U
+java:S1161]":Add the "@Override" annotation above this method signature(óÚ°ùÿÿÿÿ
+P
+java:S1161e":Add the "@Override" annotation above this method signature(†ŒË³
+U
+java:S1161o":Add the "@Override" annotation above this method signature(óÚ°ùÿÿÿÿ
+d	java:S100…"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ş§¯½
+A
+java:S1172…"*Remove this unused method parameter "evt".(Ş§¯½
+N
+java:S1135†"2Complete the task associated to this TODO comment.(ÜÀ†áûÿÿÿÿ
+F
+java:S1172‹"*Remove this unused method parameter "evt".(½ïùŠúÿÿÿÿ
+F
+java:S1874Œ"/Remove this use of "getText"; it is deprecated.(„¢¸Ô
+F
+java:S1874‘"/Remove this use of "getText"; it is deprecated.(¯şğó
+L
+java:S2209’"5Change this instance-reference to a static reference.( ¯ëÉ
+R
+java:S2696—"6Make the enclosing method "static" or remove this set.(ÂÆ£Üûÿÿÿÿ
+K
+java:S1874—"/Remove this use of "getText"; it is deprecated.(ÂÆ£Üûÿÿÿÿ
+F
+java:S1874˜"/Remove this use of "getText"; it is deprecated.(ù›Å¾
+i	java:S100¢"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âÇÏ¥ùÿÿÿÿ
+F
+java:S1172¢"*Remove this unused method parameter "evt".(âÇÏ¥ùÿÿÿÿ
+N
+java:S1135£"2Complete the task associated to this TODO comment.(ÜÀ†áûÿÿÿÿ
+N
+java:S1135¨"2Complete the task associated to this TODO comment.(ÜÀ†áûÿÿÿÿ
+d	java:S100®"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€“°ˆ
+A
+java:S1172®"*Remove this unused method parameter "evt".(€“°ˆ
+N
+java:S1135¯"2Complete the task associated to this TODO comment.(ÜÀ†áûÿÿÿÿ
+c	java:S100³"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­Ê+
+N
+java:S1135´"2Complete the task associated to this TODO comment.(ÜÀ†áûÿÿÿÿ
+i	java:S100º"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿Êö™ùÿÿÿÿ
+N
+java:S1135»"2Complete the task associated to this TODO comment.(ÜÀ†áûÿÿÿÿ
+i	java:S100Á"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë®Øıÿÿÿÿ
+F
+java:S1172Á"*Remove this unused method parameter "evt".(ë®Øıÿÿÿÿ
+N
+java:S1135Â"2Complete the task associated to this TODO comment.(ÜÀ†áûÿÿÿÿ
+F
+java:S1197É"*Move the array designators [] to the type.(¡şÏÖøÿÿÿÿ
+\
+java:S2147Ø"ECombine this catch with the one at line 214, which has the same body.(¨¦Š½
+\
+java:S2147Ú"ECombine this catch with the one at line 216, which has the same body.(ã€ 
+[
+java:S2147Ü"ECombine this catch with the one at line 218, which has the same body.(ñÎ¯%

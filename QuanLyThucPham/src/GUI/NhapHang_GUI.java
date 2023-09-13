@@ -4,12 +4,12 @@
  */
 package GUI;
 
-import BUS.CTPhieuNhap_BUS;
-import BUS.PhieuNhap_BUS;
-import BUS.SanPham_BUS;
+import bus.CTPhieuNhap_BUS;
+import bus.PhieuNhap_BUS;
+import bus.SanPham_BUS;
 import DTO.CTPhieuNhap_DTO;
 import DTO.PhieuNhap_DTO;
-import DTO.SanPham_DTO;
+
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;

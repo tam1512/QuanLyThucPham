@@ -4,7 +4,7 @@
  */
 package GUI;
 
-import BUS.CTHoaDon_BUS;
+import bus.CTHoaDonBUS;
 import DTO.CTHoaDon_DTO;
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
@@ -203,8 +203,8 @@ public class ThongKe_GUI extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
     public void showAll_CTHD(){
           DefaultTableModel n = new DefaultTableModel();
-        CTHoaDon_BUS bus = new CTHoaDon_BUS();
-        bus.docDS_CTHD();
+        CTHoaDonBUS bus = new CTHoaDonBUS();
+        bus.docDSCTHD();
          Vector header = new Vector();
             header.add("STT");
             header.add("Mã HD");
@@ -219,7 +219,7 @@ public class ThongKe_GUI extends javax.swing.JInternalFrame {
            
             n = new DefaultTableModel(header,0);
             int k = 0;
-             for (CTHoaDon_DTO nv : CTHoaDon_BUS.ds_cthd) {
+             for (CTHoaDon_DTO nv : CTHoaDonBUS.ds_cthd) {
      
             Vector row = new Vector();
             row.add(k);

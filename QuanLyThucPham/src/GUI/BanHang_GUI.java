@@ -5,12 +5,11 @@
 package GUI;
 
 
-import BUS.CTHoaDon_BUS;
-import BUS.CTKhuyenMai_BUS;
-import BUS.HoaDon_BUS;
-import BUS.SanPham_BUS;
-import BUS.ThanhVien_BUS;
-import GUI.Main_Menu;
+import bus.CTHoaDonBUS;
+import bus.CTKhuyenMai_BUS;
+import bus.HoaDon_BUS;
+import bus.SanPham_BUS;
+import bus.ThanhVien_BUS;
 import DTO.CTKhuyenMai_DTO;
 import DTO.Get_Time;
 import DTO.SanPham_DTO;
@@ -21,11 +20,11 @@ import com.lowagie.text.Paragraph;
 import com.lowagie.text.pdf.BaseFont;
 import com.lowagie.text.pdf.PdfPTable;
 import com.lowagie.text.pdf.PdfWriter;
-import static java.awt.Frame.NORMAL;
+
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import static java.lang.Integer.parseInt;
-import java.util.ArrayList;
+
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,18 +33,8 @@ import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import static java.lang.Float.parseFloat;
-import java.util.List;
-import javax.swing.ImageIcon;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellType;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
 
 
 /**
@@ -693,7 +682,7 @@ public class BanHang_GUI extends javax.swing.JInternalFrame {
             String soluong = String.valueOf(Math.round(parseFloat(model.getValueAt(j, 3).toString()))); 
             String maSp = model.getValueAt(j, 1).toString();
             String donGia = model.getValueAt(j, 4).toString();            
-            new CTHoaDon_BUS().them_CTHD(id_hd, maSp, donGia, soluong);
+            new CTHoaDonBUS().themCthd();
             new SanPham_BUS().capNhatSlSp(soluong, maSp);         
             model.removeRow(j);
             

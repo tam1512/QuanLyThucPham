@@ -5,11 +5,9 @@
  */
 package GUI;
 
-import BUS.NhanVien_BUS;
-import BUS.SanPham_BUS;
-import BUS.ThanhVien_BUS;
+import bus.NhanVien_BUS;
+import bus.ThanhVien_BUS;
 import DTO.NhanVien_DTO;
-import DTO.SanPham_DTO;
 import DTO.ThanhVien_DTO;
 import java.util.Vector;
 import javax.swing.plaf.basic.BasicInternalFrameUI;

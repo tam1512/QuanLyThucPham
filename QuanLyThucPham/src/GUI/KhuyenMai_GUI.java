@@ -5,15 +5,14 @@
 package GUI;
 
 
-import BUS.KhuyenMai_BUS;
-import BUS.SanPham_BUS;
+import bus.KhuyenMai_BUS;
 import DTO.KhuyenMai_DTO;
-import DTO.SanPham_DTO;
+
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
-import BUS.CTKhuyenMai_BUS;
+import bus.CTKhuyenMai_BUS;
 import DTO.CTKhuyenMai_DTO;
 
 /**

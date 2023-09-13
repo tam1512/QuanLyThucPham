@@ -1,0 +1,21 @@
+
+H
+src/bus/CTHoaDonBUS.java,5\c\5c1fdda38f5c5ea3dc43bb89e8f0cd9076712549
+J
+src/CustomUI/MyCanvas.java,7\6\762763c501297b93d5588a6a161d699279650013
+I
+src/DTO/CTHoaDon_DTO.java,d\6\d63af42a9a07875a7b261e72b651c739addc6d92
+I
+src/GUI/DangNhap_GUI.java,2\f\2fe3eb21dd84c8d21a0291ddc8b1c40cfa4819df
+S
+#nbproject/private/config.properties,3\4\34b36ee687cd3a4084d6918f7b896bddbafc9610
+T
+$nbproject/private/private.properties,e\7\e7c5db9810f3b38d0139d9f54b6b22bdc14e57b5
+H
+nbproject/build-impl.xml,0\8\08e98e1c68147fb1ea8657037678d342b5a09cd8
+H
+.scannerwork/.sonar_lock,d\1\d14cfce755b0c90b517e77467879808c5d561511
+9
+	build.xml,b\d\bdc348bf75801c527f51cdeddc8edf027f7ef35a
+H
+sonar-project.properties,2\5\2538046035efb77ecc44e1fd2eec1e2641594d4c
